@@ -1,0 +1,63 @@
+// sass math
+@use 'sass:math';
+
+// mixins
+@import 'base/mixins';
+
+// fonts =======================================================================
+
+// &display=swap
+@import url('https://fonts.googleapis.com/css?family=Assistant:regular,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One:regular&display=swap');
+
+// local fonts
+@import 'fonts/fonts';
+
+// variables ===================================================================
+
+// main colors
+
+// base styles file ============================================================
+@import 'base/set.scss';
+
+// base styles =================================================================
+
+body {
+  // scroll is blocked
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+  // site is loaded
+  .loaded & {
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  // press footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // fix for sliders
+  > * {
+    min-width: 0;
+  }
+}
+
+// base styles, templates (patterns), special classes ==========================
+
+// base styles import
+@import 'base';
+
+// common styles import
+@import 'common';
+
+// individual block styles import
+@import 'header';
+@import 'footer';
+
+// individual page styles import
