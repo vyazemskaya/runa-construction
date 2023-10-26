@@ -1919,6 +1919,11 @@ textarea.input {
     padding-top: 0.4rem;
   }
 
+  .btn__text.txt,
+  .btn__text.input__field {
+    font-size: 2.8rem;
+  }
+
   .input__field {
     padding: 1.6rem 0;
   }
