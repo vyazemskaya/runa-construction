@@ -38,10 +38,34 @@ body {
 }
 
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  width: 192rem;
+  margin: 0 auto;
   overflow: hidden;
+  &::before {
+    @extend %line;
+    z-index: 5;
+    left: 0;
+    top: 0;
+  }
+  &::after {
+    @extend %line;
+    z-index: 5;
+    right: 0;
+    top: 0;
+  }
+  @media (max-width: 120em) {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+  @media (max-width: 48em) {
+    width: 100%;
+  }
   // press footer
   > main {
     flex: 1 1 auto;
@@ -71,3 +95,4 @@ body {
 @import 'sections/privileges';
 @import 'sections/team';
 @import 'sections/request';
+@import 'sections/our-team';

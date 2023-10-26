@@ -1,9 +1,10 @@
-import Swiper, { Navigation } from 'swiper'
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 // styles ======================================================================
 
 // base styles
-import '../../scss/base/swiper.scss'
+import '../../scss/base/swiper.scss';
 
 // all styles
 // import "../../scss/libs/swiper.scss";
@@ -13,14 +14,14 @@ import '../../scss/base/swiper.scss'
 
 // launch ======================================================================
 function initSliders() {
-  if (document.querySelector('.swiper')) {
-    new Swiper('.swiper', {
+  if (document.querySelector('.our-team__slider')) {
+    new Swiper('.our-team__slider', {
       modules: [Navigation],
       observer: true,
       observeParents: true,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      autoHeight: true,
+      slidesPerView: 2,
+      spaceBetween: 30,
+      autoHeight: false,
       speed: 800,
 
       //touchRatio: 0,
@@ -56,8 +57,8 @@ function initSliders() {
 
       // navigation
       navigation: {
-        prevEl: '.swiper-button-prev',
-        nextEl: '.swiper-button-next',
+        prevEl: '.our-team__slider-btn_prev',
+        nextEl: '.our-team__slider-btn_next',
       },
 
       // breakpoints
@@ -84,18 +85,18 @@ function initSliders() {
 			*/
       // events
       on: {},
-    })
+    });
   }
 }
 
 // slider scroll ===============================================================
 function initSlidersScroll() {
-  let sliderScrollItems = document.querySelectorAll('.swiper_scroll')
+  let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
   if (sliderScrollItems.length > 0) {
     for (let index = 0; index < sliderScrollItems.length; index++) {
-      const sliderScrollItem = sliderScrollItems[index]
+      const sliderScrollItem = sliderScrollItems[index];
       const sliderScrollBar =
-        sliderScrollItem.querySelector('.swiper-scrollbar')
+        sliderScrollItem.querySelector('.swiper-scrollbar');
       const sliderScroll = new Swiper(sliderScrollItem, {
         observer: true,
         observeParents: true,
@@ -112,8 +113,8 @@ function initSlidersScroll() {
         mousewheel: {
           releaseOnEdges: true,
         },
-      })
-      sliderScroll.scrollbar.updateSize()
+      });
+      sliderScroll.scrollbar.updateSize();
     }
   }
 }
@@ -121,6 +122,6 @@ function initSlidersScroll() {
 //=================================================================================================================
 
 window.addEventListener('load', function (e) {
-  initSliders()
+  initSliders();
   //initSlidersScroll();
-})
+});

@@ -2,7 +2,8 @@
   @font-face {
     font-family: $font_name;
     font-display: swap;
-    src: url('../fonts/#{$file_name}.woff2') format('woff2'),
+    src:
+      url('../fonts/#{$file_name}.woff2') format('woff2'),
       url('../fonts/#{$file_name}.woff') format('woff');
     font-weight: #{$weight};
     font-style: #{$style};
@@ -101,7 +102,7 @@
   // if clamp() isn't supported;
   @supports not (#{$property}: $propertyValue) {
     #{$property}: calc(
-      #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div(
+      #{rem($minSize)} + #{$addSize} * (192rem - #{rem($widthTo)}) / #{math.div(
           $widthFrom,
           16
         ) - math.div($widthTo, 16)}

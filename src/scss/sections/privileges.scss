@@ -32,7 +32,7 @@
       @extend %line;
       bottom: 0;
       left: 2px;
-      width: calc(100% + (100vw - 100%) / 2);
+      width: calc(145.6rem + (192rem - 145.6rem - 15rem) / 2 - 4px);
       height: 2px;
     }
     @media (max-width: 48em) {
@@ -135,7 +135,7 @@
     // .privileges__card_img
 
     &_img {
-      width: calc(100% + (100vw - 145.6rem) / 2);
+      width: calc(100% + (192rem - 145.6rem) / 2);
       height: 34.7rem;
       grid-column: 3/4;
       grid-row: 2/3;

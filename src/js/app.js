@@ -88,7 +88,7 @@ import './files/forms/inputmask.js';
 // connection and setup are in js/files/sliders.js
 // plugin documentation: https://swiperjs.com/
 // snippet ( HTML ): swiper
-// import "./files/sliders.js";
+import './files/sliders.js';
 
 // ================================================================================================================
 // < scroll > =====================================================================================================
