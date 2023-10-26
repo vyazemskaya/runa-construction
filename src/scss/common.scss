@@ -1,0 +1,354 @@
+// -------------------------------- elements --------------------------------
+
+// sidebar
+.sidebar {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding: 3.6rem 2.3rem 9rem 2.3rem;
+  height: 100%;
+  background-color: rgba(106, 106, 106, 0.2);
+  backdrop-filter: blur(1.9rem);
+  @media (max-width: 48em) {
+    padding: 4rem 0;
+    width: 100%;
+    height: 16.4rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4.6rem);
+  }
+  @media (min-width: 48em) {
+    width: 15rem;
+    transition: width 0.3s ease;
+    .menu-open & {
+      width: 28.3rem;
+    }
+  }
+
+  // .sidebar__inner
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    @media (min-width: 48em) {
+      flex-direction: column;
+    }
+    @media (max-width: 48em) {
+      padding: 0 3.2rem;
+    }
+  }
+
+  // .sidebar__logo-wrap
+
+  &__logo-wrap {
+    width: 10.4rem;
+    @media (max-width: 48em) {
+      position: relative;
+      z-index: 105;
+      width: 13.6rem;
+    }
+  }
+
+  // .sidebar__logo
+
+  &__logo {
+    object-fit: contain;
+  }
+
+  // .sidebar__menu
+
+  &__menu {
+  }
+  // .sidebar__socials
+
+  &__socials {
+    @media (min-width: 48em) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1.9rem;
+    }
+  }
+
+  // .sidebar__socials-item
+
+  &__socials-item {
+  }
+
+  // .sidebar__socials-link
+
+  &__socials-link {
+    display: inline-block;
+    width: 3.2rem;
+  }
+
+  // .sidebar__socials-icon
+
+  &__socials-icon {
+    object-fit: contain;
+  }
+}
+
+// hamburger
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.6rem;
+  width: 3.4rem;
+  &::before,
+  &::after {
+    content: '';
+  }
+  &::before,
+  &::after,
+  span {
+    width: 100%;
+    height: 0.2rem;
+    background-color: $white;
+  }
+  span {
+    transform: scalex(0.7);
+    transition: transform 0.4s ease;
+  }
+  @media (max-width: 48em) {
+    row-gap: 1.2rem;
+    width: 6.5rem;
+    &::before,
+    &::after,
+    span {
+      height: 0.4rem;
+      transition: all 0.3s ease;
+    }
+    .menu-open & {
+      position: absolute;
+      &::before,
+      &::after,
+      span {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+// menu
+.menu {
+  position: relative;
+
+  // .menu__hamburger-wrap
+
+  &__hamburger-wrap {
+    transition: all 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        .hamburger {
+          span {
+            transform: scalex(1);
+          }
+        }
+      }
+    }
+    @media (max-width: 48em) {
+      position: relative;
+      z-index: 105;
+      display: flex;
+      align-items: center;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 6.5rem;
+        height: 6.5rem;
+        background-image: url(@img/icons/cross.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      .menu-open & {
+        &::after {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    @media (min-width: 48em) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1.6rem;
+      transform: translate(-50%, -50%);
+      .menu-open & {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  // .menu__hamburger
+
+  &__hamburger {
+  }
+
+  // .menu__hamburger-txt
+
+  &__hamburger-txt {
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  // .menu__body
+
+  &__body {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    @media (max-width: 48em) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 25rem;
+      height: 100vh;
+    }
+    @media (min-width: 48em) {
+      .menu-open & {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  // .menu__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4.8rem;
+    text-align: center;
+  }
+
+  // .menu__item
+
+  &__item {
+  }
+
+  // .menu__link
+
+  &__link {
+    position: relative;
+    text-transform: uppercase;
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+// ------------------------------- typography -------------------------------
+
+// tl1
+.tl1 {
+  font-size: 5.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  line-height: 130%;
+  @media (max-width: 48em) {
+    font-size: 6rem;
+  }
+}
+
+// tl2
+.tl2 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 120%;
+  letter-spacing: 0.1rem;
+  @media (max-width: 48em) {
+    font-size: 4.2rem;
+  }
+}
+
+// tl3
+.tl3 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  @media (max-width: 48em) {
+    font-size: 4rem;
+  }
+}
+
+// reg
+.reg {
+  font-weight: 400;
+}
+
+// txt
+.txt {
+  font-family: Gilroy;
+  font-weight: 500;
+  line-height: 130%;
+  @media (max-width: 48em) {
+    font-size: 3.2rem;
+  }
+
+  // .txt_16
+
+  &_16 {
+    font-size: 1.6rem;
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+    }
+  }
+
+  // .txt_18
+
+  &_18 {
+    font-size: 1.8rem;
+    @media (max-width: 48em) {
+      font-size: 3.2rem;
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+
+.grid {
+  display: grid;
+  @media (min-width: 48em) {
+    grid-template-columns: 15rem 1fr;
+  }
+}
+
+.desktop-only {
+  @media (max-width: 48em) {
+    display: none;
+  }
+}

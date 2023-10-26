@@ -1,4 +1,4 @@
-// @import "base/forms/forms";
+@import 'base/forms/forms';
 
 // popup styles
 // @import "base/popup";
@@ -128,4 +128,12 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+%line {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
 }

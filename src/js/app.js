@@ -1,16 +1,16 @@
 // full logging system)
-window['FLS'] = true
+window['FLS'] = true;
 
 // main styles
-import '../scss/style.scss'
+import '../scss/style.scss';
 
 // ================================================================================================================
 // < functional > =================================================================================================
 // ================================================================================================================
-import * as utilities from './files/functions.js'
+import * as utilities from './files/functions.js';
 
 // webp support check, add webp class or no-webp class for HTML
-utilities.isWebp()
+utilities.isWebp();
 
 // add touch class for HTML if the browser is mobile
 // utilities.addTouchClass();
@@ -19,7 +19,7 @@ utilities.isWebp()
 // utilities.addLoadedClass();
 
 // menu module
-// utilities.menuInit();
+utilities.menuInit();
 
 // accounting for the floating panel on mobile devices at 100vh
 // utilities.fullVHfix();
@@ -47,13 +47,13 @@ utilities.isWebp()
 // < forms > ======================================================================================================
 // ================================================================================================================
 
-import * as forms from './files/forms/forms.js'
+import * as forms from './files/forms/forms.js';
 
 // form fields
-// forms.formFieldsInit({ viewPass: false });
+forms.formFieldsInit({ viewPass: false });
 
 // submit form
-// forms.formSubmit();
+forms.formSubmit();
 
 // quantity module
 // forms.formQuantity();
@@ -67,7 +67,7 @@ import * as forms from './files/forms/forms.js'
 // masks module
 // connection and setup are in js/files/forms/inputmask.js
 // plugin documentation: https://github.com/RobinHerbots/inputmask
-// import "./files/forms/inputmask.js";
+import './files/forms/inputmask.js';
 
 // range module
 // connection and setup are in js/files/forms/range.js
@@ -107,7 +107,7 @@ import * as forms from './files/forms/forms.js'
 
 // < scroll functions > ===========================================================================================
 
-import * as scroll from './files/scroll/scroll.js'
+import * as scroll from './files/scroll/scroll.js';
 
 // smooth page navigation
 // scroll.pageNavigation();
@@ -130,7 +130,7 @@ import * as scroll from './files/scroll/scroll.js'
 // ================================================================================================================
 
 // dynamic adaptive
-// import "./libs/dynamic_adapt.js";
+import './libs/dynamic_adapt.js';
 
 // number formatting
 // import './libs/wNumb.min.js';
@@ -140,6 +140,6 @@ import * as scroll from './files/scroll/scroll.js'
 // ================================================================================================================
 
 // own scripts
-import './files/script.js'
+import './files/script.js';
 
 //============================================================================================================================================================================================================================================

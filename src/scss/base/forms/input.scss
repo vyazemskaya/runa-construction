@@ -12,17 +12,39 @@ input:focus {
 }
 
 .input {
-  display: block;
-  width: 100%;
-  padding: 0px 20px;
-  border-radius: 0 !important;
-  border: 1px solid #eee;
-  &._form-focus {
-  }
-  &._form-error {
+  position: relative;
+  &__field {
+    @extend .txt;
+    display: block;
+    width: 100%;
+    padding: 1.6rem 0;
+    border-radius: 0 !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    &._form-focus {
+      border-bottom: 2px solid $white;
+    }
+    &._form-error {
+      color: #f05757;
+      border-bottom: 2px solid #f05757;
+      &::placeholder {
+        color: #f05757;
+      }
+    }
+    &._filled {
+      color: $white;
+      border-bottom: 2px solid $white;
+    }
+    @media (max-width: 48em) {
+      padding: 1.6rem 0;
+    }
   }
 }
 textarea.input {
-  padding: 0px 0px;
+  padding: 0;
   resize: none;
 }

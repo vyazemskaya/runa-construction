@@ -16,6 +16,10 @@
 // variables ===================================================================
 
 // main colors
+$black: #1a1a1a;
+$bg: #242424;
+$grey: #9a9a9a;
+$white: #ffffff;
 
 // base styles file ============================================================
 @import 'base/set.scss';
@@ -50,14 +54,20 @@ body {
 
 // base styles, templates (patterns), special classes ==========================
 
-// base styles import
+// base styles
 @import 'base';
 
-// common styles import
+// common styles
 @import 'common';
 
-// individual block styles import
+// header & footer
 @import 'header';
 @import 'footer';
 
-// individual page styles import
+// sections
+@import 'sections/hero';
+@import 'sections/about-company';
+@import 'sections/services';
+@import 'sections/privileges';
+@import 'sections/team';
+@import 'sections/request';

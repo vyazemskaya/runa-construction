@@ -1,81 +1,89 @@
-import { modules } from '../modules.js'
+import { modules } from '../modules.js';
 import {
   isMobile,
   _slideUp,
   _slideDown,
   _slideToggle,
   FLS,
-} from '../functions.js'
-import { gotoBlock } from '../scroll/gotoblock.js'
+} from '../functions.js';
+import { gotoBlock } from '../scroll/gotoblock.js';
 
 // =============================================================================
 export function formFieldsInit(options = { viewPass: false }) {
   const formFields = document.querySelectorAll(
     'input[placeholder],textarea[placeholder]'
-  )
+  );
   if (formFields.length) {
     formFields.forEach(formField => {
       if (!formField.hasAttribute('data-placeholder-nohide')) {
-        formField.dataset.placeholder = formField.placeholder
+        formField.dataset.placeholder = formField.placeholder;
       }
-    })
+    });
   }
   document.body.addEventListener('focusin', function (e) {
-    const targetElement = e.target
+    const targetElement = e.target;
     if (
       targetElement.tagName === 'INPUT' ||
       targetElement.tagName === 'TEXTAREA'
     ) {
       if (targetElement.dataset.placeholder) {
-        targetElement.placeholder = ''
+        targetElement.placeholder = '';
       }
       if (!targetElement.hasAttribute('data-no-focus-classes')) {
-        targetElement.classList.add('_form-focus')
-        targetElement.parentElement.classList.add('_form-focus')
+        targetElement.classList.add('_form-focus');
+        targetElement.parentElement.classList.add('_form-focus');
       }
-      formValidate.removeError(targetElement)
+      formValidate.removeError(targetElement);
     }
-  })
+  });
   document.body.addEventListener('focusout', function (e) {
-    const targetElement = e.target
+    const targetElement = e.target;
     if (
       targetElement.tagName === 'INPUT' ||
       targetElement.tagName === 'TEXTAREA'
     ) {
       if (targetElement.dataset.placeholder) {
-        targetElement.placeholder = targetElement.dataset.placeholder
+        targetElement.placeholder = targetElement.dataset.placeholder;
       }
       if (!targetElement.hasAttribute('data-no-focus-classes')) {
-        targetElement.classList.remove('_form-focus')
-        targetElement.parentElement.classList.remove('_form-focus')
+        targetElement.classList.remove('_form-focus');
+        targetElement.parentElement.classList.remove('_form-focus');
       }
       if (targetElement.hasAttribute('data-validate')) {
-        formValidate.validateInput(targetElement)
+        formValidate.validateInput(targetElement);
+      }
+      if (
+        targetElement.value.length &&
+        !targetElement.classList.contains('_form-error')
+      ) {
+        targetElement.classList.add('_filled');
+      } else {
+        targetElement.classList.remove('_filled');
       }
     }
-  })
+  });
 
   if (options.viewPass) {
     document.addEventListener('click', function (e) {
-      let targetElement = e.target
+      let targetElement = e.target;
       if (targetElement.closest('[class*="__viewpass"]')) {
         let inputType = targetElement.classList.contains('_viewpass-active')
           ? 'password'
-          : 'text'
+          : 'text';
         targetElement.parentElement
           .querySelector('input')
-          .setAttribute('type', inputType)
-        targetElement.classList.toggle('_viewpass-active')
+          .setAttribute('type', inputType);
+        targetElement.classList.toggle('_viewpass-active');
       }
-    })
+    });
   }
 }
 
 // validation
 export let formValidate = {
   getErrors(form) {
-    let error = 0
-    let formRequiredItems = form.querySelectorAll('*[data-required]')
+    let error = 0;
+    let formRequiredItems = form.querySelectorAll('*[data-required]');
     if (formRequiredItems.length) {
       formRequiredItems.forEach(formRequiredItem => {
         if (
@@ -83,149 +91,149 @@ export let formValidate = {
             formRequiredItem.tagName === 'SELECT') &&
           !formRequiredItem.disabled
         ) {
-          error += this.validateInput(formRequiredItem)
+          error += this.validateInput(formRequiredItem);
         }
-      })
+      });
     }
-    return error
+    return error;
   },
   validateInput(formRequiredItem) {
-    let error = 0
+    let error = 0;
     if (formRequiredItem.dataset.required === 'email') {
-      formRequiredItem.value = formRequiredItem.value.replace(' ', '')
+      formRequiredItem.value = formRequiredItem.value.replace(' ', '');
       if (this.emailTest(formRequiredItem)) {
-        this.addError(formRequiredItem)
-        error++
+        this.addError(formRequiredItem);
+        error++;
       } else {
-        this.removeError(formRequiredItem)
+        this.removeError(formRequiredItem);
       }
     } else if (
       formRequiredItem.type === 'checkbox' &&
       !formRequiredItem.checked
     ) {
-      this.addError(formRequiredItem)
-      error++
+      this.addError(formRequiredItem);
+      error++;
     } else {
       if (!formRequiredItem.value.trim()) {
-        this.addError(formRequiredItem)
-        error++
+        this.addError(formRequiredItem);
+        error++;
       } else {
-        this.removeError(formRequiredItem)
+        this.removeError(formRequiredItem);
       }
     }
-    return error
+    return error;
   },
   addError(formRequiredItem) {
-    formRequiredItem.classList.add('_form-error')
-    formRequiredItem.parentElement.classList.add('_form-error')
+    formRequiredItem.classList.add('_form-error');
+    formRequiredItem.parentElement.classList.add('_form-error');
     let inputError =
-      formRequiredItem.parentElement.querySelector('.form__error')
-    if (inputError) formRequiredItem.parentElement.removeChild(inputError)
+      formRequiredItem.parentElement.querySelector('.form__error');
+    if (inputError) formRequiredItem.parentElement.removeChild(inputError);
     if (formRequiredItem.dataset.error) {
       formRequiredItem.parentElement.insertAdjacentHTML(
         'beforeend',
         `<div class="form__error">${formRequiredItem.dataset.error}</div>`
-      )
+      );
     }
   },
   removeError(formRequiredItem) {
-    formRequiredItem.classList.remove('_form-error')
-    formRequiredItem.parentElement.classList.remove('_form-error')
+    formRequiredItem.classList.remove('_form-error');
+    formRequiredItem.parentElement.classList.remove('_form-error');
     if (formRequiredItem.parentElement.querySelector('.form__error')) {
       formRequiredItem.parentElement.removeChild(
         formRequiredItem.parentElement.querySelector('.form__error')
-      )
+      );
     }
   },
   formClean(form) {
-    form.reset()
+    form.reset();
     setTimeout(() => {
-      let inputs = form.querySelectorAll('input,textarea')
+      let inputs = form.querySelectorAll('input,textarea');
       for (let index = 0; index < inputs.length; index++) {
-        const el = inputs[index]
-        el.parentElement.classList.remove('_form-focus')
-        el.classList.remove('_form-focus')
-        formValidate.removeError(el)
+        const el = inputs[index];
+        el.parentElement.classList.remove('_form-focus');
+        el.classList.remove('_form-focus');
+        formValidate.removeError(el);
       }
-      let checkboxes = form.querySelectorAll('.checkbox__input')
+      let checkboxes = form.querySelectorAll('.checkbox__input');
       if (checkboxes.length > 0) {
         for (let index = 0; index < checkboxes.length; index++) {
-          const checkbox = checkboxes[index]
-          checkbox.checked = false
+          const checkbox = checkboxes[index];
+          checkbox.checked = false;
         }
       }
       if (modules.select) {
-        let selects = form.querySelectorAll('.select')
+        let selects = form.querySelectorAll('.select');
         if (selects.length) {
           for (let index = 0; index < selects.length; index++) {
-            const select = selects[index].querySelector('select')
-            modules.select.selectBuild(select)
+            const select = selects[index].querySelector('select');
+            modules.select.selectBuild(select);
           }
         }
       }
-    }, 0)
+    }, 0);
   },
   emailTest(formRequiredItem) {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
       formRequiredItem.value
-    )
+    );
   },
-}
+};
 
 // form submition
 export function formSubmit(options = { validate: true }) {
-  const forms = document.forms
+  const forms = document.forms;
   if (forms.length) {
     for (const form of forms) {
       form.addEventListener('submit', function (e) {
-        const form = e.target
-        formSubmitAction(form, e)
-      })
+        const form = e.target;
+        formSubmitAction(form, e);
+      });
       form.addEventListener('reset', function (e) {
-        const form = e.target
-        formValidate.formClean(form)
-      })
+        const form = e.target;
+        formValidate.formClean(form);
+      });
     }
   }
   async function formSubmitAction(form, e) {
     const error = !form.hasAttribute('data-no-validate')
       ? formValidate.getErrors(form)
-      : 0
+      : 0;
     if (error === 0) {
-      const ajax = form.hasAttribute('data-ajax')
+      const ajax = form.hasAttribute('data-ajax');
       if (ajax) {
-        e.preventDefault()
+        e.preventDefault();
         const formAction = form.getAttribute('action')
           ? form.getAttribute('action').trim()
-          : '#'
+          : '#';
         const formMethod = form.getAttribute('method')
           ? form.getAttribute('method').trim()
-          : 'GET'
-        const formData = new FormData(form)
+          : 'GET';
+        const formData = new FormData(form);
 
-        form.classList.add('_sending')
+        form.classList.add('_sending');
         const response = await fetch(formAction, {
           method: formMethod,
           body: formData,
-        })
+        });
         if (response.ok) {
-          let responseResult = await response.json()
-          form.classList.remove('_sending')
-          formSent(form, responseResult)
+          let responseResult = await response.json();
+          form.classList.remove('_sending');
+          formSent(form, responseResult);
         } else {
-          alert('error')
-          form.classList.remove('_sending')
+          alert('error');
+          form.classList.remove('_sending');
         }
       } else if (form.hasAttribute('data-dev')) {
         // in development mode
-        e.preventDefault()
-        formSent(form)
+        e.preventDefault();
+        formSent(form);
       }
     } else {
-      e.preventDefault()
-      const formError = form.querySelector('._form-error')
+      e.preventDefault();
+      const formError = form.querySelector('._form-error');
       if (formError && form.hasAttribute('data-goto-error')) {
-        gotoBlock(formError, true, 1000)
+        gotoBlock(formError, true, 1000);
       }
     }
   }
@@ -238,110 +246,110 @@ export function formSubmit(options = { validate: true }) {
           form: form,
         },
       })
-    )
+    );
     // show popup, if popup module is connected and form has setting
     setTimeout(() => {
       if (modules.popup) {
-        const popup = form.dataset.popupMessage
-        popup ? modules.popup.open(popup) : null
+        const popup = form.dataset.popupMessage;
+        popup ? modules.popup.open(popup) : null;
       }
-    }, 0)
+    }, 0);
     // clean form
-    formValidate.formClean(form)
+    formValidate.formClean(form);
     // console output
-    formLogging(`form sent`)
+    formLogging(`form sent`);
   }
   function formLogging(message) {
-    FLS(`[forms]: ${message}`)
+    FLS(`[forms]: ${message}`);
   }
 }
 
 // quantity
 export function formQuantity() {
   document.addEventListener('click', function (e) {
-    let targetElement = e.target
+    let targetElement = e.target;
     if (targetElement.closest('.quantity__button')) {
       let value = parseInt(
         targetElement.closest('.quantity').querySelector('input').value
-      )
+      );
       if (targetElement.classList.contains('quantity__button_plus')) {
-        value++
+        value++;
       } else {
-        --value
-        if (value < 1) value = 1
+        --value;
+        if (value < 1) value = 1;
       }
-      targetElement.closest('.quantity').querySelector('input').value = value
+      targetElement.closest('.quantity').querySelector('input').value = value;
     }
-  })
+  });
 }
 
 // rating
 export function formRating() {
-  const ratings = document.querySelectorAll('.rating')
+  const ratings = document.querySelectorAll('.rating');
   if (ratings.length > 0) {
-    initRatings()
+    initRatings();
   }
   // main function
   function initRatings() {
-    let ratingActive, ratingValue
+    let ratingActive, ratingValue;
     // "run" through all the ratings on the page
     for (let index = 0; index < ratings.length; index++) {
-      const rating = ratings[index]
-      initRating(rating)
+      const rating = ratings[index];
+      initRating(rating);
     }
     // initialize a specific rating
     function initRating(rating) {
-      initRatingVars(rating)
+      initRatingVars(rating);
 
-      setRatingActiveWidth()
+      setRatingActiveWidth();
 
       if (rating.classList.contains('rating_set')) {
-        setRating(rating)
+        setRating(rating);
       }
     }
     // variables initialization
     function initRatingVars(rating) {
-      ratingActive = rating.querySelector('.rating__active')
-      ratingValue = rating.querySelector('.rating__value')
+      ratingActive = rating.querySelector('.rating__active');
+      ratingValue = rating.querySelector('.rating__value');
     }
     // change the width of active stars
     function setRatingActiveWidth(index = ratingValue.innerHTML) {
-      const ratingActiveWidth = index / 0.05
-      ratingActive.style.width = `${ratingActiveWidth}%`
+      const ratingActiveWidth = index / 0.05;
+      ratingActive.style.width = `${ratingActiveWidth}%`;
     }
     // indicate the grade
     function setRating(rating) {
-      const ratingItems = rating.querySelectorAll('.rating__item')
+      const ratingItems = rating.querySelectorAll('.rating__item');
       for (let index = 0; index < ratingItems.length; index++) {
-        const ratingItem = ratingItems[index]
+        const ratingItem = ratingItems[index];
         ratingItem.addEventListener('mouseenter', function (e) {
           // update variables
-          initRatingVars(rating)
+          initRatingVars(rating);
           // update active stars
-          setRatingActiveWidth(ratingItem.value)
-        })
+          setRatingActiveWidth(ratingItem.value);
+        });
         ratingItem.addEventListener('mouseleave', function (e) {
           // update active stars
-          setRatingActiveWidth()
-        })
+          setRatingActiveWidth();
+        });
         ratingItem.addEventListener('click', function (e) {
           // update variables
-          initRatingVars(rating)
+          initRatingVars(rating);
 
           if (rating.dataset.ajax) {
             // "send" to server
-            setRatingValue(ratingItem.value, rating)
+            setRatingValue(ratingItem.value, rating);
           } else {
             // show specified grade
-            ratingValue.innerHTML = index + 1
-            setRatingActiveWidth()
+            ratingValue.innerHTML = index + 1;
+            setRatingActiveWidth();
           }
-        })
+        });
       }
     }
     async function setRatingValue(value, rating) {
       if (!rating.classList.contains('rating_sending')) {
-        rating.classList.add('rating_sending')
+        rating.classList.add('rating_sending');
 
         // sending data (value) to server
         let response = await fetch('rating.json', {
@@ -353,24 +361,24 @@ export function formRating() {
           //headers: {
           //	'content-type': 'application/json'
           //}
-        })
+        });
         if (response.ok) {
-          const result = await response.json()
+          const result = await response.json();
 
           // get new rating
-          const newRating = result.newRating
+          const newRating = result.newRating;
 
           // new average result output
-          ratingValue.innerHTML = newRating
+          ratingValue.innerHTML = newRating;
 
           // update active stars
-          setRatingActiveWidth()
+          setRatingActiveWidth();
 
-          rating.classList.remove('rating_sending')
+          rating.classList.remove('rating_sending');
         } else {
-          alert('error')
+          alert('error');
 
-          rating.classList.remove('rating_sending')
+          rating.classList.remove('rating_sending');
         }
       }
     }

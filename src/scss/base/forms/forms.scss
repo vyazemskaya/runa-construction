@@ -10,23 +10,33 @@
   &__button {
   }
   &__error {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f05757;
+    transform: translateY(0.3rem);
+    @media (max-width: 48em) {
+      font-size: 2.4rem;
+    }
   }
 }
 
 // < buttons > ====================================================================================================
 
 // snippet ( HTML ): btn
-// @import "button";
+@import 'button';
 
 // < inputs > =====================================================================================================
 
 // snippet ( HTML ): inp
-// @import "input";
+@import 'input';
 
 // < check > ======================================================================================================
 
 // snippet ( HTML ): chk
-// @import "checkbox";
+@import 'checkbox';
 
 // < radio > ======================================================================================================
 

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: 'Euclid Circular A';
+  font-family: 'Gilroy';
   font-size: 0.5208335vw;
   font-style: normal;
   font-weight: normal;
@@ -17,12 +17,13 @@ html {
 body {
   font-style: normal;
   font-weight: normal;
+  font-size: 2.5rem;
   -webkit-animation: bugfix infinite 1s;
   line-height: 1.2;
   margin: 0;
   padding: 0;
-  color: #262525;
-  background-color: #ffffff;
+  color: $white;
+  background-color: $bg;
 }
 
 input,
@@ -99,7 +100,7 @@ ul li {
 }
 
 .container {
-  width: 141rem;
+  width: 145.6rem;
   margin: 0 auto;
 }
 

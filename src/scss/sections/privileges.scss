@@ -1,0 +1,164 @@
+.privileges {
+  margin-bottom: 18rem;
+
+  // .privileges__container
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &::before {
+      @extend %line;
+      top: -18rem;
+      height: calc(100% + 18rem - 2px);
+    }
+    @media (min-width: 48em) {
+      grid-column: 2/3;
+    }
+    @media (max-width: 48em) {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // .privileges__head
+
+  &__head {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 2.4rem;
+    &::after {
+      @extend %line;
+      bottom: 0;
+      left: 2px;
+      width: calc(100% + (100vw - 100%) / 2);
+      height: 2px;
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+      padding-left: 0;
+      padding-bottom: 3.2rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // .privileges__title
+
+  &__title {
+    @media (max-width: 48em) {
+      display: block;
+      max-width: 50rem;
+    }
+  }
+
+  // .privileges__body
+
+  &__body {
+    display: grid;
+    @media (min-width: 48em) {
+      grid-template-columns: 4fr 4fr 3fr;
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  // .privileges__image-wrap
+
+  &__image-wrap {
+    &::after {
+      @extend %line;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+    }
+    @media (min-width: 48em) {
+      position: relative;
+      padding: 3.6rem 3rem;
+      grid-row: span 2;
+    }
+    @media (max-width: 48em) {
+      padding-bottom: 3.2rem;
+      height: 37rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // .privileges__image
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // .privileges__card
+
+  &__card {
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    @media (max-width: 48em) {
+      padding: 3.2rem 0;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    &::after {
+      @extend %line;
+      bottom: 0;
+      left: 2px;
+      width: 100%;
+      height: 2px;
+    }
+    &::before {
+      @extend %line;
+      left: 0;
+      top: 0;
+    }
+    &:not(&_img) {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      @media (min-width: 48em) {
+        padding-left: 3rem;
+      }
+    }
+
+    // .privileges__card_img
+
+    &_img {
+      width: calc(100% + (100vw - 145.6rem) / 2);
+      height: 34.7rem;
+      grid-column: 3/4;
+      grid-row: 2/3;
+      @media (max-width: 48em) {
+        display: none;
+      }
+    }
+  }
+
+  // .privileges__heading
+
+  &__heading {
+    margin-bottom: 2.4rem;
+    @media (max-width: 48em) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  // .privileges__text
+
+  &__text {
+    @media (min-width: 48em) {
+      max-width: 32.4rem;
+    }
+  }
+}

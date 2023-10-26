@@ -1,0 +1,150 @@
+.request {
+  margin-bottom: 18rem;
+
+  // .request__container
+
+  &__container {
+    position: relative;
+    padding: 0 3.2rem;
+    display: grid;
+    &::before {
+      @extend %line;
+      left: 0;
+      top: -18rem;
+      height: calc(100% + 18rem);
+    }
+    &::after {
+      @extend %line;
+      bottom: 0;
+      left: 2px;
+      width: calc(100% + (100vw - 100% - 2px) / 2);
+      height: 2px;
+    }
+    @media (min-width: 48em) {
+      padding: 3rem;
+      grid-column: 2/3;
+      grid-template-columns: 5fr 6fr;
+    }
+    @media (max-width: 48em) {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // .request__image-wrap
+
+  &__image-wrap {
+    &::before {
+      @extend %line;
+      top: -3rem;
+      left: calc(2px - 3rem);
+      width: calc(145.6rem + (100vw - 145.6rem) / 2);
+      height: 2px;
+    }
+    @media (min-width: 48em) {
+      position: relative;
+      min-height: 54.2rem;
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+      height: 39rem;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // .request__image
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // .request__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 48em) {
+      padding-left: 15.6rem;
+    }
+  }
+
+  // .request__text-wrap
+
+  &__text-wrap {
+    margin-bottom: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 48em) {
+      margin-bottom: 4.8rem;
+    }
+  }
+
+  // .request__title
+
+  &__title {
+    margin-bottom: 2.4rem;
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  // .request__text
+
+  &__text {
+  }
+
+  // .request__form
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 49.9rem;
+    @media (max-width: 48em) {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      column-gap: 2rem;
+      width: 100%;
+    }
+  }
+
+  // .request__fields
+
+  &__fields {
+    margin-bottom: 5.6rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    width: 100%;
+    @media (max-width: 48em) {
+      margin-bottom: 4.8rem;
+      grid-column: span 2;
+      row-gap: 4.8rem;
+    }
+  }
+
+  // .request__input
+
+  &__input {
+  }
+
+  // .request__checkbox
+
+  &__checkbox {
+  }
+
+  // .request__btn
+
+  &__btn {
+    min-width: 15.3rem;
+    @media (max-width: 48em) {
+      min-width: 24.6rem;
+      order: 1;
+    }
+  }
+}
