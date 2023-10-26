@@ -100,7 +100,7 @@ import './files/sliders.js';
 
 // lazy loading
 // plugin documentation: https://github.com/verlok/vanilla-lazyload
-// import './files/scroll/lazyload.js';
+import './files/scroll/lazyload.js';
 
 // watcher
 // import './libs/watcher.js'
