@@ -1,7 +1,7 @@
 import { isMobile } from './functions.js';
 import { modules } from './modules.js';
 
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   const md = window.matchMedia('(max-width: 768px)').matches;
 
   // gsap plugins

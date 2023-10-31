@@ -7117,7 +7117,7 @@
         };
         const da = new DynamicAdapt("max");
         da.init();
-        document.addEventListener("DOMContentLoaded", (function() {
+        window.addEventListener("load", (function() {
             const md = window.matchMedia("(max-width: 768px)").matches;
             gsap.registerPlugin(ScrollTrigger);
             if (!md && document.querySelector(".mainpage")) {
