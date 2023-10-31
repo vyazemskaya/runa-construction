@@ -2356,6 +2356,10 @@ body::after {
     row-gap: 6.4rem;
   }
 
+  .facts-hero__heading {
+    font-size: 4rem;
+  }
+
   .facts-hero__text {
     color: rgba(255, 255, 255, 0.6);
   }

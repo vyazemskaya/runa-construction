@@ -189,6 +189,9 @@
 
   &__heading {
     font-family: Assistant;
+    @media (max-width: 48em) {
+      font-size: 4rem;
+    }
   }
 
   // .facts-hero__text
