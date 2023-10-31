@@ -103,7 +103,7 @@ import './files/sliders.js';
 import './files/scroll/lazyload.js';
 
 // watcher
-// import './libs/watcher.js'
+// import './libs/watcher.js';
 
 // < scroll functions > ===========================================================================================
 

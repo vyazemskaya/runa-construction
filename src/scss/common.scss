@@ -1,3 +1,29 @@
+body {
+  position: relative;
+  &::after {
+    content: '';
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  @media (max-width: 48em) {
+    .menu-open & {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
 // -------------------------------- elements --------------------------------
 
 // sidebar
@@ -16,12 +42,18 @@
     height: 16.4rem;
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(4.6rem);
+    transition: all 0.3s ease;
+    .menu-open & {
+      background-color: transparent;
+      backdrop-filter: blur(0);
+    }
   }
   @media (min-width: 48em) {
+    position: fixed;
     width: 15rem;
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
     .menu-open & {
-      width: 28.3rem;
+      width: 30.7rem;
     }
   }
 
@@ -49,6 +81,9 @@
       z-index: 105;
       width: 13.6rem;
     }
+    @media (min-width: 48em) {
+      margin-bottom: 8.6rem;
+    }
   }
 
   // .sidebar__logo
@@ -64,17 +99,24 @@
   // .sidebar__socials
 
   &__socials {
-    @media (min-width: 48em) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 1.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.9rem;
+    @media (max-width: 48em) {
+      flex-direction: row;
+      column-gap: 5rem;
     }
   }
 
   // .sidebar__socials-item
 
   &__socials-item {
+    @media (min-width: 48em) {
+      &._mobile-only {
+        display: none;
+      }
+    }
   }
 
   // .sidebar__socials-link
@@ -82,12 +124,36 @@
   &__socials-link {
     display: inline-block;
     width: 3.2rem;
+    @media (max-width: 48em) {
+      width: 6rem;
+    }
   }
 
   // .sidebar__socials-icon
 
   &__socials-icon {
     object-fit: contain;
+  }
+
+  // .sidebar__tel
+
+  &__tel {
+    font-family: Assistant;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: all 0.4 ease;
+    .menu-open & {
+      opacity: 1;
+      visibility: visible;
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 5rem;
+      &.txt {
+        font-size: 6rem;
+        font-weight: 700;
+      }
+    }
   }
 }
 
@@ -137,6 +203,11 @@
 // menu
 .menu {
   position: relative;
+  @media (min-width: 48em) {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+  }
 
   // .menu__hamburger-wrap
 
@@ -210,19 +281,23 @@
   &__body {
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     @media (max-width: 48em) {
       position: fixed;
       top: 0;
       left: 0;
-      padding-top: 25rem;
+      right: 0;
+      padding-top: 40rem;
+      padding-bottom: 12rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       height: 100vh;
+      overflow: auto;
     }
-    @media (min-width: 48em) {
-      .menu-open & {
-        opacity: 1;
-        visibility: visible;
-      }
+    .menu-open & {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -234,6 +309,10 @@
     align-items: center;
     row-gap: 4.8rem;
     text-align: center;
+    @media (max-width: 48em) {
+      margin-bottom: auto;
+      row-gap: 6.4rem;
+    }
   }
 
   // .menu__item
@@ -246,14 +325,6 @@
   &__link {
     position: relative;
     text-transform: uppercase;
-    @media (any-hover: hover) {
-      &:hover {
-        &::after {
-          opacity: 1;
-          transform: scaleX(1);
-        }
-      }
-    }
     &::after {
       content: '';
       position: absolute;
@@ -266,6 +337,17 @@
       transform: scaleX(0);
       transform-origin: center;
       transition: all 0.5s ease;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+    }
+    @media (max-width: 48em) {
+      font-size: 4rem;
     }
   }
 }

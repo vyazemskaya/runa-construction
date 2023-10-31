@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231026190751">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231101025239">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,7 @@
 				<div class="hero__sidebar sidebar">
 					<div class="sidebar__inner">
 						<a href="#" class="sidebar__logo-wrap"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" class="sidebar__logo" /></picture></a>
+						<a data-da=".menu__body,768,last" href="tel:79999999999" class="sidebar__tel txt txt_16">+7 (999) 999 99 - 99</a>
 						<div class="sidebar__menu menu">
 							<button id="hamburger" type="button" class="menu__hamburger-wrap">
 								<div class="menu__hamburger hamburger"><span></span></div>
@@ -41,12 +42,18 @@
 								</ul>
 							</nav>
 						</div>
-						<ul class="sidebar__socials desktop-only">
+						<ul data-da=".menu__body,768,last" class="sidebar__socials">
 							<li class="sidebar__socials-item">
 								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/ig.svg" alt="" class="sidebar__socials-icon" /></a>
 							</li>
 							<li class="sidebar__socials-item">
 								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/yt.svg" alt="" class="sidebar__socials-icon" /></a>
+							</li>
+							<li class="sidebar__socials-item _mobile-only">
+								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/tg.svg" alt="" class="sidebar__socials-icon" /></a>
+							</li>
+							<li class="sidebar__socials-item _mobile-only">
+								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/wp.svg" alt="" class="sidebar__socials-icon" /></a>
 							</li>
 						</ul>
 					</div>
@@ -102,20 +109,22 @@
 						</div>
 						<div class="about-company__body">
 							<div class="about-company__column txt txt_18">
-								<p class="about-company__text">
-									Архитектурное бюро ZROBIM architects всегда стремится
-									применять в своих проектах новейшие достижения мировой
-									архитектуры и дизайна. Проектируя в Москве, Санкт-Петербурге
-									и по всему миру, мы материализуем идеальное пространство и
-									мечты заказчиков.
-								</p>
-								<p class="about-company__text">
-									Проекты нашей студии — это итог творческого союза
-									архитекторов с заказчиком, итог совместного размышления. И
-									поэтому среди наших работ Вы не найдете двух одинаковых
-									зданий или интерьеров. Создавая различные проекты для людей,
-									мы меняем их жизнь к лучшему.
-								</p>
+								<div class="about-company__txt-wrap">
+									<p class="about-company__text">
+										Архитектурное бюро ZROBIM architects всегда стремится
+										применять в своих проектах новейшие достижения мировой
+										архитектуры и дизайна. Проектируя в Москве,
+										Санкт-Петербурге и по всему миру, мы материализуем
+										идеальное пространство и мечты заказчиков.
+									</p>
+									<p class="about-company__text">
+										Проекты нашей студии — это итог творческого союза
+										архитекторов с заказчиком, итог совместного размышления. И
+										поэтому среди наших работ Вы не найдете двух одинаковых
+										зданий или интерьеров. Создавая различные проекты для
+										людей, мы меняем их жизнь к лучшему.
+									</p>
+								</div>
 							</div>
 							<div class="about-company__column">
 								<a href="#" class="about-company__link btn btn_link">
@@ -378,7 +387,10 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20231026190751"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231101025239"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231101025239"></script>
+	<script src="js/app.min.js?_v=20231101025239"></script>
+
 </body>
 
 </html>

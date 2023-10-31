@@ -10,6 +10,12 @@
               <a href="#" class="sidebar__logo-wrap"
                 ><img src="@img/logo.png" alt="" class="sidebar__logo"
               /></a>
+              <a
+                data-da=".menu__body,768,last"
+                href="tel:79999999999"
+                class="sidebar__tel txt txt_16"
+                >+7 (999) 999 99 - 99</a
+              >
               <div class="sidebar__menu menu">
                 <button
                   id="hamburger"
@@ -37,7 +43,7 @@
                   </ul>
                 </nav>
               </div>
-              <ul class="sidebar__socials desktop-only">
+              <ul data-da=".menu__body,768,last" class="sidebar__socials">
                 <li class="sidebar__socials-item">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
@@ -50,6 +56,22 @@
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
                       src="@img/icons/yt.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item _mobile-only">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="@img/icons/tg.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item _mobile-only">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="@img/icons/wp.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -123,20 +145,22 @@
               </div>
               <div class="about-company__body">
                 <div class="about-company__column txt txt_18">
-                  <p class="about-company__text">
-                    Архитектурное бюро ZROBIM architects всегда стремится
-                    применять в своих проектах новейшие достижения мировой
-                    архитектуры и дизайна. Проектируя в Москве, Санкт-Петербурге
-                    и по всему миру, мы материализуем идеальное пространство и
-                    мечты заказчиков.
-                  </p>
-                  <p class="about-company__text">
-                    Проекты нашей студии — это итог творческого союза
-                    архитекторов с заказчиком, итог совместного размышления. И
-                    поэтому среди наших работ Вы не найдете двух одинаковых
-                    зданий или интерьеров. Создавая различные проекты для людей,
-                    мы меняем их жизнь к лучшему.
-                  </p>
+                  <div class="about-company__txt-wrap">
+                    <p class="about-company__text">
+                      Архитектурное бюро ZROBIM architects всегда стремится
+                      применять в своих проектах новейшие достижения мировой
+                      архитектуры и дизайна. Проектируя в Москве,
+                      Санкт-Петербурге и по всему миру, мы материализуем
+                      идеальное пространство и мечты заказчиков.
+                    </p>
+                    <p class="about-company__text">
+                      Проекты нашей студии — это итог творческого союза
+                      архитекторов с заказчиком, итог совместного размышления. И
+                      поэтому среди наших работ Вы не найдете двух одинаковых
+                      зданий или интерьеров. Создавая различные проекты для
+                      людей, мы меняем их жизнь к лучшему.
+                    </p>
+                  </div>
                 </div>
                 <div class="about-company__column">
                   <a href="#" class="about-company__link btn btn_link">

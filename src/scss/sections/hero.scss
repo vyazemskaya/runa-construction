@@ -1,6 +1,10 @@
 .hero {
   position: relative;
   margin-bottom: 18rem;
+  .mainpage & {
+    --line: 0;
+    --opacity: 0;
+  }
 
   // .hero__container
 
@@ -45,6 +49,7 @@
     &::after {
       @extend %line;
       top: 0;
+      height: var(--line);
     }
     &::before {
       left: 0;
@@ -72,6 +77,9 @@
     @media (max-width: 48em) {
       margin-bottom: 4.8rem;
     }
+    @media (min-width: 48em) {
+      opacity: var(--opacity);
+    }
   }
 
   // .hero__title-txt
@@ -87,12 +95,18 @@
       margin-bottom: 4.8rem;
       max-width: 57.8rem;
     }
+    @media (min-width: 48em) {
+      opacity: var(--opacity);
+    }
   }
 
   // .hero__btn
 
   &__btn {
     align-self: flex-start;
+    @media (min-width: 48em) {
+      opacity: 0;
+    }
   }
 
   // .hero__facts
@@ -103,6 +117,7 @@
     }
     @media (min-width: 48em) {
       padding-top: 5rem;
+      opacity: var(--opacity);
     }
   }
 
