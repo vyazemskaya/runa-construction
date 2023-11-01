@@ -7738,7 +7738,7 @@
                 observeParents: true,
                 slidesPerView: 1,
                 spaceBetween: 0,
-                autoHeight: true,
+                autoHeight: false,
                 speed: 800,
                 allowTouchMove: false,
                 updateOnWindowResize: true,
@@ -7780,8 +7780,7 @@
                     768: {
                         autoplay: {
                             enabled: true
-                        },
-                        autoHeight: false
+                        }
                     }
                 }
             });
@@ -7793,7 +7792,8 @@
                 autoHeight: false,
                 speed: 800,
                 updateOnWindowResize: true,
-                slideToClickedSlide: true
+                slideToClickedSlide: true,
+                freeMode: true
             }); else if (window.innerWidth > 768 && tabsSlider) {
                 tabsSlider.destroy();
                 tabsSlider = null;

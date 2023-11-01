@@ -230,6 +230,10 @@
     position: absolute;
     left: calc((192rem - 145.6rem + 15rem) / -2);
     display: flex;
+    picture {
+      display: flex;
+      width: 100%;
+    }
     @media (max-width: 48em) {
       top: -16.4rem;
       left: -3.2rem;

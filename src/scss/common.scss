@@ -433,55 +433,20 @@ body {
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
-  &_fc {
-    .tab__text::before {
-      @extend %line;
-      top: 0;
-      left: 0;
-      display: none;
-      width: 2px;
-      height: 100%;
-    }
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    width: calc(100% - 2px);
-    height: calc(100% - 4px);
-    top: 2px;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  &::after {
-    @extend %line;
-    top: 2px;
-    right: 0;
-    height: calc(100% - 4px);
-  }
   &._active {
-    &::before {
-      opacity: 1;
-    }
-  }
-  @media (min-width: 48em) {
-    &:first-child {
-      .tab__text::before {
-        display: none;
+    .tab__text {
+      background-color: rgba(255, 255, 255, 0.2);
+      &::after {
+        opacity: 0;
       }
     }
   }
   @media (max-width: 48em) {
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
     &_fc {
-      &::before {
-        left: 2px;
-        width: calc(100% - 4px);
-      }
-      .tab__text::before {
-        display: inline-block;
-      }
+      border-left: 2px solid rgba(255, 255, 255, 0.2);
     }
   }
 
@@ -490,10 +455,22 @@ body {
   &__text {
     position: relative;
     padding: 3.2rem 3.8rem;
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
+    transition: all 0.3s ease;
+    &::after {
+      @extend %line;
+      top: 0;
+      right: 0;
+      height: 100%;
+      transition: opacity 0.3s ease;
+    }
     @media (max-width: 48em) {
       padding: 2.8rem 4rem;
+      &::after {
+        display: none;
+      }
       &.txt {
         font-size: 2.8rem;
       }
