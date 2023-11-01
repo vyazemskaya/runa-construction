@@ -1,0 +1,151 @@
+.image-text {
+  margin-bottom: 18rem;
+
+  // .image-text__container
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    &::before {
+      @extend %line;
+      top: -18rem;
+      height: calc(100% + 18rem);
+    }
+    @media (min-width: 48em) {
+      display: grid;
+      grid-template-columns: 8fr 2fr;
+      grid-column: 2/3;
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 2.4rem;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // .image-text__text-wrap
+
+  &__text-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &::after {
+      @extend %line;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+    }
+  }
+
+  // .image-text__head
+
+  &__head {
+    position: relative;
+    &::before,
+    &::after {
+      @extend %line;
+      left: 0;
+      width: 100%;
+      height: 2px;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    @media (min-width: 48em) {
+      padding: 3.2rem 3rem;
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // .image-text__title
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .image-text__title-txt
+
+  &__title-txt {
+  }
+
+  // .image-text__body
+
+  &__body {
+    padding: 3.2rem 0;
+    position: relative;
+    display: flex;
+    column-gap: 9.8rem;
+    &::before {
+      @extend %line;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 2px;
+    }
+    @media (max-width: 48em) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+    @media (min-width: 48em) {
+      padding: 3.2rem 3rem;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // .image-text__col
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    @media (max-width: 48em) {
+      row-gap: 2rem;
+    }
+  }
+
+  // .image-text__text
+
+  &__text {
+    @media (min-width: 48em) {
+      max-width: 42.5rem;
+    }
+  }
+
+  // .image-text__image-wrap
+
+  &__image-wrap {
+    height: 37rem;
+    @media (min-width: 48em) {
+      height: 100%;
+      min-height: 77.1rem;
+    }
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  // .image-text__image
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    @media (min-width: 48em) {
+      width: calc(100% + ((192rem - 145.6rem) / 2));
+    }
+  }
+}

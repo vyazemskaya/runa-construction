@@ -68,8 +68,24 @@
   &__content {
     display: flex;
     flex-direction: column;
+    .projects-page & {
+      position: relative;
+      &::after {
+        @extend %line;
+        top: -21rem;
+        right: 0;
+        height: calc(100% + 24rem - 2px);
+      }
+    }
     @media (min-width: 48em) {
       padding-left: 15.6rem;
+    }
+    @media (max-width: 48em) {
+      .projects-page & {
+        &::after {
+          display: none;
+        }
+      }
     }
   }
 

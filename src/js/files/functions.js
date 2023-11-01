@@ -668,6 +668,12 @@ export function showMore() {
 // other utilities
 // =============================================================================
 
+// set active class
+export function setActiveClass(target, arr, className) {
+  removeClasses(arr, className);
+  target.classList.add(className);
+}
+
 // full logging system
 export function FLS(message) {
   setTimeout(() => {

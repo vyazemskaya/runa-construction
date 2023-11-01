@@ -14,7 +14,6 @@
     border-radius: 10rem;
     background-color: $black;
     overflow: hidden;
-    transition: background-color 0.3s ease;
     &::after {
       content: '';
       position: absolute;
@@ -23,7 +22,7 @@
       top: 0;
       left: 0;
       background-color: $white;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
     }
     svg {
       position: relative;
@@ -36,8 +35,8 @@
     }
     @media (any-hover: hover) {
       &:hover {
-        background-color: $black;
         &::after {
+          opacity: 0;
           transform: scaleY(0);
         }
         path {
@@ -64,19 +63,20 @@
   // .btn_link
 
   &_link {
+    transform: translateX(1.6rem);
     .btn__text {
       color: $white;
+      transform: translateX(-1.6rem);
+      transition: transform 0.3s ease;
     }
     svg {
       width: 1.6rem;
       height: 1.6rem;
-      transform: translateX(1.6rem);
-      transition: transform 0.3s ease;
     }
     @media (any-hover: hover) {
       &:hover {
-        svg {
-          transform: translateX(0.8rem);
+        .btn__text {
+          transform: translateX(-0.8rem);
         }
       }
     }

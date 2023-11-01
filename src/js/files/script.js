@@ -1,7 +1,29 @@
-import { isMobile } from './functions.js';
+import { isMobile, removeClasses } from './functions.js';
 import { modules } from './modules.js';
 
 window.addEventListener('load', function () {
+  const md = window.matchMedia('(max-width: 768px)').matches;
+
+  // tabs
+  const tabs = document.querySelectorAll('[data-tab]');
+  if (tabs.length) {
+    tabs.forEach(tab => {
+      const parent = tab.closest('.projects__tabs-col');
+      const target = tab.closest('.projects__tabs-wrapper');
+      const moveTabs = () => {
+        if (window.innerWidth <= 768) {
+          target.appendChild(tab);
+        } else if (window.innerWidth > 768) {
+          parent.appendChild(tab);
+        }
+      };
+      moveTabs();
+      window.addEventListener('resize', moveTabs);
+    });
+  }
+
+  // --------------------------------------------------------------------------
+
   // animations
   const setAnimations = () => {
     // gsap plugins
@@ -86,7 +108,24 @@ window.addEventListener('load', function () {
   };
   setAnimations();
 
-  // main page hero anim
+  // --------------------------------------------------------------------------
 
+  // handler functions
+  const onClickHandler = e => {
+    if (e.target.closest('[data-tab]')) {
+      const parent = e.target
+        .closest('[data-tab]')
+        .closest('.projects__tabs-wrapper');
+      removeClasses(parent.querySelectorAll('[data-tab]'), '_active');
+      e.target.closest('[data-tab]').classList.add('_active');
+    }
+  };
+
+  // --------------------------------------------------------------------------
+
+  // document events
+  document.addEventListener('click', onClickHandler);
+
+  // window events
   window.addEventListener('resize', setAnimations);
 });
