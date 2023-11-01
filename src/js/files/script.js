@@ -4,6 +4,9 @@ import { modules } from './modules.js';
 window.addEventListener('load', function () {
   const md = window.matchMedia('(max-width: 768px)').matches;
 
+  // show page body
+  document.body.style.opacity = '1';
+
   // tabs
   const tabs = document.querySelectorAll('[data-tab]');
   if (tabs.length) {

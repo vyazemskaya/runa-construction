@@ -7915,6 +7915,7 @@
         da.init();
         window.addEventListener("load", (function() {
             window.matchMedia("(max-width: 768px)").matches;
+            document.body.style.opacity = "1";
             const tabs = document.querySelectorAll("[data-tab]");
             if (tabs.length) tabs.forEach((tab => {
                 const parent = tab.closest(".projects__tabs-col");
