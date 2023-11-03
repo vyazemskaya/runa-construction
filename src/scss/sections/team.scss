@@ -7,17 +7,23 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    &::before {
-      @extend %line;
-      top: -18rem;
-      right: 63.2rem;
-      height: calc(100% + 18rem - 2px);
-    }
+    &::before,
     &::after {
       @extend %line;
       top: -18rem;
+      height: calc(100% + 18rem);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
+    }
+    &::before {
+      right: 63.2rem;
+    }
+    &::after {
       left: 0;
-      height: calc(100% + 18rem - 2px);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (min-width: 48em) {
       grid-column: 2/3;
@@ -39,8 +45,11 @@
       @extend %line;
       bottom: 0;
       left: 2px;
-      width: calc(145.6rem + (192rem - 145.6rem - 15rem) / 2 - 4px);
+      width: 161rem;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (min-width: 48em) {
       padding-left: 3rem;
@@ -69,8 +78,11 @@
       @extend %line;
       bottom: 0;
       left: 0;
-      width: calc(145.6rem + (192rem - 145.6rem - 15rem) / 2 - 2px);
+      width: 161rem;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (min-width: 48em) {
       grid-template-columns: 6fr 63.2rem;

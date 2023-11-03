@@ -50,8 +50,9 @@
     &::after {
       @extend %line;
       top: 0;
-      .mainpage & {
-        height: var(--line-fh);
+      background-color: rgba(255, 255, 255, 0.2);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
       }
     }
     &::before {
@@ -82,11 +83,6 @@
     margin-bottom: 3.2rem;
     display: flex;
     flex-direction: column;
-    .mainpage & {
-      @media (min-width: 48em) {
-        opacity: 0;
-      }
-    }
     @media (max-width: 48em) {
       margin-bottom: 4.8rem;
     }
@@ -101,11 +97,6 @@
 
   &__text {
     margin-bottom: 3.2rem;
-    .mainpage & {
-      @media (min-width: 48em) {
-        opacity: 0;
-      }
-    }
     @media (max-width: 48em) {
       margin-bottom: 4.8rem;
       max-width: 57.8rem;
@@ -116,11 +107,6 @@
 
   &__btn {
     align-self: flex-start;
-    .mainpage & {
-      @media (min-width: 48em) {
-        opacity: 0;
-      }
-    }
   }
 
   // .hero__facts
@@ -131,7 +117,6 @@
     }
     @media (min-width: 48em) {
       padding-top: 5rem;
-      opacity: var(--opacity);
     }
   }
 

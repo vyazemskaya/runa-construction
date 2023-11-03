@@ -7926,135 +7926,184 @@
                 moveTabs();
                 window.addEventListener("resize", moveTabs);
             }));
-            const setAnimations = () => {
-                const LINE_FW = "161rem";
-                const LINE_FH = "100%";
-                const LINE_H = "calc(100% + 18rem - 2px)";
-                const CLIP_W1 = "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)";
-                const CLIP_W2 = "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)";
-                const CLIP_H1 = "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)";
-                const CLIP_H2 = "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)";
-                gsap.registerPlugin(ScrollTrigger);
-                gsap.defaults({
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.defaults({
+                duration: 1.5,
+                delay: 0,
+                ease: "sine.out"
+            });
+            const CLIP_W1 = "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)";
+            const CLIP_W2 = "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)";
+            const CLIP_H1 = "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)";
+            const CLIP_H2 = "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)";
+            const gsapEffects = [ {
+                id: "fadeIn",
+                animate: "fromTo",
+                props: {
+                    opacity: 0
+                },
+                props2: {
+                    opacity: 1,
                     duration: 1.5
+                }
+            }, {
+                id: "scaleY",
+                animate: "fromTo",
+                props: {
+                    "--scaleY": 0
+                },
+                props2: {
+                    "--scaleY": 1,
+                    duration: 1
+                }
+            }, {
+                id: "scaleX",
+                animate: "fromTo",
+                props: {
+                    "--scaleX": 0
+                },
+                props2: {
+                    "--scaleX": 1,
+                    duration: 1
+                }
+            }, {
+                id: "scale",
+                animate: "fromTo",
+                props: {
+                    "--scaleX": 0,
+                    "--scaleY": 0
+                },
+                props2: {
+                    "--scaleX": 1,
+                    "--scaleY": 1,
+                    duration: 1
+                }
+            }, {
+                id: "clipT2B",
+                animate: "fromTo",
+                props: {
+                    "clip-path": CLIP_H1
+                },
+                props2: {
+                    "clip-path": CLIP_H2,
+                    duration: 1
+                }
+            }, {
+                id: "clipL2R",
+                animate: "fromTo",
+                props: {
+                    "clip-path": CLIP_W1
+                },
+                props2: {
+                    "clip-path": CLIP_W2,
+                    duration: 1
+                }
+            }, {
+                id: "fadeImg",
+                animate: "fromTo",
+                props: {
+                    "--opacity": 1,
+                    "--x": "translateX(-100%)",
+                    "clip-path": CLIP_W1
+                },
+                props2: {
+                    "--opacity": .3,
+                    "--x": "translateX(100%)",
+                    "clip-path": CLIP_W2,
+                    duration: 2
+                }
+            } ];
+            gsapEffects.forEach((effect => {
+                gsap.registerEffect({
+                    name: effect.id,
+                    defaults: {
+                        duration: 1.5
+                    },
+                    extendTimeline: true,
+                    effect(targets, config) {
+                        console.log(targets);
+                        if (effect.animate === "from") return gsap.from(targets, {
+                            ...effect.props,
+                            ...config
+                        }); else if (effect.animate === "fromTo") return gsap.fromTo(targets, {
+                            ...effect.props,
+                            ...config
+                        }, {
+                            ...effect.props2
+                        }); else return gsap.to(targets, {
+                            ...effect.props,
+                            ...config
+                        });
+                    }
                 });
-                const gsapEffects = [ {
-                    id: "fadeIn",
-                    animate: "to",
-                    props: {
-                        opacity: 1
-                    }
-                }, {
-                    id: "setFH",
-                    animate: "to",
-                    props: {
-                        "--line-fh": LINE_FH,
-                        duration: 2
-                    }
-                }, {
-                    id: "setFW",
-                    animate: "to",
-                    props: {
-                        "--line-fw": LINE_FW,
-                        duration: 2
-                    }
-                }, {
-                    id: "clipT2B",
-                    animate: "fromTo",
-                    props: {
-                        "clip-path": CLIP_H1
-                    },
-                    props2: {
-                        "clip-path": CLIP_H2,
+            }));
+            const setAnimations = () => {
+                if (window.innerWidth > 768 && document.querySelector(".scroll-trigger")) {
+                    if (document.querySelector(".mainpage__hero")) gsap.timeline().scaleY(".mainpage__hero").fadeIn([ ".hero__title", ".hero__text", ".hero__facts" ], "+=0.5").fadeIn(".hero__btn", {
                         duration: 1.2
-                    }
-                }, {
-                    id: "clipL2R",
-                    animate: "fromTo",
-                    props: {
-                        "clip-path": CLIP_W1
-                    },
-                    props2: {
-                        "clip-path": CLIP_W2,
-                        duration: 1.2
-                    }
-                } ];
-                gsapEffects.forEach((effect => {
-                    gsap.registerEffect({
-                        name: effect.id,
-                        defaults: {
-                            duration: 1.5
-                        },
-                        extendTimeline: true,
-                        effect(targets, config) {
-                            if (effect.animate === "from") return gsap.from(targets, {
-                                ...effect.props,
-                                ...config
-                            }); else if (effect.animate === "fromTo") return gsap.fromTo(targets, {
-                                ...effect.props,
-                                ...config
-                            }, {
-                                ...effect.props2
-                            }); else return gsap.to(targets, {
-                                ...effect.props,
-                                ...config
-                            });
-                        }
-                    });
-                }));
-                if (window.innerWidth > 768 && document.querySelector(".mainpage")) {
-                    gsap.timeline().setFH(".mainpage__hero").fadeIn([ ".hero__title", ".hero__text" ]).fadeIn(".hero__btn", {}, 2.3);
-                    gsap.timeline({
+                    }, 2.3);
+                    if (document.querySelector(".mainpage__about-company")) gsap.timeline({
                         scrollTrigger: {
                             trigger: ".mainpage__about-company",
                             start: "20% bottom",
                             once: true
                         }
-                    }).to(".mainpage__about-company", {
-                        "--line-fw": LINE_FW,
-                        "--line-fh": LINE_FH,
-                        "--l1": "calc(100% + 2.5rem - 4px)",
-                        "--l2": "calc(100% + 18rem - 2px)",
-                        duration: 2
-                    }).fadeIn(".about-company__title", 2).fromTo(".about-company__image-wrap", {
-                        "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)"
-                    }, {
-                        "--imgX": "translateX(100%)",
-                        "--opacity": .3,
-                        "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-                    }, 2.5).clipT2B(".about-company__txt-wrap", 3.5).fadeIn(".about-company__link", 3.5);
-                    gsap.timeline({
-                        scrollTrigger: {
-                            trigger: ".mainpage__services",
-                            start: "10% bottom",
-                            once: true
-                        }
-                    }).to(".mainpage__services", {
-                        "--line-fw": LINE_FW,
-                        "--l1": "calc(100% + 18rem)",
-                        duration: 5
-                    }).fadeIn([ ".services__title", ".services__btn" ], 0);
-                    const servicesCards = document.querySelectorAll(".services__card");
-                    if (servicesCards.length) servicesCards.forEach((servicesCard => {
+                    }).scale(".mainpage__about-company").fadeIn(".about-company__title", 1.5).fadeImg(".about-company__image-wrap", 2.5).clipT2B(".about-company__txt-wrap", 3.5).fadeIn(".about-company__link", 3.5);
+                    if (document.querySelector(".mainpage__services")) {
                         gsap.timeline({
                             scrollTrigger: {
-                                trigger: servicesCard,
-                                start: "40% bottom",
+                                trigger: ".mainpage__services",
+                                start: "10% bottom",
                                 once: true
                             }
-                        }).clipL2R(servicesCard.querySelector(".card-services__text-wrap")).setFW(servicesCard, 0).fadeIn(servicesCard.querySelector(".card-services__image-wrap"), 0);
-                    }));
-                    const tl4 = gsap.timeline({
+                        }).scale(".mainpage__services").fadeIn([ ".services__title", ".services__btn" ], 0);
+                        const servicesCards = document.querySelectorAll(".services__card");
+                        if (servicesCards.length) servicesCards.forEach((servicesCard => {
+                            gsap.timeline({
+                                scrollTrigger: {
+                                    trigger: servicesCard,
+                                    start: "40% bottom",
+                                    once: true
+                                }
+                            }).scale(servicesCard).clipL2R(servicesCard.querySelector(".card-services__text-wrap"), .5).fadeIn(servicesCard.querySelector(".card-services__image-wrap"), .5);
+                        }));
+                    }
+                    if (document.querySelector(".mainpage__privileges")) gsap.timeline({
                         scrollTrigger: {
                             trigger: ".mainpage__privileges",
-                            start: "10% bottom",
+                            start: "20% bottom",
                             once: true
                         }
-                    });
-                    tl4.to([ ".mainpage__privileges", ".privileges__title" ], {
-                        "--line-h": LINE_H,
-                        opacity: 1
-                    });
+                    }).scale(".mainpage__privileges").fadeIn(".privileges__title").fadeIn([ ".privileges__image", ".privileges__card-image" ], 1.5).clipL2R(document.querySelectorAll(".privileges__card_text"), 2.3);
+                    if (document.querySelector(".mainpage__team")) gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".mainpage__team",
+                            start: "20% bottom",
+                            once: true
+                        }
+                    }).scale(".mainpage__team").fadeIn(".team__title").fadeImg(".team__image-wrap", 1.5).clipL2R(".team__group", 2.5).clipT2B(".team__text", 3.5);
+                    if (document.querySelector(".mainpage__request")) gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".mainpage__request",
+                            start: "20% bottom",
+                            once: true
+                        }
+                    }).scale(".mainpage__request").fadeIn(".request__image").clipL2R(".request__text-wrap", 1.5).clipL2R(".request__form"), 
+                    2;
+                    if (document.querySelector(".mainpage__our-team")) gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".mainpage__our-team",
+                            start: "20% bottom",
+                            once: true
+                        }
+                    }).scale(".mainpage__our-team").fadeIn(".our-team__wrapper").clipL2R([ ".our-team__title", ".our-team__text" ], 2).fadeIn(".our-team__slider-control", 3);
+                    if (document.querySelector(".footer")) gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".footer",
+                            start: "20% bottom",
+                            once: true
+                        }
+                    }).scale(".footer");
                 }
             };
             setAnimations();
@@ -8067,6 +8116,9 @@
             };
             document.addEventListener("click", onClickHandler);
             window.addEventListener("resize", setAnimations);
+            window.addEventListener("beforeunload", (function() {
+                window.scrollTo(0, 0);
+            }));
         }));
         window["FLS"] = true;
         isWebp();

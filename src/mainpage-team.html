@@ -2,7 +2,7 @@
 <html lang="ru">
   @@include('html/_head.htm',{ "title":"Главная" })
   <body style="opacity: 0">
-    <div class="wrapper">
+    <div class="wrapper scroll-trigger">
       <main class="main mainpage">
         <section class="mainpage__hero hero grid">
           <div class="hero__sidebar sidebar">
@@ -277,7 +277,7 @@
                 </div>
                 <div class="card-services__text-wrap">
                   <span class="card-services__heading tl2"
-                    >подбор земельных участков</span
+                    >реализация проекта - ремонт</span
                   >
                   <p class="card-services__text txt">
                     Создание архитектурного проекта начинается с наброска от
@@ -321,37 +321,47 @@
                   alt=""
                   class="privileges__image" />
               </div>
-              <div class="privileges__card">
-                <span class="privileges__heading tl3"
-                  >Индивидуальный дизайн</span
-                >
-                <p class="privileges__text txt txt_16">
-                  Архитекторы и дизайнеры нашей компании разрабатывают
-                  уникальные и персонализированные проекты, учитывая потребности
-                  каждого клиента.
-                </p>
-              </div>
-              <div class="privileges__card">
-                <span class="privileges__heading tl3">Управление бюджетом</span>
-                <p class="privileges__text txt txt_16">
-                  Мы помогаем клиентам управлять бюджетом проекта, и
-                  контролируем ход стройки, выбирая оптимальные решения и
-                  материалы.
-                </p>
-              </div>
-              <div class="privileges__card">
-                <span class="privileges__heading tl3">Сокращение рисков</span>
-                <p class="privileges__text txt txt_16">
-                  Благодаря профессиональному подходу и опыту нашей команды, мы
-                  можем помочь избежать ошибок и минимизировать риски при
-                  строительстве.
-                </p>
-              </div>
-              <div class="privileges__card privileges__card_img">
-                <img
-                  data-src="@img/privileges/829bef0dbbc98b229423bfd106f76ec6.webp"
-                  alt=""
-                  class="privileges__image" />
+              <div class="privileges__cards">
+                <div class="privileges__row">
+                  <div class="privileges__card privileges__card_text">
+                    <span class="privileges__heading tl3"
+                      >Индивидуальный дизайн</span
+                    >
+                    <p class="privileges__text txt txt_16">
+                      Архитекторы и дизайнеры нашей компании разрабатывают
+                      уникальные и персонализированные проекты, учитывая
+                      потребности каждого клиента.
+                    </p>
+                  </div>
+                  <div class="privileges__card privileges__card_text">
+                    <span class="privileges__heading tl3"
+                      >Управление бюджетом</span
+                    >
+                    <p class="privileges__text txt txt_16">
+                      Мы помогаем клиентам управлять бюджетом проекта, и
+                      контролируем ход стройки, выбирая оптимальные решения и
+                      материалы.
+                    </p>
+                  </div>
+                </div>
+                <div class="privileges__row">
+                  <div class="privileges__card privileges__card_text">
+                    <span class="privileges__heading tl3"
+                      >Сокращение рисков</span
+                    >
+                    <p class="privileges__text txt txt_16">
+                      Благодаря профессиональному подходу и опыту нашей команды,
+                      мы можем помочь избежать ошибок и минимизировать риски при
+                      строительстве.
+                    </p>
+                  </div>
+                  <div class="privileges__card privileges__card_img">
+                    <img
+                      data-src="@img/privileges/829bef0dbbc98b229423bfd106f76ec6.webp"
+                      alt=""
+                      class="privileges__card-image" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

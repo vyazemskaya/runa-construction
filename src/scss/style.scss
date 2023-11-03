@@ -23,9 +23,10 @@ $white: #ffffff;
 
 // css variables for animations
 .main {
-  --line-fw: 0;
-  --line-fh: 0;
-  --line-h: 0;
+  --scaleY: 0;
+  --scaleX: 0;
+  --opacity: 0;
+  --x: translateX(-100%);
 }
 
 // base styles file ============================================================

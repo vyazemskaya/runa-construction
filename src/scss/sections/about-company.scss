@@ -1,13 +1,5 @@
 .about-company {
   margin-bottom: 18rem;
-  .mainpage & {
-    --l1: 0;
-    --l2: 0;
-    --bgPosition: -170% 0;
-    --bgSize: calc(100% + 23.2rem) 200%;
-    --imgX: translateX(-100%);
-    --opacity: 1;
-  }
 
   // .about-company__container
 
@@ -17,8 +9,11 @@
     &::after {
       @extend %line;
       bottom: 0;
-      width: var(--line-fw);
+      width: 161rem;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (max-width: 48em) {
       padding: 0 3.2rem;
@@ -41,7 +36,10 @@
     &::after {
       @extend %line;
       top: -18rem;
-      height: var(--l2);
+      height: calc(100% + 18rem - 2px);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     &::before {
       left: 0;
@@ -68,8 +66,11 @@
       @extend %line;
       left: 2px;
       bottom: 0;
-      width: var(--l1);
+      width: calc(100% + 2.5rem - 4px);
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (max-width: 48em) {
       padding: 0 0 3.2rem 0;
@@ -83,9 +84,6 @@
   // .about-company__title
 
   &__title {
-    @media (min-width: 48em) {
-      opacity: 0;
-    }
   }
 
   // .about-company__title-txt
@@ -117,7 +115,9 @@
         @extend %line;
         right: 0;
         top: 0;
-        height: var(--line-fh);
+        .scroll-trigger & {
+          transform: scaleY(var(--scaleY));
+        }
       }
     }
     @media (min-width: 48em) {
@@ -140,9 +140,6 @@
 
   &__txt-wrap {
     row-gap: 1rem;
-    @media (min-width: 48em) {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-    }
   }
 
   // .about-company__text
@@ -157,14 +154,12 @@
     @media (min-width: 48em) {
       margin-top: auto;
       align-self: center;
-      opacity: 0;
     }
   }
 
   // .about-company__image-wrap
 
   &__image-wrap {
-    position: relative;
     width: 100%;
     height: 52.8rem;
     @media (min-width: 48em) {
@@ -173,26 +168,6 @@
       align-self: end;
       transform: translate(6rem, -3.4rem);
       transform: translate(6rem, -3.4rem);
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        opacity: var(--opacity);
-        transform: var(--imgX);
-        background: rgb(36, 36, 35);
-        background: linear-gradient(
-          90deg,
-          rgba(36, 36, 35, 0) 0%,
-          rgba(36, 36, 35, 0.3435749299719888) 33%,
-          rgba(36, 36, 35, 0.85) 52%,
-          rgba(36, 36, 35, 1) 100%
-        );
-        background-size: 120% 100%;
-      }
     }
   }
 

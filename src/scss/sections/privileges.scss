@@ -10,7 +10,20 @@
     &::before {
       @extend %line;
       top: -18rem;
-      height: var(--line-h);
+      height: calc(100% + 18rem - 2px);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
+    }
+    &::after {
+      @extend %line;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 161rem;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (min-width: 48em) {
       grid-column: 2/3;
@@ -32,8 +45,11 @@
       @extend %line;
       bottom: 0;
       left: 2px;
-      width: calc(145.6rem + (192rem - 145.6rem - 15rem) / 2 - 4px);
+      width: 161rem;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (max-width: 48em) {
       margin-bottom: 3.2rem;
@@ -53,9 +69,6 @@
       display: block;
       max-width: 50rem;
     }
-    @media (min-width: 48em) {
-      opacity: 0;
-    }
   }
 
   // .privileges__body
@@ -63,8 +76,7 @@
   &__body {
     display: grid;
     @media (min-width: 48em) {
-      grid-template-columns: 4fr 4fr 3fr;
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: 4fr 7fr;
     }
   }
 
@@ -73,15 +85,15 @@
   &__image-wrap {
     &::after {
       @extend %line;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
+      top: 0;
+      right: 0;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (min-width: 48em) {
       position: relative;
       padding: 3.6rem 3rem;
-      grid-row: span 2;
     }
     @media (max-width: 48em) {
       padding-bottom: 3.2rem;
@@ -95,9 +107,48 @@
 
   // .privileges__image
 
-  &__image {
+  &__image,
+  &__card-image {
     height: 100%;
     object-fit: cover;
+  }
+
+  // .privileges__cards
+
+  &__cards {
+    position: relative;
+    display: grid;
+    &::after {
+      @extend %line;
+      top: 0;
+      right: 50%;
+      width: 2px;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
+    }
+  }
+
+  // .privileges__row
+
+  &__row {
+    position: relative;
+    display: grid;
+    &:not(:last-child) {
+      &::after {
+        @extend %line;
+        bottom: 0;
+        left: 0;
+        width: calc(50% - 2px);
+        height: 2px;
+        .scroll-trigger & {
+          transform: scaleX(var(--scaleX));
+        }
+      }
+    }
+    @media (min-width: 48em) {
+      grid-template-columns: repeat(2, 50%);
+    }
   }
 
   // .privileges__card
@@ -106,6 +157,14 @@
     position: relative;
     justify-content: center;
     height: 100%;
+    &_text {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      @media (min-width: 48em) {
+        padding: 10.4rem 3rem;
+      }
+    }
     @media (max-width: 48em) {
       padding: 3.2rem 0;
       border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -114,34 +173,13 @@
         display: none;
       }
     }
-    &::after {
-      @extend %line;
-      bottom: 0;
-      left: 2px;
-      width: 100%;
-      height: 2px;
-    }
-    &::before {
-      @extend %line;
-      left: 0;
-      top: 0;
-    }
-    &:not(&_img) {
-      display: flex;
-      flex-direction: column;
-      align-self: center;
-      @media (min-width: 48em) {
-        padding-left: 3rem;
-      }
-    }
 
     // .privileges__card_img
 
     &_img {
-      width: calc(100% + (192rem - 145.6rem) / 2);
+      width: calc(100% + ((192rem - 145.6rem) / 2));
       height: 34.7rem;
-      grid-column: 3/4;
-      grid-row: 2/3;
+      transform: translateY(-2px);
       @media (max-width: 48em) {
         display: none;
       }
