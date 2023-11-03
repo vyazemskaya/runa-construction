@@ -1,5 +1,8 @@
 .services {
   margin-bottom: 18rem;
+  .mainpage & {
+    --l1: 0;
+  }
 
   // .services__container
 
@@ -10,7 +13,7 @@
     &::after {
       @extend %line;
       top: -18rem;
-      height: calc(100% + 18rem);
+      height: var(--l1);
     }
     @media (min-width: 48em) {
       grid-column: 2/3;
@@ -40,6 +43,9 @@
   // .services__title
 
   &__title {
+    @media (min-width: 48em) {
+      opacity: 0;
+    }
   }
 
   // .services__btn
@@ -48,6 +54,9 @@
     min-width: 20.5rem;
     @media (max-width: 48em) {
       display: none;
+    }
+    @media (min-width: 48em) {
+      opacity: 0;
     }
   }
 
@@ -72,12 +81,13 @@
 .card-services {
   position: relative;
   display: grid;
+  --line-fw: 0;
   &:last-child::after,
   &::before {
     @extend %line;
     top: 0;
     left: 2px;
-    width: calc(145.6rem + (192rem - 145.6rem - 15rem) / 2 - 4px);
+    width: var(--line-fw);
     height: 2px;
   }
   &:last-child {
@@ -123,10 +133,15 @@
   // .card-services__image-wrap
 
   &__image-wrap {
+    position: relative;
     min-height: 50rem;
+    overflow: hidden;
     @media (max-width: 48em) {
       min-height: none;
       height: 40rem;
+    }
+    @media (min-width: 48em) {
+      opacity: 0;
     }
   }
 

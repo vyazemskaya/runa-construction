@@ -1,9 +1,13 @@
 .about-company {
   margin-bottom: 18rem;
-  --l1: 0;
-  --l2: 0;
-  --l3: 0;
-  --l4: 0;
+  .mainpage & {
+    --l1: 0;
+    --l2: 0;
+    --bgPosition: -170% 0;
+    --bgSize: calc(100% + 23.2rem) 200%;
+    --imgX: translateX(-100%);
+    --opacity: 1;
+  }
 
   // .about-company__container
 
@@ -13,7 +17,7 @@
     &::after {
       @extend %line;
       bottom: 0;
-      width: var(--l1);
+      width: var(--line-fw);
       height: 2px;
     }
     @media (max-width: 48em) {
@@ -64,7 +68,7 @@
       @extend %line;
       left: 2px;
       bottom: 0;
-      width: var(--l3);
+      width: var(--l1);
       height: 2px;
     }
     @media (max-width: 48em) {
@@ -113,7 +117,7 @@
         @extend %line;
         right: 0;
         top: 0;
-        height: var(--l4);
+        height: var(--line-fh);
       }
     }
     @media (min-width: 48em) {
@@ -164,10 +168,6 @@
     width: 100%;
     height: 52.8rem;
     @media (min-width: 48em) {
-      --bgPosition: -170% 0;
-      --bgSize: calc(100% + 23.2rem) 200%;
-      --imgX: translateX(-100%);
-      --opacity: 1;
       width: calc(100% + ((192rem - 145.6rem) / 2));
       height: 63.8rem;
       align-self: end;

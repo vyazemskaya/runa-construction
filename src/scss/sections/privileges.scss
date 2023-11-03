@@ -10,7 +10,7 @@
     &::before {
       @extend %line;
       top: -18rem;
-      height: calc(100% + 18rem - 2px);
+      height: var(--line-h);
     }
     @media (min-width: 48em) {
       grid-column: 2/3;
@@ -52,6 +52,9 @@
     @media (max-width: 48em) {
       display: block;
       max-width: 50rem;
+    }
+    @media (min-width: 48em) {
+      opacity: 0;
     }
   }
 

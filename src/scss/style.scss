@@ -21,6 +21,13 @@ $bg: #242424;
 $grey: #9a9a9a;
 $white: #ffffff;
 
+// css variables for animations
+.main {
+  --line-fw: 0;
+  --line-fh: 0;
+  --line-h: 0;
+}
+
 // base styles file ============================================================
 @import 'base/set.scss';
 

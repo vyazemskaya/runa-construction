@@ -1,10 +1,6 @@
 .hero {
   position: relative;
   margin-bottom: 18rem;
-  .mainpage & {
-    --line: 0;
-    --opacity: 0;
-  }
 
   // .hero__container
 
@@ -55,7 +51,7 @@
       @extend %line;
       top: 0;
       .mainpage & {
-        height: var(--line);
+        height: var(--line-fh);
       }
     }
     &::before {
@@ -88,7 +84,7 @@
     flex-direction: column;
     .mainpage & {
       @media (min-width: 48em) {
-        opacity: var(--opacity);
+        opacity: 0;
       }
     }
     @media (max-width: 48em) {
@@ -107,7 +103,7 @@
     margin-bottom: 3.2rem;
     .mainpage & {
       @media (min-width: 48em) {
-        opacity: var(--opacity);
+        opacity: 0;
       }
     }
     @media (max-width: 48em) {
