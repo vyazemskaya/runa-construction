@@ -82,7 +82,7 @@
       &::before {
         @extend %line;
         top: -21rem;
-        right: calc(145.6rem / 2 - 3rem);
+        right: calc(69.8rem - 2px);
         height: calc(100% + 6rem + 18rem);
       }
       &::after {

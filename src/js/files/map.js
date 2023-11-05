@@ -1,24 +1,35 @@
-initMap();
-async function initMap() {
-  await ymaps3.ready;
+window.map = null;
 
-  const LOCATION = { center: [37.67119249999992, 55.75224706896767], zoom: 17 };
+window.addEventListener('load', function () {
+  async function initMap() {
+    await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
-    ymaps3;
+    const LOCATION = {
+      center: [37.67119249999992, 55.75224706896767],
+      zoom: 17,
+    };
 
-  const map = new YMap(
-    document.getElementById('map'),
+    const {
+      YMap,
+      YMapDefaultSchemeLayer,
+      YMapDefaultFeaturesLayer,
+      YMapMarker,
+    } = ymaps3;
 
-    { location: LOCATION }
-  );
+    const map = new YMap(
+      document.getElementById('map'),
 
-  map.addChild(new YMapDefaultSchemeLayer());
-  map.addChild(new YMapDefaultFeaturesLayer());
+      { location: LOCATION }
+    );
 
-  const el = document.createElement('img');
-  el.className = 'marker';
-  el.src = './img/icons/map-pin.svg';
-  el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
-  map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
-}
+    map.addChild(new YMapDefaultSchemeLayer());
+    map.addChild(new YMapDefaultFeaturesLayer());
+
+    const el = document.createElement('img');
+    el.className = 'marker';
+    el.src = './img/icons/map-pin.svg';
+    el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
+    map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
+  }
+  initMap();
+});

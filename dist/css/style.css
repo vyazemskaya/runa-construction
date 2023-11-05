@@ -1944,7 +1944,7 @@ body::after {
 
 .contacts-page .request__content::before {
   top: -21rem;
-  right: 69.8rem;
+  right: calc(69.8rem - 2px);
   height: calc(100% + 6rem + 18rem);
 }
 
