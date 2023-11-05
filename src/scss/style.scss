@@ -22,10 +22,11 @@ $grey: #9a9a9a;
 $white: #ffffff;
 
 // css variables for animations
-.main {
+body {
   --scaleY: 0;
   --scaleX: 0;
   --opacity: 0;
+  --progress: 0;
   --x: translateX(-100%);
 }
 
@@ -106,3 +107,7 @@ body {
 @import 'sections/our-team';
 @import 'sections/projects';
 @import 'sections/image-text';
+@import 'sections/hero-project';
+@import 'sections/project-info';
+@import 'sections/project-layout';
+@import 'sections/project-interiors';

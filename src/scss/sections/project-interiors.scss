@@ -1,0 +1,130 @@
+.project-interiors {
+  margin-bottom: 18rem;
+
+  // .project-interiors__container
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    &::before {
+      @extend %line;
+      top: -18rem;
+      left: 0;
+      height: calc(100% + 18rem);
+    }
+    @media (max-width: 48em) {
+      &::before {
+        display: none;
+      }
+    }
+    @media (min-width: 48em) {
+      grid-column: 2/3;
+    }
+  }
+
+  // .project-interiors__head
+
+  &__head {
+    margin-bottom: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 48em) {
+      padding-left: 3rem;
+    }
+  }
+
+  // .project-interiors__title
+
+  &__title {
+  }
+
+  // .project-interiors__slider-nav
+
+  &__slider-nav {
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+    @media (min-width: 48em) {
+      align-self: flex-end;
+    }
+    @media (max-width: 48em) {
+      justify-content: space-between;
+    }
+  }
+
+  // .project-interiors__slider-arr
+
+  &__slider-arr {
+    // .project-interiors__slider-arr_prev
+
+    &_prev {
+    }
+
+    // .project-interiors__slider-arr_next
+
+    &_next {
+    }
+  }
+
+  // .project-interiors__body
+
+  &__body {
+    position: relative;
+    padding: 3rem 0 3rem 3rem;
+    &::before,
+    &::after {
+      @extend %line;
+      left: 0;
+      width: calc(100% + 129.2rem);
+      height: 2px;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    @media (max-width: 48em) {
+      padding: 3.2rem 0;
+      &::before {
+        width: 100%;
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // .project-interiors__slider
+
+  &__slider {
+  }
+
+  // .project-interiors__wrapper
+
+  &__wrapper {
+  }
+
+  // .project-interiors__slide
+
+  &__slide {
+  }
+
+  // .project-interiors__image-wrap
+
+  &__image-wrap {
+    height: 84rem;
+    @media (max-width: 48em) {
+      height: 100rem;
+    }
+  }
+
+  // .project-interiors__image
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+}

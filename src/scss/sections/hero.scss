@@ -9,6 +9,11 @@
     z-index: 2;
     display: grid;
     height: 100%;
+    &::before {
+      @extend %line;
+      top: 0;
+      left: 0;
+    }
     @media (max-width: 48em) {
       padding: 22.7rem 3.2rem 6.4rem 3.2rem;
       row-gap: 26.2rem;
@@ -30,7 +35,6 @@
   // .hero__body
 
   &__body {
-    position: relative;
     @media (min-width: 48em) {
       grid-column: 2/3;
       min-height: 100rem;

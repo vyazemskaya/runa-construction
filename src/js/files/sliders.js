@@ -1,5 +1,11 @@
 import Swiper from 'swiper';
-import { Navigation, EffectFade, Pagination, Autoplay } from 'swiper/modules';
+import {
+  Navigation,
+  EffectFade,
+  Pagination,
+  Autoplay,
+  EffectCreative,
+} from 'swiper/modules';
 
 // styles ======================================================================
 
@@ -14,6 +20,7 @@ import '../../scss/base/swiper.scss';
 
 // launch ======================================================================
 let tabsSlider = null;
+let heroProjectSlider = null;
 
 // hero slide text
 const setSlideText = swiper => {
@@ -23,6 +30,11 @@ const setSlideText = swiper => {
   const text =
     swiper.slides[swiper.activeIndex].querySelector('.hero__slide-text');
   target.innerHTML = text.innerHTML;
+};
+// autoplay progress
+const setAutoplayProgress = (s, time, progress) => {
+  const progressLine = document.querySelector('.sl-fraction__progress');
+  progressLine.style.setProperty('--progress', 1 - progress);
 };
 
 function initSliders() {
@@ -79,9 +91,10 @@ function initSliders() {
 
       // pagination
       pagination: {
-        el: '.sl-fraction__content',
+        el: '#projects-sl-fraction',
         type: 'custom',
         renderCustom: function (swiper, current, total) {
+          console.log('log');
           const isSingletTotal = total < 10 ? '0' : ' ';
           const isSingleCurrent = current < 10 ? '0' : ' ';
           return isSingleCurrent + current + ' / ' + isSingletTotal + total;
@@ -97,8 +110,7 @@ function initSliders() {
           setSlideText(swiper);
         },
         autoplayTimeLeft: (s, time, progress) => {
-          const progressLine = document.querySelector('.sl-fraction__progress');
-          progressLine.style.setProperty('--progress', 1 - progress);
+          setAutoplayProgress(s, time, progress);
         },
       },
 
@@ -127,6 +139,147 @@ function initSliders() {
       tabsSlider.destroy();
       tabsSlider = null;
     }
+  }
+  if (document.querySelector('.hero-project__slider')) {
+    if (window.innerWidth <= 768) {
+      heroProjectSlider = new Swiper('.hero-project__slider', {
+        modules: [Navigation, Pagination],
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        centeredSlides: false,
+        loop: true,
+        updateOnWindowResize: true,
+
+        // navigation
+        navigation: {
+          prevEl: '.hero__slider-arr_prev',
+          nextEl: '.hero__slider-arr_next',
+        },
+
+        // pagination
+
+        // pagination
+        pagination: {
+          el: '#project-sl-fraction',
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            const isSingletTotal = total < 10 ? '0' : ' ';
+            const isSingleCurrent = current < 10 ? '0' : ' ';
+            return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+          },
+        },
+      });
+    } else if (window.innerWidth > 768) {
+      heroProjectSlider = new Swiper('.hero-project__slider', {
+        modules: [Navigation, Pagination, EffectCreative, Autoplay],
+        observer: true,
+        observeParents: true,
+        slidesPerView: 4,
+        centeredSlides: false,
+        loop: true,
+        updateOnWindowResize: true,
+
+        // autoplay
+        autoplay: {
+          delay: 7000,
+          disableOnInteraction: false,
+        },
+
+        // effects
+        effect: 'creative',
+        creativeEffect: {
+          limitProgress: 10,
+          prev: {
+            scale: 0.85,
+            translate: ['-45%', 0, 0],
+          },
+          next: {
+            scale: 0.85,
+            translate: ['45%', 0, 0],
+          },
+        },
+
+        // navigation
+        navigation: {
+          prevEl: '.hero__slider-arr_prev',
+          nextEl: '.hero__slider-arr_next',
+        },
+
+        // pagination
+        pagination: {
+          el: '#project-sl-fraction',
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            const isSingletTotal = total < 10 ? '0' : ' ';
+            const isSingleCurrent = current < 10 ? '0' : ' ';
+            return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+          },
+        },
+
+        // events
+        on: {
+          autoplayTimeLeft: (s, time, progress) => {
+            setAutoplayProgress(s, time, progress);
+          },
+        },
+      });
+    }
+  }
+  if (document.querySelector('.project-info__slider')) {
+    new Swiper('.project-info__slider', {
+      modules: [Navigation],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoHeight: false,
+      speed: 800,
+      allowTouchMove: false,
+      loop: true,
+
+      // navigation
+      navigation: {
+        prevEl: '.project-info__slider-arr_prev',
+        nextEl: '.project-info__slider-arr_next',
+      },
+    });
+  }
+  if (document.querySelector('.project-layout__slider')) {
+    new Swiper('.project-layout__slider', {
+      modules: [Navigation],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoHeight: false,
+      speed: 800,
+      allowTouchMove: false,
+      loop: true,
+      // navigation
+      navigation: {
+        prevEl: '.project-layout__slider-arr_prev',
+        nextEl: '.project-layout__slider-arr_next',
+      },
+    });
+  }
+  if (document.querySelector('.project-interiors__slider')) {
+    new Swiper('.project-interiors__slider', {
+      modules: [Navigation],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoHeight: false,
+      speed: 800,
+      allowTouchMove: false,
+      loop: true,
+      // navigation
+      navigation: {
+        prevEl: '.project-interiors__slider-arr_prev',
+        nextEl: '.project-interiors__slider-arr_next',
+      },
+    });
   }
 }
 

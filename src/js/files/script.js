@@ -27,7 +27,6 @@ window.addEventListener('load', function () {
 
   // --------------------------------------------------------------------------
 
-  // animations
   // gsap plugins
   gsap.registerPlugin(ScrollTrigger);
 
@@ -230,7 +229,7 @@ window.addEventListener('load', function () {
           .clipL2R('.request__form'),
           2;
       }
-      // out team
+      // our team
       if (document.querySelector('.mainpage__our-team')) {
         gsap
           .timeline({
@@ -251,7 +250,6 @@ window.addEventListener('load', function () {
           .timeline({
             scrollTrigger: {
               trigger: '.footer',
-              start: '20% bottom',
               once: true,
             },
           })

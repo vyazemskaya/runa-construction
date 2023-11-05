@@ -1,0 +1,152 @@
+.project-info {
+  margin-bottom: 18rem;
+
+  // .project-info__container
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &::before {
+      @extend %line;
+      top: -23.6rem;
+      left: 0;
+      height: calc(100% + 23.6rem);
+    }
+    @media (max-width: 48em) {
+      &::before {
+        display: none;
+      }
+    }
+    @media (min-width: 48em) {
+      grid-column: 2/3;
+    }
+  }
+
+  // .project-info__head
+
+  &__head {
+    padding-bottom: 3.2rem;
+    @media (min-width: 48em) {
+      padding-left: 3rem;
+    }
+  }
+
+  // .project-info__title
+
+  &__title {
+  }
+
+  // .project-info__body
+
+  &__body {
+    position: relative;
+    padding: 3.2rem 0 0 0;
+    display: grid;
+    &::before,
+    &::after {
+      @extend %line;
+      left: 0;
+      height: 2px;
+      width: 100%;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    @media (min-width: 48em) {
+      padding: 3rem 3.2rem;
+      grid-template-columns: 7fr 4fr;
+      column-gap: 3rem;
+      &::before,
+      &::after {
+        width: calc(100% + 23.2rem);
+      }
+    }
+  }
+
+  // .project-info__slider
+
+  &__slider {
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  // .project-info__wrapper
+
+  &__wrapper {
+  }
+
+  // .project-info__slide
+
+  &__slide {
+    display: flex;
+    min-height: 67.8rem;
+    @media (max-width: 48em) {
+      height: 52.8rem;
+      min-height: auto;
+    }
+  }
+
+  // .project-info__slider-nav
+
+  &__slider-nav {
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+    @media (max-width: 48em) {
+      justify-content: space-between;
+    }
+  }
+
+  // .project-info__image-wrap
+
+  &__image-wrap {
+    height: 100%;
+  }
+
+  // .project-info__image
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // .project-info__content
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 48em) {
+      order: -1;
+    }
+  }
+
+  // .project-info__text-wrap
+
+  &__text-wrap {
+    margin-bottom: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    @media (max-width: 48em) {
+      row-gap: 2rem;
+    }
+  }
+
+  // .project-info__text
+
+  &__text {
+    @media (min-width: 48em) {
+      max-width: 52rem;
+    }
+  }
+
+  // .project-info__footer
+
+  &__footer {
+  }
+}

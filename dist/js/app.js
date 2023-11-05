@@ -7711,11 +7711,142 @@
                 })
             });
         }
+        function create_shadow_createShadow(suffix, slideEl, side) {
+            const shadowClass = `swiper-slide-shadow${side ? `-${side}` : ""}${suffix ? ` swiper-slide-shadow-${suffix}` : ""}`;
+            const shadowContainer = utils_getSlideTransformEl(slideEl);
+            let shadowEl = shadowContainer.querySelector(`.${shadowClass.split(" ").join(".")}`);
+            if (!shadowEl) {
+                shadowEl = utils_createElement("div", shadowClass.split(" "));
+                shadowContainer.append(shadowEl);
+            }
+            return shadowEl;
+        }
+        function EffectCreative(_ref) {
+            let {swiper, extendParams, on} = _ref;
+            extendParams({
+                creativeEffect: {
+                    limitProgress: 1,
+                    shadowPerProgress: false,
+                    progressMultiplier: 1,
+                    perspective: true,
+                    prev: {
+                        translate: [ 0, 0, 0 ],
+                        rotate: [ 0, 0, 0 ],
+                        opacity: 1,
+                        scale: 1
+                    },
+                    next: {
+                        translate: [ 0, 0, 0 ],
+                        rotate: [ 0, 0, 0 ],
+                        opacity: 1,
+                        scale: 1
+                    }
+                }
+            });
+            const getTranslateValue = value => {
+                if (typeof value === "string") return value;
+                return `${value}px`;
+            };
+            const setTranslate = () => {
+                const {slides, wrapperEl, slidesSizesGrid} = swiper;
+                const params = swiper.params.creativeEffect;
+                const {progressMultiplier: multiplier} = params;
+                const isCenteredSlides = swiper.params.centeredSlides;
+                if (isCenteredSlides) {
+                    const margin = slidesSizesGrid[0] / 2 - swiper.params.slidesOffsetBefore || 0;
+                    wrapperEl.style.transform = `translateX(calc(50% - ${margin}px))`;
+                }
+                for (let i = 0; i < slides.length; i += 1) {
+                    const slideEl = slides[i];
+                    const slideProgress = slideEl.progress;
+                    const progress = Math.min(Math.max(slideEl.progress, -params.limitProgress), params.limitProgress);
+                    let originalProgress = progress;
+                    if (!isCenteredSlides) originalProgress = Math.min(Math.max(slideEl.originalProgress, -params.limitProgress), params.limitProgress);
+                    const offset = slideEl.swiperSlideOffset;
+                    const t = [ swiper.params.cssMode ? -offset - swiper.translate : -offset, 0, 0 ];
+                    const r = [ 0, 0, 0 ];
+                    let custom = false;
+                    if (!swiper.isHorizontal()) {
+                        t[1] = t[0];
+                        t[0] = 0;
+                    }
+                    let data = {
+                        translate: [ 0, 0, 0 ],
+                        rotate: [ 0, 0, 0 ],
+                        scale: 1,
+                        opacity: 1
+                    };
+                    if (progress < 0) {
+                        data = params.next;
+                        custom = true;
+                    } else if (progress > 0) {
+                        data = params.prev;
+                        custom = true;
+                    }
+                    t.forEach(((value, index) => {
+                        t[index] = `calc(${value}px + (${getTranslateValue(data.translate[index])} * ${Math.abs(progress * multiplier)}))`;
+                    }));
+                    r.forEach(((value, index) => {
+                        r[index] = data.rotate[index] * Math.abs(progress * multiplier);
+                    }));
+                    slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
+                    const translateString = t.join(", ");
+                    const rotateString = `rotateX(${r[0]}deg) rotateY(${r[1]}deg) rotateZ(${r[2]}deg)`;
+                    const scaleString = originalProgress < 0 ? `scale(${1 + (1 - data.scale) * originalProgress * multiplier})` : `scale(${1 - (1 - data.scale) * originalProgress * multiplier})`;
+                    const opacityString = originalProgress < 0 ? 1 + (1 - data.opacity) * originalProgress * multiplier : 1 - (1 - data.opacity) * originalProgress * multiplier;
+                    const transform = `translate3d(${translateString}) ${rotateString} ${scaleString}`;
+                    if (custom && data.shadow || !custom) {
+                        let shadowEl = slideEl.querySelector(".swiper-slide-shadow");
+                        if (!shadowEl && data.shadow) shadowEl = create_shadow_createShadow("creative", slideEl);
+                        if (shadowEl) {
+                            const shadowOpacity = params.shadowPerProgress ? progress * (1 / params.limitProgress) : progress;
+                            shadowEl.style.opacity = Math.min(Math.max(Math.abs(shadowOpacity), 0), 1);
+                        }
+                    }
+                    const targetEl = effect_target_effectTarget(params, slideEl);
+                    targetEl.style.transform = transform;
+                    targetEl.style.opacity = opacityString;
+                    if (data.origin) targetEl.style.transformOrigin = data.origin;
+                }
+            };
+            const setTransition = duration => {
+                const transformElements = swiper.slides.map((slideEl => utils_getSlideTransformEl(slideEl)));
+                transformElements.forEach((el => {
+                    el.style.transitionDuration = `${duration}ms`;
+                    el.querySelectorAll(".swiper-slide-shadow").forEach((shadowEl => {
+                        shadowEl.style.transitionDuration = `${duration}ms`;
+                    }));
+                }));
+                effect_virtual_transition_end_effectVirtualTransitionEnd({
+                    swiper,
+                    duration,
+                    transformElements,
+                    allSlides: true
+                });
+            };
+            effect_init_effectInit({
+                effect: "creative",
+                swiper,
+                on,
+                setTranslate,
+                setTransition,
+                perspective: () => swiper.params.creativeEffect.perspective,
+                overwriteParams: () => ({
+                    watchSlidesProgress: true,
+                    virtualTranslate: !swiper.params.cssMode
+                })
+            });
+        }
         let tabsSlider = null;
+        let heroProjectSlider = null;
         const setSlideText = swiper => {
             const target = document.querySelector(".hero__slider-nav-wrap .hero__slide-text");
             const text = swiper.slides[swiper.activeIndex].querySelector(".hero__slide-text");
             target.innerHTML = text.innerHTML;
+        };
+        const setAutoplayProgress = (s, time, progress) => {
+            const progressLine = document.querySelector(".sl-fraction__progress");
+            progressLine.style.setProperty("--progress", 1 - progress);
         };
         function initSliders() {
             if (document.querySelector(".our-team__slider")) new swiper_core_Swiper(".our-team__slider", {
@@ -7756,9 +7887,10 @@
                     nextEl: ".hero__slider-arr_next"
                 },
                 pagination: {
-                    el: ".sl-fraction__content",
+                    el: "#projects-sl-fraction",
                     type: "custom",
                     renderCustom: function(swiper, current, total) {
+                        console.log("log");
                         const isSingletTotal = total < 10 ? "0" : " ";
                         const isSingleCurrent = current < 10 ? "0" : " ";
                         return isSingleCurrent + current + " / " + isSingletTotal + total;
@@ -7772,8 +7904,7 @@
                         setSlideText(swiper);
                     },
                     autoplayTimeLeft: (s, time, progress) => {
-                        const progressLine = document.querySelector(".sl-fraction__progress");
-                        progressLine.style.setProperty("--progress", 1 - progress);
+                        setAutoplayProgress(s, time, progress);
                     }
                 },
                 breakpoints: {
@@ -7798,6 +7929,115 @@
                 tabsSlider.destroy();
                 tabsSlider = null;
             }
+            if (document.querySelector(".hero-project__slider")) if (window.innerWidth <= 768) heroProjectSlider = new swiper_core_Swiper(".hero-project__slider", {
+                modules: [ Navigation, Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                centeredSlides: false,
+                loop: true,
+                updateOnWindowResize: true,
+                navigation: {
+                    prevEl: ".hero__slider-arr_prev",
+                    nextEl: ".hero__slider-arr_next"
+                },
+                pagination: {
+                    el: "#project-sl-fraction",
+                    type: "custom",
+                    renderCustom: function(swiper, current, total) {
+                        const isSingletTotal = total < 10 ? "0" : " ";
+                        const isSingleCurrent = current < 10 ? "0" : " ";
+                        return isSingleCurrent + current + " / " + isSingletTotal + total;
+                    }
+                }
+            }); else if (window.innerWidth > 768) heroProjectSlider = new swiper_core_Swiper(".hero-project__slider", {
+                modules: [ Navigation, Pagination, EffectCreative, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                centeredSlides: false,
+                loop: true,
+                updateOnWindowResize: true,
+                autoplay: {
+                    delay: 7e3,
+                    disableOnInteraction: false
+                },
+                effect: "creative",
+                creativeEffect: {
+                    limitProgress: 10,
+                    prev: {
+                        scale: .85,
+                        translate: [ "-45%", 0, 0 ]
+                    },
+                    next: {
+                        scale: .85,
+                        translate: [ "45%", 0, 0 ]
+                    }
+                },
+                navigation: {
+                    prevEl: ".hero__slider-arr_prev",
+                    nextEl: ".hero__slider-arr_next"
+                },
+                pagination: {
+                    el: "#project-sl-fraction",
+                    type: "custom",
+                    renderCustom: function(swiper, current, total) {
+                        const isSingletTotal = total < 10 ? "0" : " ";
+                        const isSingleCurrent = current < 10 ? "0" : " ";
+                        return isSingleCurrent + current + " / " + isSingletTotal + total;
+                    }
+                },
+                on: {
+                    autoplayTimeLeft: (s, time, progress) => {
+                        setAutoplayProgress(s, time, progress);
+                    }
+                }
+            });
+            if (document.querySelector(".project-info__slider")) new swiper_core_Swiper(".project-info__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 30,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                loop: true,
+                navigation: {
+                    prevEl: ".project-info__slider-arr_prev",
+                    nextEl: ".project-info__slider-arr_next"
+                }
+            });
+            if (document.querySelector(".project-layout__slider")) new swiper_core_Swiper(".project-layout__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 30,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                loop: true,
+                navigation: {
+                    prevEl: ".project-layout__slider-arr_prev",
+                    nextEl: ".project-layout__slider-arr_next"
+                }
+            });
+            if (document.querySelector(".project-interiors__slider")) new swiper_core_Swiper(".project-interiors__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 30,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                loop: true,
+                navigation: {
+                    prevEl: ".project-interiors__slider-arr_prev",
+                    nextEl: ".project-interiors__slider-arr_next"
+                }
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -8100,7 +8340,6 @@
                     if (document.querySelector(".footer")) gsap.timeline({
                         scrollTrigger: {
                             trigger: ".footer",
-                            start: "20% bottom",
                             once: true
                         }
                     }).scale(".footer");
