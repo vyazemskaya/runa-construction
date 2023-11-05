@@ -77,6 +77,21 @@
   &__content {
     display: flex;
     flex-direction: column;
+    .contacts-page & {
+      position: relative;
+      &::before {
+        @extend %line;
+        top: -21rem;
+        right: calc(145.6rem / 2 - 3rem);
+        height: calc(100% + 6rem + 18rem);
+      }
+      &::after {
+        @extend %line;
+        top: -21rem;
+        right: -3rem;
+        height: calc(100% + 6rem + 18rem);
+      }
+    }
     .projects-page & {
       position: relative;
       &::after {
@@ -93,6 +108,12 @@
       padding-left: 15.6rem;
     }
     @media (max-width: 48em) {
+      .contacts-page & {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
       .projects-page & {
         &::after {
           display: none;
