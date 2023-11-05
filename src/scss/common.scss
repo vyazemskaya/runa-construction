@@ -519,6 +519,35 @@ body {
   }
 }
 
+// page navigation
+.page-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  // .page-nav__num
+
+  &__num {
+    &:not(:last-child) {
+      margin-right: 2.4rem;
+      &._active {
+        margin-right: 12rem;
+      }
+    }
+    &:not(&._active) {
+      color: #9a9a9a;
+    }
+    @media (max-width: 48em) {
+      &:not(:last-child) {
+        margin-right: 1rem;
+        &._active {
+          margin-right: 5rem;
+        }
+      }
+    }
+  }
+}
+
 // ------------------------------- typography -------------------------------
 
 // tl1
