@@ -138,3 +138,14 @@
   background-color: #505050;
   transform-origin: left top;
 }
+
+%swiperFix {
+  &.swiper-slide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  &.swiper-slide-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}

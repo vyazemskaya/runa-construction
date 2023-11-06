@@ -5,6 +5,7 @@ import {
   Pagination,
   Autoplay,
   EffectCreative,
+  Thumbs,
 } from 'swiper/modules';
 
 // styles ======================================================================
@@ -296,6 +297,48 @@ function initSliders() {
       navigation: {
         prevEl: '.privileges-company-info__slider-arr_prev',
         nextEl: '.privileges-company-info__slider-arr_next',
+      },
+    });
+  }
+  if (document.querySelector('.hero-portfolio__slider')) {
+    const portfolioThumbs = new Swiper('.hero-portfolio__thumbs', {
+      spaceBetween: 30,
+      slidesPerView: 'auto',
+      freeMode: true,
+    });
+    new Swiper('.hero-portfolio__slider', {
+      modules: [Navigation, Pagination, EffectFade, Thumbs],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      updateOnWindowResize: true,
+
+      // thumbs
+      thumbs: {
+        swiper: portfolioThumbs,
+      },
+
+      // effects
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
+
+      // navigation
+      navigation: {
+        prevEl: '.hero-portfolio__slider-arr_prev',
+        nextEl: '.hero-portfolio__slider-arr_next',
+      },
+
+      // pagination
+      pagination: {
+        el: '.hero-portfolio__slider-fraction',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          const isSingletTotal = total < 10 ? '0' : ' ';
+          const isSingleCurrent = current < 10 ? '0' : ' ';
+          return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+        },
       },
     });
   }
