@@ -3581,7 +3581,7 @@ body::after {
   font-weight: 700;
   text-transform: uppercase;
   white-space: nowrap;
-  line-height: 90%;
+  line-height: 170%;
   opacity: 0.1;
 }
 

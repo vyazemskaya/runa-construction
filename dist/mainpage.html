@@ -1,407 +1,675 @@
 <!doctype html>
 <html lang="ru">
+  <head>
+    <title>Главная</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="css/style.min.css?_v=20231106173122" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU"></script>
+  </head>
 
-<head>
-	<title>Главная</title>
-	<meta charset="UTF-8" />
-	<meta name="format-detection" content="telephone=no" />
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231106172701" />
-	<link rel="shortcut icon" href="favicon.ico" />
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <script
-    src="https://api-maps.yandex.ru/v3/?apikey=<YOUR_APIKEY>&lang=en_US"
-    type="text/javascript"></script> -->
-	<script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU&_v=20231106172701"></script>
-	<!-- 893d068f-6a82-4f63-aec8-f0e9ed9ed59c -->
-</head>
-
-<body style="opacity: 0">
-	<div class="wrapper scroll-trigger">
-		<main class="main mainpage">
-			<section class="mainpage__hero hero grid">
-				<div class="hero__sidebar sidebar">
-					<div class="sidebar__inner">
-						<a href="#" class="sidebar__logo-wrap"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" class="sidebar__logo" /></picture></a>
-						<a data-da=".menu__body,768,last" href="tel:79999999999" class="sidebar__tel txt txt_16">+7 (999) 999 99 - 99</a>
-						<div class="sidebar__menu menu">
-							<button id="hamburger" type="button" class="menu__hamburger-wrap">
-								<div class="menu__hamburger hamburger"><span></span></div>
-								<span class="menu__hamburger-txt txt txt_16 desktop-only">меню</span>
-							</button>
-							<nav class="menu__body">
-								<ul class="menu__list txt txt_16">
-									<li class="menu__item">
-										<a href="#" class="menu__link">о нас</a>
-									</li>
-									<li class="menu__item">
-										<a href="#" class="menu__link">проекты</a>
-									</li>
-									<li class="menu__item">
-										<a href="#" class="menu__link">портфолио</a>
-									</li>
-									<li class="menu__item">
-										<a href="#" class="menu__link">контакты</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-						<ul data-da=".menu__body,768,last" class="sidebar__socials">
-							<li class="sidebar__socials-item">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/ig.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-							<li class="sidebar__socials-item">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/yt.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-							<li class="sidebar__socials-item _mobile-only">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/tg.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-							<li class="sidebar__socials-item _mobile-only">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/wp.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="hero__body">
-					<div class="hero__container container">
-						<div class="hero__text-wrap">
-							<span class="hero__title tl1">
-								<span class="hero__title-txt reg">строительная компания</span>
-								<span class="hero__title-txt">RUNA CONSTRUCTION</span>
-							</span>
-							<p class="hero__text txt txt_16">
-								В каждом нашем проекте заложен уникальный смысл
-							</p>
-							<button type="button" class="hero__btn btn btn_primary">
-								<span class="btn__text txt txt_16">Заказать звонок</span>
-								<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-									<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-								</svg>
-							</button>
-						</div>
-						<div class="hero__facts facts-hero">
-							<div class="facts-hero__item">
-								<span class="facts-hero__heading h2">10</span>
-								<span class="facts-hero__text txt txt_18">лет опыта</span>
-							</div>
-							<div class="facts-hero__item">
-								<span class="facts-hero__heading h2">500</span>
-								<span class="facts-hero__text txt txt_18">проектов</span>
-							</div>
-							<div class="facts-hero__item">
-								<span class="facts-hero__heading h2">1000</span>
-								<span class="facts-hero__text txt txt_18">клиентов</span>
-							</div>
-						</div>
-					</div>
-					<div class="hero__video-wrap">
-						<video playsinline autoplay muted loop>
-							<source type="video/mp4" src="./files/mainpage-hero-vid.mp4" />
-						</video>
-					</div>
-				</div>
-			</section>
-			<section class="mainpage__about-company about-company grid">
-				<div class="about-company__container container">
-					<div class="about-company__text-wrap">
-						<div class="about-company__head">
-							<span class="about-company__title tl1">
-								<span class="about-company__title-txt reg">НЕМНОГО ИНФОРМАЦИИ</span>
-								<span class="about-company__title-txt">О НАшей компании</span>
-							</span>
-						</div>
-						<div class="about-company__body">
-							<div class="about-company__column txt txt_18">
-								<div class="about-company__txt-wrap">
-									<p class="about-company__text">
-										Архитектурное бюро ZROBIM architects всегда стремится
-										применять в своих проектах новейшие достижения мировой
-										архитектуры и дизайна. Проектируя в Москве,
-										Санкт-Петербурге и по всему миру, мы материализуем
-										идеальное пространство и мечты заказчиков.
-									</p>
-									<p class="about-company__text">
-										Проекты нашей студии — это итог творческого союза
-										архитекторов с заказчиком, итог совместного размышления. И
-										поэтому среди наших работ Вы не найдете двух одинаковых
-										зданий или интерьеров. Создавая различные проекты для
-										людей, мы меняем их жизнь к лучшему.
-									</p>
-								</div>
-							</div>
-							<div class="about-company__column">
-								<a href="#" class="about-company__link btn btn_link">
-									<span class="btn__text txt txt_16">О компании</span>
-									<svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
-										<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-									</svg>
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="about-company__image-wrap image-gradient">
-						<picture><source data-srcset="img/cf7335945d95459041d77cb23159663c.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/cf7335945d95459041d77cb23159663c.webp" alt="" class="about-company__image" /></picture>
-					</div>
-				</div>
-			</section>
-			<section class="mainpage__services services grid">
-				<div class="services__container container">
-					<div class="services__head">
-						<span class="services__title tl1">услуги</span>
-						<a href="#" class="services__btn btn btn_primary">
-							<span class="btn__text txt txt_18">Обсудить проект</span>
-							<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-								<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-							</svg>
-						</a>
-					</div>
-					<div class="services__body">
-						<div class="services__card card-services">
-							<div class="card-services__image-wrap">
-								<picture><source data-srcset="img/services/f7f9d1d4ef52add7f48219223305293e.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/f7f9d1d4ef52add7f48219223305293e.webp" alt="" class="card-services__image" /></picture>
-							</div>
-							<div class="card-services__text-wrap">
-								<span class="card-services__heading tl2">Проектирование</span>
-								<p class="card-services__text txt">
-									Создание архитектурного проекта начинается с наброска от
-									руки, в котором архитектор стремится реализовать и передать
-									свою идею.
-								</p>
-								<span class="card-services__num">01</span>
-							</div>
-						</div>
-						<div class="services__card card-services card-services_reversed">
-							<div class="card-services__image-wrap">
-								<picture><source data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" alt="" class="card-services__image" /></picture>
-							</div>
-							<div class="card-services__text-wrap">
-								<span class="card-services__heading tl2">строительство</span>
-								<p class="card-services__text txt">
-									Создание архитектурного проекта начинается с наброска от
-									руки, в котором архитектор стремится реализовать и передать
-									свою идею.
-								</p>
-								<span class="card-services__num">02</span>
-							</div>
-						</div>
-						<div class="services__card card-services">
-							<div class="card-services__image-wrap">
-								<picture><source data-srcset="img/services/e9b0a80db0c218d2efc4ed35e174114b.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/e9b0a80db0c218d2efc4ed35e174114b.webp" alt="" class="card-services__image" /></picture>
-							</div>
-							<div class="card-services__text-wrap">
-								<span class="card-services__heading tl2">реализация проекта - ремонт</span>
-								<p class="card-services__text txt">
-									Создание архитектурного проекта начинается с наброска от
-									руки, в котором архитектор стремится реализовать и передать
-									свою идею.
-								</p>
-								<span class="card-services__num">03</span>
-							</div>
-						</div>
-						<div class="services__card card-services card-services_reversed">
-							<div class="card-services__image-wrap">
-								<picture><source data-srcset="img/services/9ad0e92ca03b5fd5054327eaa1f8ad8e.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/9ad0e92ca03b5fd5054327eaa1f8ad8e.webp" alt="" class="card-services__image" /></picture>
-							</div>
-							<div class="card-services__text-wrap">
-								<span class="card-services__heading tl2">реализация проекта - ремонт</span>
-								<p class="card-services__text txt">
-									Создание архитектурного проекта начинается с наброска от
-									руки, в котором архитектор стремится реализовать и передать
-									свою идею.
-								</p>
-								<span class="card-services__num">04</span>
-							</div>
-						</div>
-						<div class="services__card card-services">
-							<div class="card-services__image-wrap">
-								<picture><source data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" alt="" class="card-services__image" /></picture>
-							</div>
-							<div class="card-services__text-wrap">
-								<span class="card-services__heading tl2">подбор земельных участков</span>
-								<p class="card-services__text txt">
-									Создание архитектурного проекта начинается с наброска от
-									руки, в котором архитектор стремится реализовать и передать
-									свою идею.
-								</p>
-								<span class="card-services__num">05</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="mainpage__privileges privileges grid">
-				<div class="privileges__container container">
-					<div class="privileges__head">
-						<span class="privileges__title tl1">Почему выбирают нас</span>
-					</div>
-					<div class="privileges__body">
-						<div class="privileges__image-wrap">
-							<picture><source data-srcset="img/privileges/4e04512d3aea758da878b88dfb4bd43d.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/privileges/4e04512d3aea758da878b88dfb4bd43d.webp" alt="" class="privileges__image" /></picture>
-						</div>
-						<div class="privileges__cards">
-							<div class="privileges__row">
-								<div class="privileges__card privileges__card_text">
-									<span class="privileges__heading tl3">Индивидуальный дизайн</span>
-									<p class="privileges__text txt txt_16">
-										Архитекторы и дизайнеры нашей компании разрабатывают
-										уникальные и персонализированные проекты, учитывая
-										потребности каждого клиента.
-									</p>
-								</div>
-								<div class="privileges__card privileges__card_text">
-									<span class="privileges__heading tl3">Управление бюджетом</span>
-									<p class="privileges__text txt txt_16">
-										Мы помогаем клиентам управлять бюджетом проекта, и
-										контролируем ход стройки, выбирая оптимальные решения и
-										материалы.
-									</p>
-								</div>
-							</div>
-							<div class="privileges__row">
-								<div class="privileges__card privileges__card_text">
-									<span class="privileges__heading tl3">Сокращение рисков</span>
-									<p class="privileges__text txt txt_16">
-										Благодаря профессиональному подходу и опыту нашей команды,
-										мы можем помочь избежать ошибок и минимизировать риски при
-										строительстве.
-									</p>
-								</div>
-								<div class="privileges__card privileges__card_img">
-									<picture><source data-srcset="img/privileges/829bef0dbbc98b229423bfd106f76ec6.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/privileges/829bef0dbbc98b229423bfd106f76ec6.webp" alt="" class="privileges__card-image" /></picture>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="mainpage__team team grid">
-				<div class="team__container container">
-					<div class="team__head">
-						<span class="team__title tl1">RUNA CONSTRUCTION</span>
-					</div>
-					<div class="team__body">
-						<div class="team__content">
-							<div class="team__info">
-								<div class="team__group">
-									<span class="team__group-heading txt txt_16">Иван Иванов</span>
-									<span class="team__group-txt txt txt_18">Основатель</span>
-								</div>
-								<div class="team__group">
-									<span class="team__group-heading txt txt_16">Артём Артёмов</span>
-									<span class="team__group-txt txt txt_18">Заместитель</span>
-								</div>
-							</div>
-							<p class="team__text txt">
-								Команда под руководством креативного директора бюро Ивана
-								Иванова посвятила себя созданию мест, где человек реализует
-								себя. Наш ориентир – мировая культура проектирования
-								пространств для работы, общения и творчества. Создавая с
-								помощью архитектуры качественную среду для жизни, мы можем
-								видеть, как улучшается сама жизнь. В такой среде
-								поддерживается здоровье человека, формируется семья,
-								развивается успешный бизнес.
-							</p>
-						</div>
-						<div class="team__image-wrap image-gradient">
-							<picture><source data-srcset="img/013be35cfb49e64226e932d934cd3aa0.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/013be35cfb49e64226e932d934cd3aa0.webp" alt="" class="team__image" /></picture>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="mainpage__request request grid">
-				<div class="request__container container">
-					<div class="request__image-wrap">
-						<picture><source srcset="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp" type="image/webp"><img src="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp" alt="" class="request__image" /></picture>
-					</div>
-					<div class="request__content">
-						<div class="request__text-wrap">
-							<span class="request__title tl1">Оставьте заявку</span>
-							<p class="request__text txt txt_18">
-								Мы ответим на любые интересующие вас вопросы
-							</p>
-						</div>
-						<form action="#" data-dev class="request__form form">
-							<div class="request__fields">
-								<div class="request__input input">
-									<input data-validate data-required autocomplete="off" type="text" name="form[]" placeholder="Имя" data-error="Поле не заполнено" class="input__field" />
-								</div>
-								<div class="request__input input">
-									<input data-validate data-required="tel" autocomplete="off" type="text" name="form[]" data-error="Поле не заполнено" placeholder="Телефон" class="input__field" />
-								</div>
-								<div class="request__input input">
-									<input data-validate data-required autocomplete="off" type="text" name="form[]" data-error="Поле не заполнено" placeholder="Комментарий" class="input__field" />
-								</div>
-								<div data-da=".request__form,768,last" class="request__checkbox checkbox">
-									<input id="c_1" data-error data-required data-validate class="checkbox__input" type="checkbox" value="1" name="form[]" />
-									<label for="c_1" class="checkbox__label"><span class="checkbox__text txt txt_16">Я согласен на обработку персональных данных</span></label>
-								</div>
-							</div>
-							<button type="submit" class="request__btn btn btn_primary">
-								<span class="btn__text txt txt_16">Отправить</span>
-								<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-									<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-								</svg>
-							</button>
-						</form>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer grid">
-			<div class="footer__container container">
-				<div class="footer__row footer__row_upper">
-					<div class="footer__contacts">
-						<a href="tel:+79999999999" class="footer__tel tl1 reg">+7 999 999 - 99 - 99</a>
-						<a href="mailto:forexample@.com" class="footer__mail txt reg">forexample@.com</a>
-					</div>
-					<ul data-da=".footer__container,768,last" class="footer__socials">
-						<li class="footer__socials-item">
-							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/ig.svg" alt="" class="footer__socials-icon" /></a>
-						</li>
-						<li class="footer__socials-item">
-							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/yt.svg" alt="" class="footer__socials-icon" /></a>
-						</li>
-						<li class="footer__socials-item">
-							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/tg.svg" alt="" class="footer__socials-icon" /></a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__row footer__row_lower">
-					<div class="footer__address">
-						<span class="footer__address-heading tl2">руна</span>
-						<p class="footer__address-text txt txt_18">
-							г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
-						</p>
-					</div>
-					<nav class="footer__navigation">
-						<ul class="footer__navigation-list">
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">о нас</a>
-							</li>
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">проекты</a>
-							</li>
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">портфолио</a>
-							</li>
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">контакты</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</footer>
-
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231106172701"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231106172701"></script>
-	<script src="js/app.min.js?_v=20231106172701"></script>
-
-</body>
-
+  <body style="opacity: 0">
+    <div class="wrapper scroll-trigger">
+      <main class="main mainpage">
+        <section class="mainpage__hero hero grid">
+          <div class="hero__sidebar sidebar">
+            <div class="sidebar__inner">
+              <a href="#" class="sidebar__logo-wrap"
+                ><picture
+                  ><source srcset="img/logo.webp" type="image/webp" />
+                  <img
+                    src="img/logo.png"
+                    alt=""
+                    class="sidebar__logo" /></picture
+              ></a>
+              <a
+                data-da=".menu__body,768,last"
+                href="tel:79999999999"
+                class="sidebar__tel txt txt_16"
+                >+7 (999) 999 99 - 99</a
+              >
+              <div class="sidebar__menu menu">
+                <button
+                  id="hamburger"
+                  type="button"
+                  class="menu__hamburger-wrap">
+                  <div class="menu__hamburger hamburger"><span></span></div>
+                  <span class="menu__hamburger-txt txt txt_16 desktop-only"
+                    >меню</span
+                  >
+                </button>
+                <nav class="menu__body">
+                  <ul class="menu__list txt txt_16">
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">о нас</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">проекты</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">портфолио</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">контакты</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <ul data-da=".menu__body,768,last" class="sidebar__socials">
+                <li class="sidebar__socials-item">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/ig.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/yt.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item _mobile-only">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/tg.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item _mobile-only">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/wp.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero__body">
+            <div class="hero__container container">
+              <div class="hero__text-wrap">
+                <span class="hero__title tl1">
+                  <span class="hero__title-txt reg">строительная компания</span>
+                  <span class="hero__title-txt">RUNA CONSTRUCTION</span>
+                </span>
+                <p class="hero__text txt txt_16">
+                  В каждом нашем проекте заложен уникальный смысл
+                </p>
+                <button type="button" class="hero__btn btn btn_primary">
+                  <span class="btn__text txt txt_16">Заказать звонок</span>
+                  <svg
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 1.5L7 7.5L1 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                    <path
+                      d="M8 1.5L14 7.5L8 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="hero__facts facts-hero">
+                <div class="facts-hero__item">
+                  <span class="facts-hero__heading h2">10</span>
+                  <span class="facts-hero__text txt txt_18">лет опыта</span>
+                </div>
+                <div class="facts-hero__item">
+                  <span class="facts-hero__heading h2">500</span>
+                  <span class="facts-hero__text txt txt_18">проектов</span>
+                </div>
+                <div class="facts-hero__item">
+                  <span class="facts-hero__heading h2">1000</span>
+                  <span class="facts-hero__text txt txt_18">клиентов</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero__video-wrap">
+              <video playsinline autoplay muted loop>
+                <source type="video/mp4" src="./files/mainpage-hero-vid.mp4" />
+              </video>
+            </div>
+          </div>
+        </section>
+        <section class="mainpage__about-company about-company grid">
+          <div class="about-company__container container">
+            <div class="about-company__text-wrap">
+              <div class="about-company__head">
+                <span class="about-company__title tl1">
+                  <span class="about-company__title-txt reg"
+                    >НЕМНОГО ИНФОРМАЦИИ</span
+                  >
+                  <span class="about-company__title-txt">О НАшей компании</span>
+                </span>
+              </div>
+              <div class="about-company__body">
+                <div class="about-company__column txt txt_18">
+                  <div class="about-company__txt-wrap">
+                    <p class="about-company__text">
+                      Архитектурное бюро ZROBIM architects всегда стремится
+                      применять в своих проектах новейшие достижения мировой
+                      архитектуры и дизайна. Проектируя в Москве,
+                      Санкт-Петербурге и по всему миру, мы материализуем
+                      идеальное пространство и мечты заказчиков.
+                    </p>
+                    <p class="about-company__text">
+                      Проекты нашей студии — это итог творческого союза
+                      архитекторов с заказчиком, итог совместного размышления. И
+                      поэтому среди наших работ Вы не найдете двух одинаковых
+                      зданий или интерьеров. Создавая различные проекты для
+                      людей, мы меняем их жизнь к лучшему.
+                    </p>
+                  </div>
+                </div>
+                <div class="about-company__column">
+                  <a href="#" class="about-company__link btn btn_link">
+                    <span class="btn__text txt txt_16">О компании</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="8"
+                      height="15"
+                      viewBox="0 0 8 15"
+                      fill="none">
+                      <path
+                        d="M1 1.5L7 7.5L1 13.5"
+                        stroke="white"
+                        stroke-width="1.3"
+                        stroke-linecap="round" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="about-company__image-wrap image-gradient">
+              <picture
+                ><source
+                  data-srcset="img/cf7335945d95459041d77cb23159663c.webp"
+                  srcset="
+                    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                  "
+                  type="image/webp" />
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="img/cf7335945d95459041d77cb23159663c.webp"
+                  alt=""
+                  class="about-company__image"
+              /></picture>
+            </div>
+          </div>
+        </section>
+        <section class="mainpage__services services grid">
+          <div class="services__container container">
+            <div class="services__head">
+              <span class="services__title tl1">услуги</span>
+              <a href="#" class="services__btn btn btn_primary">
+                <span class="btn__text txt txt_18">Обсудить проект</span>
+                <svg
+                  width="16"
+                  height="15"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 1.5L7 7.5L1 13.5"
+                    stroke="#1A1A1A"
+                    stroke-width="1.5"
+                    stroke-linecap="round" />
+                  <path
+                    d="M8 1.5L14 7.5L8 13.5"
+                    stroke="#1A1A1A"
+                    stroke-width="1.5"
+                    stroke-linecap="round" />
+                </svg>
+              </a>
+            </div>
+            <div class="services__body">
+              <div class="services__card card-services">
+                <div class="card-services__image-wrap">
+                  <picture
+                    ><source
+                      data-srcset="img/services/f7f9d1d4ef52add7f48219223305293e.webp"
+                      srcset="
+                        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                      "
+                      type="image/webp" />
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="img/services/f7f9d1d4ef52add7f48219223305293e.webp"
+                      alt=""
+                      class="card-services__image"
+                  /></picture>
+                </div>
+                <div class="card-services__text-wrap">
+                  <span class="card-services__heading tl2">Проектирование</span>
+                  <p class="card-services__text txt">
+                    Создание архитектурного проекта начинается с наброска от
+                    руки, в котором архитектор стремится реализовать и передать
+                    свою идею.
+                  </p>
+                  <span class="card-services__num">01</span>
+                </div>
+              </div>
+              <div class="services__card card-services card-services_reversed">
+                <div class="card-services__image-wrap">
+                  <picture
+                    ><source
+                      data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                      srcset="
+                        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                      "
+                      type="image/webp" />
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                      alt=""
+                      class="card-services__image"
+                  /></picture>
+                </div>
+                <div class="card-services__text-wrap">
+                  <span class="card-services__heading tl2">строительство</span>
+                  <p class="card-services__text txt">
+                    Создание архитектурного проекта начинается с наброска от
+                    руки, в котором архитектор стремится реализовать и передать
+                    свою идею.
+                  </p>
+                  <span class="card-services__num">02</span>
+                </div>
+              </div>
+              <div class="services__card card-services">
+                <div class="card-services__image-wrap">
+                  <picture
+                    ><source
+                      data-srcset="img/services/e9b0a80db0c218d2efc4ed35e174114b.webp"
+                      srcset="
+                        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                      "
+                      type="image/webp" />
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="img/services/e9b0a80db0c218d2efc4ed35e174114b.webp"
+                      alt=""
+                      class="card-services__image"
+                  /></picture>
+                </div>
+                <div class="card-services__text-wrap">
+                  <span class="card-services__heading tl2"
+                    >реализация проекта - ремонт</span
+                  >
+                  <p class="card-services__text txt">
+                    Создание архитектурного проекта начинается с наброска от
+                    руки, в котором архитектор стремится реализовать и передать
+                    свою идею.
+                  </p>
+                  <span class="card-services__num">03</span>
+                </div>
+              </div>
+              <div class="services__card card-services card-services_reversed">
+                <div class="card-services__image-wrap">
+                  <picture
+                    ><source
+                      data-srcset="img/services/9ad0e92ca03b5fd5054327eaa1f8ad8e.webp"
+                      srcset="
+                        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                      "
+                      type="image/webp" />
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="img/services/9ad0e92ca03b5fd5054327eaa1f8ad8e.webp"
+                      alt=""
+                      class="card-services__image"
+                  /></picture>
+                </div>
+                <div class="card-services__text-wrap">
+                  <span class="card-services__heading tl2"
+                    >реализация проекта - ремонт</span
+                  >
+                  <p class="card-services__text txt">
+                    Создание архитектурного проекта начинается с наброска от
+                    руки, в котором архитектор стремится реализовать и передать
+                    свою идею.
+                  </p>
+                  <span class="card-services__num">04</span>
+                </div>
+              </div>
+              <div class="services__card card-services">
+                <div class="card-services__image-wrap">
+                  <picture
+                    ><source
+                      data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                      srcset="
+                        data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                      "
+                      type="image/webp" />
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                      alt=""
+                      class="card-services__image"
+                  /></picture>
+                </div>
+                <div class="card-services__text-wrap">
+                  <span class="card-services__heading tl2"
+                    >подбор земельных участков</span
+                  >
+                  <p class="card-services__text txt">
+                    Создание архитектурного проекта начинается с наброска от
+                    руки, в котором архитектор стремится реализовать и передать
+                    свою идею.
+                  </p>
+                  <span class="card-services__num">05</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mainpage__privileges privileges grid">
+          <div class="privileges__container container">
+            <div class="privileges__head">
+              <span class="privileges__title tl1">Почему выбирают нас</span>
+            </div>
+            <div class="privileges__body">
+              <div class="privileges__image-wrap">
+                <picture
+                  ><source
+                    data-srcset="img/privileges/4e04512d3aea758da878b88dfb4bd43d.webp"
+                    srcset="
+                      data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                    "
+                    type="image/webp" />
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                    data-src="img/privileges/4e04512d3aea758da878b88dfb4bd43d.webp"
+                    alt=""
+                    class="privileges__image"
+                /></picture>
+              </div>
+              <div class="privileges__cards">
+                <div class="privileges__row">
+                  <div class="privileges__card privileges__card_text">
+                    <span class="privileges__heading tl3"
+                      >Индивидуальный дизайн</span
+                    >
+                    <p class="privileges__text txt txt_16">
+                      Архитекторы и дизайнеры нашей компании разрабатывают
+                      уникальные и персонализированные проекты, учитывая
+                      потребности каждого клиента.
+                    </p>
+                  </div>
+                  <div class="privileges__card privileges__card_text">
+                    <span class="privileges__heading tl3"
+                      >Управление бюджетом</span
+                    >
+                    <p class="privileges__text txt txt_16">
+                      Мы помогаем клиентам управлять бюджетом проекта, и
+                      контролируем ход стройки, выбирая оптимальные решения и
+                      материалы.
+                    </p>
+                  </div>
+                </div>
+                <div class="privileges__row">
+                  <div class="privileges__card privileges__card_text">
+                    <span class="privileges__heading tl3"
+                      >Сокращение рисков</span
+                    >
+                    <p class="privileges__text txt txt_16">
+                      Благодаря профессиональному подходу и опыту нашей команды,
+                      мы можем помочь избежать ошибок и минимизировать риски при
+                      строительстве.
+                    </p>
+                  </div>
+                  <div class="privileges__card privileges__card_img">
+                    <picture
+                      ><source
+                        data-srcset="img/privileges/829bef0dbbc98b229423bfd106f76ec6.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/privileges/829bef0dbbc98b229423bfd106f76ec6.webp"
+                        alt=""
+                        class="privileges__card-image"
+                    /></picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mainpage__team team grid">
+          <div class="team__container container">
+            <div class="team__head">
+              <span class="team__title tl1">RUNA CONSTRUCTION</span>
+            </div>
+            <div class="team__body">
+              <div class="team__content">
+                <div class="team__info">
+                  <div class="team__group">
+                    <span class="team__group-heading txt txt_16"
+                      >Иван Иванов</span
+                    >
+                    <span class="team__group-txt txt txt_18">Основатель</span>
+                  </div>
+                  <div class="team__group">
+                    <span class="team__group-heading txt txt_16"
+                      >Артём Артёмов</span
+                    >
+                    <span class="team__group-txt txt txt_18">Заместитель</span>
+                  </div>
+                </div>
+                <p class="team__text txt">
+                  Команда под руководством креативного директора бюро Ивана
+                  Иванова посвятила себя созданию мест, где человек реализует
+                  себя. Наш ориентир – мировая культура проектирования
+                  пространств для работы, общения и творчества. Создавая с
+                  помощью архитектуры качественную среду для жизни, мы можем
+                  видеть, как улучшается сама жизнь. В такой среде
+                  поддерживается здоровье человека, формируется семья,
+                  развивается успешный бизнес.
+                </p>
+              </div>
+              <div class="team__image-wrap image-gradient">
+                <picture
+                  ><source
+                    data-srcset="img/013be35cfb49e64226e932d934cd3aa0.webp"
+                    srcset="
+                      data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                    "
+                    type="image/webp" />
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                    data-src="img/013be35cfb49e64226e932d934cd3aa0.webp"
+                    alt=""
+                    class="team__image"
+                /></picture>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mainpage__request request grid">
+          <div class="request__container container">
+            <div class="request__image-wrap">
+              <picture
+                ><source
+                  srcset="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
+                  type="image/webp" />
+                <img
+                  src="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
+                  alt=""
+                  class="request__image"
+              /></picture>
+            </div>
+            <div class="request__content">
+              <div class="request__text-wrap">
+                <span class="request__title tl1">Оставьте заявку</span>
+                <p class="request__text txt txt_18">
+                  Мы ответим на любые интересующие вас вопросы
+                </p>
+              </div>
+              <form action="#" data-dev class="request__form form">
+                <div class="request__fields">
+                  <div class="request__input input">
+                    <input
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      placeholder="Имя"
+                      data-error="Поле не заполнено"
+                      class="input__field" />
+                  </div>
+                  <div class="request__input input">
+                    <input
+                      data-validate
+                      data-required="tel"
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      data-error="Поле не заполнено"
+                      placeholder="Телефон"
+                      class="input__field" />
+                  </div>
+                  <div class="request__input input">
+                    <input
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      data-error="Поле не заполнено"
+                      placeholder="Комментарий"
+                      class="input__field" />
+                  </div>
+                  <div
+                    data-da=".request__form,768,last"
+                    class="request__checkbox checkbox">
+                    <input
+                      id="c_1"
+                      data-error
+                      data-required
+                      data-validate
+                      class="checkbox__input"
+                      type="checkbox"
+                      value="1"
+                      name="form[]" />
+                    <label for="c_1" class="checkbox__label"
+                      ><span class="checkbox__text txt txt_16"
+                        >Я согласен на обработку персональных данных</span
+                      ></label
+                    >
+                  </div>
+                </div>
+                <button type="submit" class="request__btn btn btn_primary">
+                  <span class="btn__text txt txt_16">Отправить</span>
+                  <svg
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 1.5L7 7.5L1 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                    <path
+                      d="M8 1.5L14 7.5L8 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer grid">
+        <div class="footer__container container">
+          <div class="footer__row footer__row_upper">
+            <div class="footer__contacts">
+              <a href="tel:+79999999999" class="footer__tel tl1 reg"
+                >+7 999 999 - 99 - 99</a
+              >
+              <a href="mailto:forexample@.com" class="footer__mail txt reg"
+                >forexample@.com</a
+              >
+            </div>
+            <ul data-da=".footer__container,768,last" class="footer__socials">
+              <li class="footer__socials-item">
+                <a href="#" target="_blank" class="footer__socials-link"
+                  ><img
+                    src="img/icons/ig.svg"
+                    alt=""
+                    class="footer__socials-icon"
+                /></a>
+              </li>
+              <li class="footer__socials-item">
+                <a href="#" target="_blank" class="footer__socials-link"
+                  ><img
+                    src="img/icons/yt.svg"
+                    alt=""
+                    class="footer__socials-icon"
+                /></a>
+              </li>
+              <li class="footer__socials-item">
+                <a href="#" target="_blank" class="footer__socials-link"
+                  ><img
+                    src="img/icons/tg.svg"
+                    alt=""
+                    class="footer__socials-icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__row footer__row_lower">
+            <div class="footer__address">
+              <span class="footer__address-heading tl2">руна</span>
+              <p class="footer__address-text txt txt_18">
+                г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
+              </p>
+            </div>
+            <nav class="footer__navigation">
+              <ul class="footer__navigation-list">
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">о нас</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">проекты</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">портфолио</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231106173122"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231106173122"></script>
+    <script src="js/app.min.js?_v=20231106173122"></script>
+  </body>
 </html>

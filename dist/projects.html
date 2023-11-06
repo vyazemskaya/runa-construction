@@ -1,432 +1,795 @@
 <!doctype html>
 <html lang="ru">
+  <head>
+    <title>Проекты</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- <style>body{opacity: 0;}</style> -->
+    <link rel="stylesheet" href="css/style.min.css?_v=20231106173122" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU"></script>
+  </head>
 
-<head>
-	<title>Проекты</title>
-	<meta charset="UTF-8" />
-	<meta name="format-detection" content="telephone=no" />
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231106172701" />
-	<link rel="shortcut icon" href="favicon.ico" />
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <script
-    src="https://api-maps.yandex.ru/v3/?apikey=<YOUR_APIKEY>&lang=en_US"
-    type="text/javascript"></script> -->
-	<script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU&_v=20231106172701"></script>
-	<!-- 893d068f-6a82-4f63-aec8-f0e9ed9ed59c -->
-</head>
-
-<body style="opacity: 0">
-	<div class="wrapper">
-		<main class="main projects-page">
-			<section class="projects-page__hero hero grid">
-				<div class="hero__sidebar sidebar">
-					<div class="sidebar__inner">
-						<a href="#" class="sidebar__logo-wrap"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" class="sidebar__logo" /></picture></a>
-						<a data-da=".menu__body,768,last" href="tel:79999999999" class="sidebar__tel txt txt_16">+7 (999) 999 99 - 99</a>
-						<div class="sidebar__menu menu">
-							<button id="hamburger" type="button" class="menu__hamburger-wrap">
-								<div class="menu__hamburger hamburger"><span></span></div>
-								<span class="menu__hamburger-txt txt txt_16 desktop-only">меню</span>
-							</button>
-							<nav class="menu__body">
-								<ul class="menu__list txt txt_16">
-									<li class="menu__item">
-										<a href="#" class="menu__link">о нас</a>
-									</li>
-									<li class="menu__item">
-										<a href="#" class="menu__link">проекты</a>
-									</li>
-									<li class="menu__item">
-										<a href="#" class="menu__link">портфолио</a>
-									</li>
-									<li class="menu__item">
-										<a href="#" class="menu__link">контакты</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-						<ul data-da=".menu__body,768,last" class="sidebar__socials">
-							<li class="sidebar__socials-item">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/ig.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-							<li class="sidebar__socials-item">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/yt.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-							<li class="sidebar__socials-item _mobile-only">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/tg.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-							<li class="sidebar__socials-item _mobile-only">
-								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/wp.svg" alt="" class="sidebar__socials-icon" /></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="hero__body">
-					<div class="hero__container container">
-						<div class="hero__text-wrap">
-							<span class="hero__title tl1">
-								<span class="hero__title-txt reg">завершённые</span>
-								<span class="hero__title-txt">проекты</span>
-							</span>
-							<p class="hero__text txt txt_16">
-								В каждом нашем проекте заложен уникальный смысл
-							</p>
-							<button type="button" class="hero__btn btn btn_primary">
-								<span class="btn__text txt txt_16">Заказать звонок</span>
-								<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-									<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-								</svg>
-							</button>
-						</div>
-						<div class="hero__slider swiper">
-							<div class="hero__wrapper swiper-wrapper">
-								<div class="hero__slide swiper-slide">
-									<p class="hero__slide-text txt txt_16">
-										Монтесито <span>1855 м2</span>
-									</p>
-									<div class="hero__bg-image">
-										<picture><source srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" type="image/webp"><img src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" alt="" class="hero__image" /></picture>
-									</div>
-								</div>
-								<div class="hero__slide swiper-slide">
-									<p class="hero__slide-text txt txt_16">
-										Монтесито <span>1855 м2</span>
-									</p>
-									<div class="hero__bg-image">
-										<picture><source srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" type="image/webp"><img src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" alt="" class="hero__image" /></picture>
-									</div>
-								</div>
-								<div class="hero__slide swiper-slide">
-									<p class="hero__slide-text txt txt_16">
-										Монтесито <span>1855 м2</span>
-									</p>
-									<div class="hero__bg-image">
-										<picture><source srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" type="image/webp"><img src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" alt="" class="hero__image" /></picture>
-									</div>
-								</div>
-								<div class="hero__slide swiper-slide">
-									<p class="hero__slide-text txt txt_16">
-										Монтесито <span>1855 м2</span>
-									</p>
-									<div class="hero__bg-image">
-										<picture><source srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" type="image/webp"><img src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp" alt="" class="hero__image" /></picture>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="hero__slider-control">
-							<p class="hero__text txt txt_16">
-								Любим и проектируем современные дома
-							</p>
-							<div class="hero__slider-nav-wrap">
-								<div class="hero__slider-nav">
-									<button type="button" class="hero__slider-arr hero__slider-arr_prev nav-btn">
-										<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<circle cx="30" cy="30" r="29" stroke="white" stroke-width="2" />
-											<path d="M33 39L24 30L33 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-									</button>
-									<button type="button" class="hero__slider-arr hero__slider-arr_next nav-btn">
-										<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<circle cx="30" cy="30" r="29" transform="matrix(-1 0 0 1 60 0)" stroke="white" stroke-width="2" />
-											<path d="M27 21L36 30L27 39" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-									</button>
-								</div>
-								<span class="hero__slide-text txt txt_16"></span>
-							</div>
-							<div class="hero__slider-fraction sl-fraction">
-								<span class="sl-fraction__progress"></span>
-								<span id="projects-sl-fraction" class="sl-fraction__content txt txt_16"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="projects-page__projects projects grid">
-				<div class="projects__container container">
-					<span class="projects__title tl1">все проекты</span>
-					<div class="projects__tabs swiper">
-						<div class="projects__tabs-wrapper swiper-wrapper">
-							<div class="projects__tabs-col">
-								<button data-tab type="button" class="projects__tab tab tab_fc swiper-slide">
-									<span class="tab__text txt txt_16">проектирование</span>
-								</button>
-								<button data-tab type="button" class="projects__tab tab swiper-slide">
-									<span class="tab__text txt txt_16">строительство</span>
-								</button>
-								<button data-tab type="button" class="projects__tab tab swiper-slide _active">
-									<span class="tab__text txt txt_16">дизайн интерьеров</span>
-								</button>
-							</div>
-							<div class="projects__tabs-col">
-								<button data-tab type="button" class="projects__tab tab swiper-slide">
-									<span class="tab__text txt txt_16">реализация проекта - ремонт</span>
-								</button>
-								<button data-tab type="button" class="projects__tab tab swiper-slide">
-									<span class="tab__text txt txt_16">подбор земельных участков</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div class="projects__body">
-						<div class="projects__card card-projects">
-							<div class="card-projects__inner">
-								<a href="#" class="card-projects__image-wrap"><picture><source data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" alt="" class="card-projects__image" /></picture></a>
-								<div class="card-projects__heading-wrap">
-									<span class="card-projects__heading tl1">Монтесино</span>
-									<a href="#" class="card-projects__link btn btn_link">
-										<span class="btn__text txt txt_16">Подробнее</span>
-										<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-										</svg>
-									</a>
-								</div>
-								<div class="card-projects__info-wrap txt txt_18">
-									<span class="card-projects__info">Проектирование</span>
-									<span class="card-projects__info">1815м2</span>
-								</div>
-							</div>
-						</div>
-						<div class="projects__card card-projects">
-							<div class="card-projects__inner">
-								<a href="#" class="card-projects__image-wrap"><picture><source data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" alt="" class="card-projects__image" /></picture></a>
-								<div class="card-projects__heading-wrap">
-									<span class="card-projects__heading tl1">ГАМБУРГ</span>
-									<a href="#" class="card-projects__link btn btn_link">
-										<span class="btn__text txt txt_16">Подробнее</span>
-										<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-										</svg>
-									</a>
-								</div>
-								<div class="card-projects__info-wrap txt txt_18">
-									<span class="card-projects__info">Cтроительство</span>
-									<span class="card-projects__info">960м2</span>
-								</div>
-							</div>
-						</div>
-						<div class="projects__card card-projects">
-							<div class="card-projects__inner">
-								<a href="#" class="card-projects__image-wrap"><picture><source data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" alt="" class="card-projects__image" /></picture></a>
-								<div class="card-projects__heading-wrap">
-									<span class="card-projects__heading tl1">ГАМБУРГ</span>
-									<a href="#" class="card-projects__link btn btn_link">
-										<span class="btn__text txt txt_16">Подробнее</span>
-										<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-										</svg>
-									</a>
-								</div>
-								<div class="card-projects__info-wrap txt txt_18">
-									<span class="card-projects__info">Cтроительство</span>
-									<span class="card-projects__info">960м2</span>
-								</div>
-							</div>
-						</div>
-						<div class="projects__card card-projects">
-							<div class="card-projects__inner">
-								<a href="#" class="card-projects__image-wrap"><picture><source data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" alt="" class="card-projects__image" /></picture></a>
-								<div class="card-projects__heading-wrap">
-									<span class="card-projects__heading tl1">Монтесино</span>
-									<a href="#" class="card-projects__link btn btn_link">
-										<span class="btn__text txt txt_16">Подробнее</span>
-										<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-										</svg>
-									</a>
-								</div>
-								<div class="card-projects__info-wrap txt txt_18">
-									<span class="card-projects__info">Проектирование</span>
-									<span class="card-projects__info">1815м2</span>
-								</div>
-							</div>
-						</div>
-						<div class="projects__card card-projects">
-							<div class="card-projects__inner">
-								<a href="#" class="card-projects__image-wrap"><picture><source data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp" alt="" class="card-projects__image" /></picture></a>
-								<div class="card-projects__heading-wrap">
-									<span class="card-projects__heading tl1">Монтесино</span>
-									<a href="#" class="card-projects__link btn btn_link">
-										<span class="btn__text txt txt_16">Подробнее</span>
-										<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-										</svg>
-									</a>
-								</div>
-								<div class="card-projects__info-wrap txt txt_18">
-									<span class="card-projects__info">Проектирование</span>
-									<span class="card-projects__info">1815м2</span>
-								</div>
-							</div>
-						</div>
-						<div class="projects__card card-projects">
-							<div class="card-projects__inner">
-								<a href="#" class="card-projects__image-wrap"><picture><source data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp" alt="" class="card-projects__image" /></picture></a>
-								<div class="card-projects__heading-wrap">
-									<span class="card-projects__heading tl1">ГАМБУРГ</span>
-									<a href="#" class="card-projects__link btn btn_link">
-										<span class="btn__text txt txt_16">Подробнее</span>
-										<svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M1 1.5L7 7.5L1 13.5" stroke="white" stroke-width="1.3" stroke-linecap="round" />
-										</svg>
-									</a>
-								</div>
-								<div class="card-projects__info-wrap txt txt_18">
-									<span class="card-projects__info">Cтроительство</span>
-									<span class="card-projects__info">960м2</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<a href="#" class="projects__btn btn btn_primary">
-						<span class="btn__text txt txt_16">Загрузить ещё</span>
-						<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-							<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-						</svg>
-					</a>
-				</div>
-			</section>
-			<section class="projects-page__image-text image-text grid">
-				<div class="image-text__container container">
-					<div class="image-text__text-wrap">
-						<div class="image-text__head">
-							<span class="image-text__title tl1">
-								<span class="image-text__title-txt reg">ГОТОВЫЙ ПРОЕКТ</span>
-								<span class="image-text__title-txt">ЗАГОРОДНОГО ДОМА</span>
-							</span>
-						</div>
-						<div class="image-text__body">
-							<div class="image-text__col">
-								<p class="image-text__text txt txt_18">
-									Каждый проект загородного дома – это идеально выверенная
-									планировка, сочетающиеся материалы стен, отделки и кровли,
-									тщательно проверенный на предмет удобства и достаточности
-									метраж помещений.
-								</p>
-								<p class="image-text__text txt txt_18">
-									Благодаря наличию готовых решений, клиенты компании "Runa
-									Conctrucrion" имеют возможность легко подобрать идеальный,
-									отвечающий всем запросам относительно площади, этажности и
-									планировки проект дома и сэкономить за счет отказа от
-									разработки проекта с нуля.
-								</p>
-							</div>
-							<div class="image-text__col">
-								<p class="image-text__text txt txt_18">
-									Большинство типовых проектов могут быть изменены!
-									Незначительные коррективы в планировке, метраже, добавление
-									пристроек и прочее позволят максимально приблизить проект к
-									вашему идеальному загородному дому.
-								</p>
-								<p class="image-text__text txt txt_18">
-									Для разработки собственного проекта, обращайтесь в наше
-									архитектурное бюро, где можно заказать индивидуальный проект
-									загородного дома!
-								</p>
-							</div>
-						</div>
-					</div>
-					<div data-da=".image-text__text-wrap,768,1" class="image-text__image-wrap">
-						<picture><source srcset="img/d596a9d66ee428f137cd808cfa8f3389.webp" type="image/webp"><img src="img/d596a9d66ee428f137cd808cfa8f3389.webp" alt="" class="image-text__image" /></picture>
-					</div>
-				</div>
-			</section>
-			<section class="projects-page__request request grid">
-				<div class="request__container container">
-					<div class="request__image-wrap">
-						<picture><source srcset="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp" type="image/webp"><img src="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp" alt="" class="request__image" /></picture>
-					</div>
-					<div class="request__content">
-						<div class="request__text-wrap">
-							<span class="request__title tl1">Оставьте заявку</span>
-							<p class="request__text txt txt_18">
-								Мы ответим на любые интересующие вас вопросы
-							</p>
-						</div>
-						<form action="#" data-dev class="request__form form">
-							<div class="request__fields">
-								<div class="request__input input">
-									<input data-validate data-required autocomplete="off" type="text" name="form[]" placeholder="Имя" data-error="Поле не заполнено" class="input__field" />
-								</div>
-								<div class="request__input input">
-									<input data-validate data-required="tel" autocomplete="off" type="text" name="form[]" data-error="Поле не заполнено" placeholder="Телефон" class="input__field" />
-								</div>
-								<div class="request__input input">
-									<input data-validate data-required autocomplete="off" type="text" name="form[]" data-error="Поле не заполнено" placeholder="Комментарий" class="input__field" />
-								</div>
-								<div data-da=".request__form,768,last" class="request__checkbox checkbox">
-									<input id="c_1" data-error data-required data-validate class="checkbox__input" type="checkbox" value="1" name="form[]" />
-									<label for="c_1" class="checkbox__label"><span class="checkbox__text txt txt_16">Я согласен на обработку персональных данных</span></label>
-								</div>
-							</div>
-							<button type="submit" class="request__btn btn btn_primary">
-								<span class="btn__text txt txt_16">Отправить</span>
-								<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-									<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
-								</svg>
-							</button>
-						</form>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer grid">
-			<div class="footer__container container">
-				<div class="footer__row footer__row_upper">
-					<div class="footer__contacts">
-						<a href="tel:+79999999999" class="footer__tel tl1 reg">+7 999 999 - 99 - 99</a>
-						<a href="mailto:forexample@.com" class="footer__mail txt reg">forexample@.com</a>
-					</div>
-					<ul data-da=".footer__container,768,last" class="footer__socials">
-						<li class="footer__socials-item">
-							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/ig.svg" alt="" class="footer__socials-icon" /></a>
-						</li>
-						<li class="footer__socials-item">
-							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/yt.svg" alt="" class="footer__socials-icon" /></a>
-						</li>
-						<li class="footer__socials-item">
-							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/tg.svg" alt="" class="footer__socials-icon" /></a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__row footer__row_lower">
-					<div class="footer__address">
-						<span class="footer__address-heading tl2">руна</span>
-						<p class="footer__address-text txt txt_18">
-							г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
-						</p>
-					</div>
-					<nav class="footer__navigation">
-						<ul class="footer__navigation-list">
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">о нас</a>
-							</li>
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">проекты</a>
-							</li>
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">портфолио</a>
-							</li>
-							<li class="footer__navigation-item">
-								<a href="#" class="footer__navigation-link">контакты</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</footer>
-
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231106172701"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231106172701"></script>
-	<script src="js/app.min.js?_v=20231106172701"></script>
-
-</body>
-
+  <body style="opacity: 0">
+    <div class="wrapper">
+      <main class="main projects-page">
+        <section class="projects-page__hero hero grid">
+          <div class="hero__sidebar sidebar">
+            <div class="sidebar__inner">
+              <a href="#" class="sidebar__logo-wrap"
+                ><picture
+                  ><source srcset="img/logo.webp" type="image/webp" />
+                  <img
+                    src="img/logo.png"
+                    alt=""
+                    class="sidebar__logo" /></picture
+              ></a>
+              <a
+                data-da=".menu__body,768,last"
+                href="tel:79999999999"
+                class="sidebar__tel txt txt_16"
+                >+7 (999) 999 99 - 99</a
+              >
+              <div class="sidebar__menu menu">
+                <button
+                  id="hamburger"
+                  type="button"
+                  class="menu__hamburger-wrap">
+                  <div class="menu__hamburger hamburger"><span></span></div>
+                  <span class="menu__hamburger-txt txt txt_16 desktop-only"
+                    >меню</span
+                  >
+                </button>
+                <nav class="menu__body">
+                  <ul class="menu__list txt txt_16">
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">о нас</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">проекты</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">портфолио</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#" class="menu__link">контакты</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <ul data-da=".menu__body,768,last" class="sidebar__socials">
+                <li class="sidebar__socials-item">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/ig.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/yt.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item _mobile-only">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/tg.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+                <li class="sidebar__socials-item _mobile-only">
+                  <a href="#" target="_blank" class="sidebar__socials-link"
+                    ><img
+                      src="img/icons/wp.svg"
+                      alt=""
+                      class="sidebar__socials-icon"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero__body">
+            <div class="hero__container container">
+              <div class="hero__text-wrap">
+                <span class="hero__title tl1">
+                  <span class="hero__title-txt reg">завершённые</span>
+                  <span class="hero__title-txt">проекты</span>
+                </span>
+                <p class="hero__text txt txt_16">
+                  В каждом нашем проекте заложен уникальный смысл
+                </p>
+                <button type="button" class="hero__btn btn btn_primary">
+                  <span class="btn__text txt txt_16">Заказать звонок</span>
+                  <svg
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 1.5L7 7.5L1 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                    <path
+                      d="M8 1.5L14 7.5L8 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="hero__slider swiper">
+                <div class="hero__wrapper swiper-wrapper">
+                  <div class="hero__slide swiper-slide">
+                    <p class="hero__slide-text txt txt_16">
+                      Монтесито <span>1855 м2</span>
+                    </p>
+                    <div class="hero__bg-image">
+                      <picture
+                        ><source
+                          srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          type="image/webp" />
+                        <img
+                          src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          alt=""
+                          class="hero__image"
+                      /></picture>
+                    </div>
+                  </div>
+                  <div class="hero__slide swiper-slide">
+                    <p class="hero__slide-text txt txt_16">
+                      Монтесито <span>1855 м2</span>
+                    </p>
+                    <div class="hero__bg-image">
+                      <picture
+                        ><source
+                          srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          type="image/webp" />
+                        <img
+                          src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          alt=""
+                          class="hero__image"
+                      /></picture>
+                    </div>
+                  </div>
+                  <div class="hero__slide swiper-slide">
+                    <p class="hero__slide-text txt txt_16">
+                      Монтесито <span>1855 м2</span>
+                    </p>
+                    <div class="hero__bg-image">
+                      <picture
+                        ><source
+                          srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          type="image/webp" />
+                        <img
+                          src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          alt=""
+                          class="hero__image"
+                      /></picture>
+                    </div>
+                  </div>
+                  <div class="hero__slide swiper-slide">
+                    <p class="hero__slide-text txt txt_16">
+                      Монтесито <span>1855 м2</span>
+                    </p>
+                    <div class="hero__bg-image">
+                      <picture
+                        ><source
+                          srcset="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          type="image/webp" />
+                        <img
+                          src="img/6d1e4c619e8a4d5ca91b4589aabd06cc.webp"
+                          alt=""
+                          class="hero__image"
+                      /></picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero__slider-control">
+                <p class="hero__text txt txt_16">
+                  Любим и проектируем современные дома
+                </p>
+                <div class="hero__slider-nav-wrap">
+                  <div class="hero__slider-nav">
+                    <button
+                      type="button"
+                      class="hero__slider-arr hero__slider-arr_prev nav-btn">
+                      <svg
+                        width="60"
+                        height="60"
+                        viewBox="0 0 60 60"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="29"
+                          stroke="white"
+                          stroke-width="2" />
+                        <path
+                          d="M33 39L24 30L33 21"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      class="hero__slider-arr hero__slider-arr_next nav-btn">
+                      <svg
+                        width="60"
+                        height="60"
+                        viewBox="0 0 60 60"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle
+                          cx="30"
+                          cy="30"
+                          r="29"
+                          transform="matrix(-1 0 0 1 60 0)"
+                          stroke="white"
+                          stroke-width="2" />
+                        <path
+                          d="M27 21L36 30L27 39"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                  <span class="hero__slide-text txt txt_16"></span>
+                </div>
+                <div class="hero__slider-fraction sl-fraction">
+                  <span class="sl-fraction__progress"></span>
+                  <span
+                    id="projects-sl-fraction"
+                    class="sl-fraction__content txt txt_16"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="projects-page__projects projects grid">
+          <div class="projects__container container">
+            <span class="projects__title tl1">все проекты</span>
+            <div class="projects__tabs swiper">
+              <div class="projects__tabs-wrapper swiper-wrapper">
+                <div class="projects__tabs-col">
+                  <button
+                    data-tab
+                    type="button"
+                    class="projects__tab tab tab_fc swiper-slide">
+                    <span class="tab__text txt txt_16">проектирование</span>
+                  </button>
+                  <button
+                    data-tab
+                    type="button"
+                    class="projects__tab tab swiper-slide">
+                    <span class="tab__text txt txt_16">строительство</span>
+                  </button>
+                  <button
+                    data-tab
+                    type="button"
+                    class="projects__tab tab swiper-slide _active">
+                    <span class="tab__text txt txt_16">дизайн интерьеров</span>
+                  </button>
+                </div>
+                <div class="projects__tabs-col">
+                  <button
+                    data-tab
+                    type="button"
+                    class="projects__tab tab swiper-slide">
+                    <span class="tab__text txt txt_16"
+                      >реализация проекта - ремонт</span
+                    >
+                  </button>
+                  <button
+                    data-tab
+                    type="button"
+                    class="projects__tab tab swiper-slide">
+                    <span class="tab__text txt txt_16"
+                      >подбор земельных участков</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="projects__body">
+              <div class="projects__card card-projects">
+                <div class="card-projects__inner">
+                  <a href="#" class="card-projects__image-wrap"
+                    ><picture
+                      ><source
+                        data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                        alt=""
+                        class="card-projects__image" /></picture
+                  ></a>
+                  <div class="card-projects__heading-wrap">
+                    <span class="card-projects__heading tl1">Монтесино</span>
+                    <a href="#" class="card-projects__link btn btn_link">
+                      <span class="btn__text txt txt_16">Подробнее</span>
+                      <svg
+                        width="8"
+                        height="15"
+                        viewBox="0 0 8 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 1.5L7 7.5L1 13.5"
+                          stroke="white"
+                          stroke-width="1.3"
+                          stroke-linecap="round" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-projects__info-wrap txt txt_18">
+                    <span class="card-projects__info">Проектирование</span>
+                    <span class="card-projects__info">1815м2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__card card-projects">
+                <div class="card-projects__inner">
+                  <a href="#" class="card-projects__image-wrap"
+                    ><picture
+                      ><source
+                        data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                        alt=""
+                        class="card-projects__image" /></picture
+                  ></a>
+                  <div class="card-projects__heading-wrap">
+                    <span class="card-projects__heading tl1">ГАМБУРГ</span>
+                    <a href="#" class="card-projects__link btn btn_link">
+                      <span class="btn__text txt txt_16">Подробнее</span>
+                      <svg
+                        width="8"
+                        height="15"
+                        viewBox="0 0 8 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 1.5L7 7.5L1 13.5"
+                          stroke="white"
+                          stroke-width="1.3"
+                          stroke-linecap="round" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-projects__info-wrap txt txt_18">
+                    <span class="card-projects__info">Cтроительство</span>
+                    <span class="card-projects__info">960м2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__card card-projects">
+                <div class="card-projects__inner">
+                  <a href="#" class="card-projects__image-wrap"
+                    ><picture
+                      ><source
+                        data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                        alt=""
+                        class="card-projects__image" /></picture
+                  ></a>
+                  <div class="card-projects__heading-wrap">
+                    <span class="card-projects__heading tl1">ГАМБУРГ</span>
+                    <a href="#" class="card-projects__link btn btn_link">
+                      <span class="btn__text txt txt_16">Подробнее</span>
+                      <svg
+                        width="8"
+                        height="15"
+                        viewBox="0 0 8 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 1.5L7 7.5L1 13.5"
+                          stroke="white"
+                          stroke-width="1.3"
+                          stroke-linecap="round" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-projects__info-wrap txt txt_18">
+                    <span class="card-projects__info">Cтроительство</span>
+                    <span class="card-projects__info">960м2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__card card-projects">
+                <div class="card-projects__inner">
+                  <a href="#" class="card-projects__image-wrap"
+                    ><picture
+                      ><source
+                        data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                        alt=""
+                        class="card-projects__image" /></picture
+                  ></a>
+                  <div class="card-projects__heading-wrap">
+                    <span class="card-projects__heading tl1">Монтесино</span>
+                    <a href="#" class="card-projects__link btn btn_link">
+                      <span class="btn__text txt txt_16">Подробнее</span>
+                      <svg
+                        width="8"
+                        height="15"
+                        viewBox="0 0 8 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 1.5L7 7.5L1 13.5"
+                          stroke="white"
+                          stroke-width="1.3"
+                          stroke-linecap="round" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-projects__info-wrap txt txt_18">
+                    <span class="card-projects__info">Проектирование</span>
+                    <span class="card-projects__info">1815м2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__card card-projects">
+                <div class="card-projects__inner">
+                  <a href="#" class="card-projects__image-wrap"
+                    ><picture
+                      ><source
+                        data-srcset="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                        alt=""
+                        class="card-projects__image" /></picture
+                  ></a>
+                  <div class="card-projects__heading-wrap">
+                    <span class="card-projects__heading tl1">Монтесино</span>
+                    <a href="#" class="card-projects__link btn btn_link">
+                      <span class="btn__text txt txt_16">Подробнее</span>
+                      <svg
+                        width="8"
+                        height="15"
+                        viewBox="0 0 8 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 1.5L7 7.5L1 13.5"
+                          stroke="white"
+                          stroke-width="1.3"
+                          stroke-linecap="round" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-projects__info-wrap txt txt_18">
+                    <span class="card-projects__info">Проектирование</span>
+                    <span class="card-projects__info">1815м2</span>
+                  </div>
+                </div>
+              </div>
+              <div class="projects__card card-projects">
+                <div class="card-projects__inner">
+                  <a href="#" class="card-projects__image-wrap"
+                    ><picture
+                      ><source
+                        data-srcset="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                        srcset="
+                          data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=
+                        "
+                        type="image/webp" />
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        data-src="img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                        alt=""
+                        class="card-projects__image" /></picture
+                  ></a>
+                  <div class="card-projects__heading-wrap">
+                    <span class="card-projects__heading tl1">ГАМБУРГ</span>
+                    <a href="#" class="card-projects__link btn btn_link">
+                      <span class="btn__text txt txt_16">Подробнее</span>
+                      <svg
+                        width="8"
+                        height="15"
+                        viewBox="0 0 8 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 1.5L7 7.5L1 13.5"
+                          stroke="white"
+                          stroke-width="1.3"
+                          stroke-linecap="round" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="card-projects__info-wrap txt txt_18">
+                    <span class="card-projects__info">Cтроительство</span>
+                    <span class="card-projects__info">960м2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="projects__btn btn btn_primary">
+              <span class="btn__text txt txt_16">Загрузить ещё</span>
+              <svg
+                width="16"
+                height="15"
+                viewBox="0 0 16 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1.5L7 7.5L1 13.5"
+                  stroke="#1A1A1A"
+                  stroke-width="1.5"
+                  stroke-linecap="round" />
+                <path
+                  d="M8 1.5L14 7.5L8 13.5"
+                  stroke="#1A1A1A"
+                  stroke-width="1.5"
+                  stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+        </section>
+        <section class="projects-page__image-text image-text grid">
+          <div class="image-text__container container">
+            <div class="image-text__text-wrap">
+              <div class="image-text__head">
+                <span class="image-text__title tl1">
+                  <span class="image-text__title-txt reg">ГОТОВЫЙ ПРОЕКТ</span>
+                  <span class="image-text__title-txt">ЗАГОРОДНОГО ДОМА</span>
+                </span>
+              </div>
+              <div class="image-text__body">
+                <div class="image-text__col">
+                  <p class="image-text__text txt txt_18">
+                    Каждый проект загородного дома – это идеально выверенная
+                    планировка, сочетающиеся материалы стен, отделки и кровли,
+                    тщательно проверенный на предмет удобства и достаточности
+                    метраж помещений.
+                  </p>
+                  <p class="image-text__text txt txt_18">
+                    Благодаря наличию готовых решений, клиенты компании "Runa
+                    Conctrucrion" имеют возможность легко подобрать идеальный,
+                    отвечающий всем запросам относительно площади, этажности и
+                    планировки проект дома и сэкономить за счет отказа от
+                    разработки проекта с нуля.
+                  </p>
+                </div>
+                <div class="image-text__col">
+                  <p class="image-text__text txt txt_18">
+                    Большинство типовых проектов могут быть изменены!
+                    Незначительные коррективы в планировке, метраже, добавление
+                    пристроек и прочее позволят максимально приблизить проект к
+                    вашему идеальному загородному дому.
+                  </p>
+                  <p class="image-text__text txt txt_18">
+                    Для разработки собственного проекта, обращайтесь в наше
+                    архитектурное бюро, где можно заказать индивидуальный проект
+                    загородного дома!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              data-da=".image-text__text-wrap,768,1"
+              class="image-text__image-wrap">
+              <picture
+                ><source
+                  srcset="img/d596a9d66ee428f137cd808cfa8f3389.webp"
+                  type="image/webp" />
+                <img
+                  src="img/d596a9d66ee428f137cd808cfa8f3389.webp"
+                  alt=""
+                  class="image-text__image"
+              /></picture>
+            </div>
+          </div>
+        </section>
+        <section class="projects-page__request request grid">
+          <div class="request__container container">
+            <div class="request__image-wrap">
+              <picture
+                ><source
+                  srcset="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
+                  type="image/webp" />
+                <img
+                  src="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
+                  alt=""
+                  class="request__image"
+              /></picture>
+            </div>
+            <div class="request__content">
+              <div class="request__text-wrap">
+                <span class="request__title tl1">Оставьте заявку</span>
+                <p class="request__text txt txt_18">
+                  Мы ответим на любые интересующие вас вопросы
+                </p>
+              </div>
+              <form action="#" data-dev class="request__form form">
+                <div class="request__fields">
+                  <div class="request__input input">
+                    <input
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      placeholder="Имя"
+                      data-error="Поле не заполнено"
+                      class="input__field" />
+                  </div>
+                  <div class="request__input input">
+                    <input
+                      data-validate
+                      data-required="tel"
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      data-error="Поле не заполнено"
+                      placeholder="Телефон"
+                      class="input__field" />
+                  </div>
+                  <div class="request__input input">
+                    <input
+                      data-validate
+                      data-required
+                      autocomplete="off"
+                      type="text"
+                      name="form[]"
+                      data-error="Поле не заполнено"
+                      placeholder="Комментарий"
+                      class="input__field" />
+                  </div>
+                  <div
+                    data-da=".request__form,768,last"
+                    class="request__checkbox checkbox">
+                    <input
+                      id="c_1"
+                      data-error
+                      data-required
+                      data-validate
+                      class="checkbox__input"
+                      type="checkbox"
+                      value="1"
+                      name="form[]" />
+                    <label for="c_1" class="checkbox__label"
+                      ><span class="checkbox__text txt txt_16"
+                        >Я согласен на обработку персональных данных</span
+                      ></label
+                    >
+                  </div>
+                </div>
+                <button type="submit" class="request__btn btn btn_primary">
+                  <span class="btn__text txt txt_16">Отправить</span>
+                  <svg
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 1.5L7 7.5L1 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                    <path
+                      d="M8 1.5L14 7.5L8 13.5"
+                      stroke="#1A1A1A"
+                      stroke-width="1.5"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer grid">
+        <div class="footer__container container">
+          <div class="footer__row footer__row_upper">
+            <div class="footer__contacts">
+              <a href="tel:+79999999999" class="footer__tel tl1 reg"
+                >+7 999 999 - 99 - 99</a
+              >
+              <a href="mailto:forexample@.com" class="footer__mail txt reg"
+                >forexample@.com</a
+              >
+            </div>
+            <ul data-da=".footer__container,768,last" class="footer__socials">
+              <li class="footer__socials-item">
+                <a href="#" target="_blank" class="footer__socials-link"
+                  ><img
+                    src="img/icons/ig.svg"
+                    alt=""
+                    class="footer__socials-icon"
+                /></a>
+              </li>
+              <li class="footer__socials-item">
+                <a href="#" target="_blank" class="footer__socials-link"
+                  ><img
+                    src="img/icons/yt.svg"
+                    alt=""
+                    class="footer__socials-icon"
+                /></a>
+              </li>
+              <li class="footer__socials-item">
+                <a href="#" target="_blank" class="footer__socials-link"
+                  ><img
+                    src="img/icons/tg.svg"
+                    alt=""
+                    class="footer__socials-icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__row footer__row_lower">
+            <div class="footer__address">
+              <span class="footer__address-heading tl2">руна</span>
+              <p class="footer__address-text txt txt_18">
+                г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
+              </p>
+            </div>
+            <nav class="footer__navigation">
+              <ul class="footer__navigation-list">
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">о нас</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">проекты</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">портфолио</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a href="#" class="footer__navigation-link">контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231106173122"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231106173122"></script>
+    <script src="js/app.min.js?_v=20231106173122"></script>
+  </body>
 </html>
