@@ -1,9 +1,3 @@
-// sass math
-@use 'sass:math';
-
-// mixins
-@import 'base/mixins';
-
 // fonts =======================================================================
 
 // &display=swap
@@ -11,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One:regular&display=swap');
 
 // local fonts
-@import 'fonts/fonts';
+@import './fonts';
 
 // variables ===================================================================
 
@@ -30,8 +24,40 @@ body {
   --x: translateX(-100%);
 }
 
-// base styles file ============================================================
+// set.scss file ===============================================================
 @import 'base/set.scss';
+
+// base styles, templates (patterns), special classes ==========================
+
+// base styles
+@import 'base';
+
+// common styles
+@import 'common';
+
+// components
+@import 'components/_header';
+@import 'components/_footer';
+
+// sections
+@import 'sections/hero';
+@import 'sections/about-company';
+@import 'sections/services';
+@import 'sections/privileges';
+@import 'sections/team';
+@import 'sections/request';
+@import 'sections/our-team';
+@import 'sections/projects';
+@import 'sections/image-text';
+@import 'sections/hero-project';
+@import 'sections/project-info';
+@import 'sections/project-layout';
+@import 'sections/project-interiors';
+@import 'sections/portfolio';
+@import 'sections/contacts';
+@import 'sections/company-info';
+@import 'sections/company-methods';
+@import 'sections/hero-portfolio';
 
 // base styles =================================================================
 
@@ -84,35 +110,3 @@ body {
     min-width: 0;
   }
 }
-
-// base styles, templates (patterns), special classes ==========================
-
-// base styles
-@import 'base';
-
-// common styles
-@import 'common';
-
-// header & footer
-@import 'header';
-@import 'footer';
-
-// sections
-@import 'sections/hero';
-@import 'sections/about-company';
-@import 'sections/services';
-@import 'sections/privileges';
-@import 'sections/team';
-@import 'sections/request';
-@import 'sections/our-team';
-@import 'sections/projects';
-@import 'sections/image-text';
-@import 'sections/hero-project';
-@import 'sections/project-info';
-@import 'sections/project-layout';
-@import 'sections/project-interiors';
-@import 'sections/portfolio';
-@import 'sections/contacts';
-@import 'sections/company-info';
-@import 'sections/company-methods';
-@import 'sections/hero-portfolio';

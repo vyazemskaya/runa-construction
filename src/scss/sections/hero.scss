@@ -20,6 +20,11 @@
       left: 0;
       background-color: rgba(255, 255, 255, 0.2);
     }
+    .mainpage & {
+      &::before {
+        display: none;
+      }
+    }
     @media (max-width: 48em) {
       padding: 22.7rem 3.2rem 6.4rem 3.2rem;
       row-gap: 26.2rem;
@@ -31,11 +36,6 @@
         padding: 0;
         row-gap: normal;
         height: auto;
-        &::before {
-          display: none;
-        }
-      }
-      .mainpage & {
         &::before {
           display: none;
         }
@@ -307,13 +307,13 @@
       width: calc(100% + 6.4rem);
       height: calc(16.4rem + 100%);
       .about-company-page & {
-        position: static;
+        position: relative;
         margin-bottom: 3.2rem;
         height: 92.4rem;
         width: 100%;
-        &::after {
-          display: none;
-        }
+        top: 0;
+        left: 0;
+        transform: none;
       }
     }
   }

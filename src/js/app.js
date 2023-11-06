@@ -2,39 +2,41 @@
 window['FLS'] = true;
 
 // main styles
-import '../scss/style.scss';
+// import '../scss/style.scss';
 
 // ================================================================================================================
 // < functional > =================================================================================================
 // ================================================================================================================
-import * as utilities from './files/functions.js';
+import './files/functions.js';
+
+import { isWebp, menuInit, tabs } from './files/functions.js';
 
 // webp support check, add webp class or no-webp class for HTML
-utilities.isWebp();
+isWebp();
 
 // add touch class for HTML if the browser is mobile
-// utilities.addTouchClass();
+// addTouchClass();
 
 // add loaded for HTML after the page is fully loaded
-// utilities.addLoadedClass();
+// addLoadedClass();
 
 // menu module
-utilities.menuInit();
+menuInit();
 
 // accounting for the floating panel on mobile devices at 100vh
-// utilities.fullVHfix();
+// fullVHfix();
 
 // spoiler module
 // snippet ( HTML ): spoilers
-// utilities.spoilers();
+// spoilers();
 
 // tabs module
 // snippet ( HTML ): tabs
-// utilities.tabs();
+tabs();
 
 // show more module
 // snippet ( HTML ): showmore
-// utilities.showMore();
+// showMore();
 
 // popups
 // snippet ( HTML ): pl
@@ -47,19 +49,21 @@ utilities.menuInit();
 // < forms > ======================================================================================================
 // ================================================================================================================
 
-import * as forms from './files/forms/forms.js';
+import './files/forms/forms.js';
+
+import { formFieldsInit, formSubmit } from './files/forms/forms.js';
 
 // form fields
-forms.formFieldsInit({ viewPass: false });
+formFieldsInit({ viewPass: false });
 
 // submit form
-forms.formSubmit();
+formSubmit();
 
 // quantity module
-// forms.formQuantity();
+// formQuantity();
 
 // rating module
-// forms.formRating();
+// formRating();
 
 // select module
 // import './libs/select.js'
@@ -107,7 +111,7 @@ import './files/scroll/lazyload.js';
 
 // < scroll functions > ===========================================================================================
 
-import * as scroll from './files/scroll/scroll.js';
+// import * as scroll from './files/scroll/scroll.js';
 
 // smooth page navigation
 // scroll.pageNavigation();

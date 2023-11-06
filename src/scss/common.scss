@@ -143,7 +143,7 @@ body {
     opacity: 0;
     visibility: hidden;
     white-space: nowrap;
-    transition: all 0.4 ease;
+    transition: all 0.4s ease;
     .menu-open & {
       opacity: 1;
       visibility: visible;
@@ -199,6 +199,13 @@ body {
       }
     }
   }
+  @media (min-width: 48em) {
+    transition: all 0.3s ease;
+    .menu-open & {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 }
 
 // menu
@@ -217,7 +224,7 @@ body {
       &:hover {
         .hamburger {
           span {
-            transform: scaleX(1);
+            transform: scaleX(0.99);
           }
         }
       }
@@ -232,7 +239,7 @@ body {
         position: absolute;
         width: 6.5rem;
         height: 6.5rem;
-        background-image: url(@img/icons/cross.svg);
+        background-image: url(./assets/images/icons/cross.svg);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

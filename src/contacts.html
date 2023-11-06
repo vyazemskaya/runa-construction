@@ -1,6 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  @@include('html/_head.htm',{ "title":"Контакты" })
+  <head>
+    <include src="./components/_js.html"></include>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты</title>
+  </head>
   <body style="opacity: 0">
     <div class="wrapper">
       <main class="main contacts-page">
@@ -8,7 +14,10 @@
           <div class="hero-project__sidebar sidebar">
             <div class="sidebar__inner">
               <a href="#" class="sidebar__logo-wrap"
-                ><img src="@img/logo.png" alt="" class="sidebar__logo"
+                ><img
+                  src="./assets/images/logo.png"
+                  alt=""
+                  class="sidebar__logo"
               /></a>
               <a
                 data-da=".menu__body,768,last"
@@ -47,7 +56,7 @@
                 <li class="sidebar__socials-item">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/ig.svg"
+                      src="./assets/images/icons/ig.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -55,7 +64,7 @@
                 <li class="sidebar__socials-item">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/yt.svg"
+                      src="./assets/images/icons/yt.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -63,7 +72,7 @@
                 <li class="sidebar__socials-item _mobile-only">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/tg.svg"
+                      src="./assets/images/icons/tg.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -71,7 +80,7 @@
                 <li class="sidebar__socials-item _mobile-only">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/wp.svg"
+                      src="./assets/images/icons/wp.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -85,7 +94,7 @@
                 <span class="contacts__title tl1 desktop-only">Контакты</span>
                 <div class="contacts__image-wrap">
                   <img
-                    src="@img/contacts/cd4af4372a7d6368191f02994866367e.webp"
+                    src="./assets/images/contacts/cd4af4372a7d6368191f02994866367e.webp"
                     alt=""
                     class="contacts__image" />
                 </div>
@@ -147,7 +156,7 @@
               </div>
               <div class="contacts__image-wrap contacts__image-wrap_abs">
                 <img
-                  src="@img/contacts/33bbdaea4540cb49520b4d97dd672873.webp"
+                  src="./assets/images/contacts/33bbdaea4540cb49520b4d97dd672873.webp"
                   alt=""
                   class="contacts__image" />
               </div>
@@ -160,7 +169,7 @@
           <div class="request__container container">
             <div class="request__image-wrap">
               <img
-                src="@img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
+                src="./assets/images/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
                 alt=""
                 class="request__image" />
             </div>
@@ -250,8 +259,7 @@
           </div>
         </section>
       </main>
-      @@include('html/_footer.htm',{})
+      <include src="./components/_footer.html"></include>
     </div>
-    @@include('html/_js.htm',{})
   </body>
 </html>

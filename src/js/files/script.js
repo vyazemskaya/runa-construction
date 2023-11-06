@@ -103,7 +103,6 @@ window.addEventListener('load', function () {
       defaults: { duration: 1.5 },
       extendTimeline: true,
       effect(targets, config) {
-        console.log(targets);
         if (effect.animate === 'from') {
           return gsap.from(targets, { ...effect.props, ...config });
         } else if (effect.animate === 'fromTo') {

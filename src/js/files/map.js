@@ -27,7 +27,7 @@ if (document.getElementById('map')) {
 
     const el = document.createElement('img');
     el.className = 'marker';
-    el.src = './img/icons/map-pin.svg';
+    el.src = './assets/images/icons/map-pin.svg';
     el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
     map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
   }

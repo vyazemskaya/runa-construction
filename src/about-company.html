@@ -1,6 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  @@include('html/_head.htm',{ "title":"О компании" })
+  <head>
+    <include src="./components/_js.html"></include>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О компании</title>
+  </head>
   <body style="opacity: 0">
     <div class="wrapper">
       <main class="main about-company-page">
@@ -8,7 +13,10 @@
           <div class="hero__sidebar sidebar">
             <div class="sidebar__inner">
               <a href="#" class="sidebar__logo-wrap"
-                ><img src="@img/logo.png" alt="" class="sidebar__logo"
+                ><img
+                  src="./assets/images/logo.png"
+                  alt=""
+                  class="sidebar__logo"
               /></a>
               <a
                 data-da=".menu__body,768,last"
@@ -47,7 +55,7 @@
                 <li class="sidebar__socials-item">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/ig.svg"
+                      src="./assets/images/icons/ig.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -55,7 +63,7 @@
                 <li class="sidebar__socials-item">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/yt.svg"
+                      src="./assets/images/icons/yt.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -63,7 +71,7 @@
                 <li class="sidebar__socials-item _mobile-only">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/tg.svg"
+                      src="./assets/images/icons/tg.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -71,7 +79,7 @@
                 <li class="sidebar__socials-item _mobile-only">
                   <a href="#" target="_blank" class="sidebar__socials-link"
                     ><img
-                      src="@img/icons/wp.svg"
+                      src="./assets/images/icons/wp.svg"
                       alt=""
                       class="sidebar__socials-icon"
                   /></a>
@@ -140,7 +148,7 @@
             </div>
             <div data-da=".hero__container,768,first" class="hero__bg-image">
               <img
-                src="@img/9e20787dd37067c3c17b4d71178bc183.webp"
+                src="./assets/images/9e20787dd37067c3c17b4d71178bc183.webp"
                 alt=""
                 class="hero__image" />
             </div>
@@ -167,7 +175,7 @@
                 </p>
                 <div class="info-company-info__image">
                   <img
-                    src="@img/services/66a73905fff5c7f7f93fa281a86f8279.webp"
+                    src="./assets/images/services/66a73905fff5c7f7f93fa281a86f8279.webp"
                     alt="" />
                 </div>
               </div>
@@ -183,7 +191,7 @@
               </div>
               <div class="numbers-company-info__image-wrap">
                 <img
-                  src="@img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                  src="./assets/images/services/ef6631ad93f7e498535fa756cf21e53f.webp"
                   alt=""
                   class="numbers-company-info__image" />
               </div>
@@ -245,7 +253,7 @@
                       <div
                         class="privileges-company-info__image-wrap mobile-only">
                         <img
-                          src="@img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                          src="./assets/images/services/ef6631ad93f7e498535fa756cf21e53f.webp"
                           alt=""
                           class="privileges-company-info__image" />
                       </div>
@@ -284,7 +292,7 @@
                       <div
                         class="privileges-company-info__image-wrap mobile-only">
                         <img
-                          src="@img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                          src="./assets/images/services/ef6631ad93f7e498535fa756cf21e53f.webp"
                           alt=""
                           class="privileges-company-info__image" />
                       </div>
@@ -323,7 +331,7 @@
                       <div
                         class="privileges-company-info__image-wrap mobile-only">
                         <img
-                          src="@img/services/ef6631ad93f7e498535fa756cf21e53f.webp"
+                          src="./assets/images/services/ef6631ad93f7e498535fa756cf21e53f.webp"
                           alt=""
                           class="privileges-company-info__image" />
                       </div>
@@ -479,7 +487,7 @@
           <div class="request__container container">
             <div class="request__image-wrap">
               <img
-                src="@img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
+                src="./assets/images/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
                 alt=""
                 class="request__image" />
             </div>
@@ -569,8 +577,7 @@
           </div>
         </section>
       </main>
-      @@include('html/_footer.htm',{})
+      <include src="./components/_footer.html"></include>
     </div>
-    @@include('html/_js.htm',{})
   </body>
 </html>

@@ -18,7 +18,7 @@
     &:focus + .checkbox__label:before {
     }
     &:checked + .checkbox__label:before {
-      background-image: url(@img/icons/check.svg);
+      background-image: url(./assets/images/icons/check.svg);
       background-position: center;
       background-size: 1.4rem;
       background-repeat: no-repeat;
