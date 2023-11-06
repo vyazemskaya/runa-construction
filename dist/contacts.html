@@ -1,355 +1,201 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <title>Контакты</title>
-    <meta charset="UTF-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <!-- <style>body{opacity: 0;}</style> -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20231106023031" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <!-- <meta name="robots" content="noindex, nofollow"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU"></script>
-  </head>
 
-  <body style="opacity: 0">
-    <div class="wrapper">
-      <main class="main contacts-page">
-        <section class="contacts-page__contacts contacts grid">
-          <div class="hero-project__sidebar sidebar">
-            <div class="sidebar__inner">
-              <a href="#" class="sidebar__logo-wrap"
-                ><picture
-                  ><source srcset="img/logo.webp" type="image/webp" />
-                  <img
-                    src="img/logo.png"
-                    alt=""
-                    class="sidebar__logo" /></picture
-              ></a>
-              <a
-                data-da=".menu__body,768,last"
-                href="tel:79999999999"
-                class="sidebar__tel txt txt_16"
-                >+7 (999) 999 99 - 99</a
-              >
-              <div class="sidebar__menu menu">
-                <button
-                  id="hamburger"
-                  type="button"
-                  class="menu__hamburger-wrap">
-                  <div class="menu__hamburger hamburger"><span></span></div>
-                  <span class="menu__hamburger-txt txt txt_16 desktop-only"
-                    >меню</span
-                  >
-                </button>
-                <nav class="menu__body">
-                  <ul class="menu__list txt txt_16">
-                    <li class="menu__item">
-                      <a href="#" class="menu__link">о нас</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="menu__link">проекты</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="menu__link">портфолио</a>
-                    </li>
-                    <li class="menu__item">
-                      <a href="#" class="menu__link">контакты</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <ul data-da=".menu__body,768,last" class="sidebar__socials">
-                <li class="sidebar__socials-item">
-                  <a href="#" target="_blank" class="sidebar__socials-link"
-                    ><img
-                      src="img/icons/ig.svg"
-                      alt=""
-                      class="sidebar__socials-icon"
-                  /></a>
-                </li>
-                <li class="sidebar__socials-item">
-                  <a href="#" target="_blank" class="sidebar__socials-link"
-                    ><img
-                      src="img/icons/yt.svg"
-                      alt=""
-                      class="sidebar__socials-icon"
-                  /></a>
-                </li>
-                <li class="sidebar__socials-item _mobile-only">
-                  <a href="#" target="_blank" class="sidebar__socials-link"
-                    ><img
-                      src="img/icons/tg.svg"
-                      alt=""
-                      class="sidebar__socials-icon"
-                  /></a>
-                </li>
-                <li class="sidebar__socials-item _mobile-only">
-                  <a href="#" target="_blank" class="sidebar__socials-link"
-                    ><img
-                      src="img/icons/wp.svg"
-                      alt=""
-                      class="sidebar__socials-icon"
-                  /></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="contacts__container container">
-            <div class="contacts__content">
-              <div class="contacts__column">
-                <span class="contacts__title tl1 desktop-only">Контакты</span>
-                <div class="contacts__image-wrap">
-                  <picture
-                    ><source
-                      srcset="
-                        img/contacts/cd4af4372a7d6368191f02994866367e.webp
-                      "
-                      type="image/webp" />
-                    <img
-                      src="img/contacts/cd4af4372a7d6368191f02994866367e.webp"
-                      alt=""
-                      class="contacts__image"
-                  /></picture>
-                </div>
-                <a
-                  data-da=".contacts__column_info,768,first"
-                  href="tel:79999999999"
-                  class="contacts__tel tl1"
-                  >+7 999 999 - 99 - 99</a
-                >
-                <button
-                  data-da=".contacts__column_info,768,first"
-                  type="button"
-                  class="contacts__btn btn btn_primary">
-                  <span class="btn__text txt txt_16">Заказать звонок</span>
-                  <svg
-                    width="16"
-                    height="15"
-                    viewBox="0 0 16 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M1 1.5L7 7.5L1 13.5"
-                      stroke="#1A1A1A"
-                      stroke-width="1.5"
-                      stroke-linecap="round" />
-                    <path
-                      d="M8 1.5L14 7.5L8 13.5"
-                      stroke="#1A1A1A"
-                      stroke-width="1.5"
-                      stroke-linecap="round" />
-                  </svg>
-                </button>
-              </div>
-              <div class="contacts__column contacts__column_info">
-                <div class="contacts__info">
-                  <div class="contacts__group txt txt_18">
-                    <span class="contacts__group-subtitle">Информация:</span>
-                    <a
-                      href="mailto:runaconstruction@.com"
-                      class="contacts__group-text"
-                      >runaconstruction@.com</a
-                    >
-                  </div>
-                  <div class="contacts__group txt txt_18">
-                    <span class="contacts__group-subtitle">Заказчикам:</span>
-                    <a
-                      href="mailto:forexample@.com"
-                      class="contacts__group-text"
-                      >forexample@.com</a
-                    >
-                  </div>
-                  <div class="contacts__group txt txt_18">
-                    <span class="contacts__group-subtitle">Адрес:</span>
-                    <p class="contacts__group-text">
-                      г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="contacts__image-wrap contacts__image-wrap_abs">
-                <picture
-                  ><source
-                    srcset="img/contacts/33bbdaea4540cb49520b4d97dd672873.webp"
-                    type="image/webp" />
-                  <img
-                    src="img/contacts/33bbdaea4540cb49520b4d97dd672873.webp"
-                    alt=""
-                    class="contacts__image"
-                /></picture>
-              </div>
-            </div>
-            <div id="map" class="contacts__map"></div>
-          </div>
-        </section>
+<head>
+	<title>Контакты</title>
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231106172701" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <script
+    src="https://api-maps.yandex.ru/v3/?apikey=<YOUR_APIKEY>&lang=en_US"
+    type="text/javascript"></script> -->
+	<script src="https://api-maps.yandex.ru/v3/?apikey=893d068f-6a82-4f63-aec8-f0e9ed9ed59c&lang=ru_RU&_v=20231106172701"></script>
+	<!-- 893d068f-6a82-4f63-aec8-f0e9ed9ed59c -->
+</head>
 
-        <section class="contacts-page__request request grid">
-          <div class="request__container container">
-            <div class="request__image-wrap">
-              <picture
-                ><source
-                  srcset="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
-                  type="image/webp" />
-                <img
-                  src="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp"
-                  alt=""
-                  class="request__image"
-              /></picture>
-            </div>
-            <div class="request__content">
-              <div class="request__text-wrap">
-                <span class="request__title tl1">Оставьте заявку</span>
-                <p class="request__text txt txt_18">
-                  Мы ответим на любые интересующие вас вопросы
-                </p>
-              </div>
-              <form action="#" data-dev class="request__form form">
-                <div class="request__fields">
-                  <div class="request__input input">
-                    <input
-                      data-validate
-                      data-required
-                      autocomplete="off"
-                      type="text"
-                      name="form[]"
-                      placeholder="Имя"
-                      data-error="Поле не заполнено"
-                      class="input__field" />
-                  </div>
-                  <div class="request__input input">
-                    <input
-                      data-validate
-                      data-required="tel"
-                      autocomplete="off"
-                      type="text"
-                      name="form[]"
-                      data-error="Поле не заполнено"
-                      placeholder="Телефон"
-                      class="input__field" />
-                  </div>
-                  <div class="request__input input">
-                    <input
-                      data-validate
-                      data-required
-                      autocomplete="off"
-                      type="text"
-                      name="form[]"
-                      data-error="Поле не заполнено"
-                      placeholder="Комментарий"
-                      class="input__field" />
-                  </div>
-                  <div
-                    data-da=".request__form,768,last"
-                    class="request__checkbox checkbox">
-                    <input
-                      id="c_1"
-                      data-error
-                      data-required
-                      data-validate
-                      class="checkbox__input"
-                      type="checkbox"
-                      value="1"
-                      name="form[]" />
-                    <label for="c_1" class="checkbox__label"
-                      ><span class="checkbox__text txt txt_16"
-                        >Я согласен на обработку персональных данных</span
-                      ></label
-                    >
-                  </div>
-                </div>
-                <button type="submit" class="request__btn btn btn_primary">
-                  <span class="btn__text txt txt_16">Отправить</span>
-                  <svg
-                    width="16"
-                    height="15"
-                    viewBox="0 0 16 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M1 1.5L7 7.5L1 13.5"
-                      stroke="#1A1A1A"
-                      stroke-width="1.5"
-                      stroke-linecap="round" />
-                    <path
-                      d="M8 1.5L14 7.5L8 13.5"
-                      stroke="#1A1A1A"
-                      stroke-width="1.5"
-                      stroke-linecap="round" />
-                  </svg>
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer grid">
-        <div class="footer__container container">
-          <div class="footer__row footer__row_upper">
-            <div class="footer__contacts">
-              <a href="tel:+79999999999" class="footer__tel tl1 reg"
-                >+7 999 999 - 99 - 99</a
-              >
-              <a href="mailto:forexample@.com" class="footer__mail txt reg"
-                >forexample@.com</a
-              >
-            </div>
-            <ul data-da=".footer__container,768,last" class="footer__socials">
-              <li class="footer__socials-item">
-                <a href="#" target="_blank" class="footer__socials-link"
-                  ><img
-                    src="img/icons/ig.svg"
-                    alt=""
-                    class="footer__socials-icon"
-                /></a>
-              </li>
-              <li class="footer__socials-item">
-                <a href="#" target="_blank" class="footer__socials-link"
-                  ><img
-                    src="img/icons/yt.svg"
-                    alt=""
-                    class="footer__socials-icon"
-                /></a>
-              </li>
-              <li class="footer__socials-item">
-                <a href="#" target="_blank" class="footer__socials-link"
-                  ><img
-                    src="img/icons/tg.svg"
-                    alt=""
-                    class="footer__socials-icon"
-                /></a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer__row footer__row_lower">
-            <div class="footer__address">
-              <span class="footer__address-heading tl2">руна</span>
-              <p class="footer__address-text txt txt_18">
-                г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
-              </p>
-            </div>
-            <nav class="footer__navigation">
-              <ul class="footer__navigation-list">
-                <li class="footer__navigation-item">
-                  <a href="#" class="footer__navigation-link">о нас</a>
-                </li>
-                <li class="footer__navigation-item">
-                  <a href="#" class="footer__navigation-link">проекты</a>
-                </li>
-                <li class="footer__navigation-item">
-                  <a href="#" class="footer__navigation-link">портфолио</a>
-                </li>
-                <li class="footer__navigation-item">
-                  <a href="#" class="footer__navigation-link">контакты</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231106023031"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231106023031"></script>
-    <script src="js/app.min.js?_v=20231106023031"></script>
-  </body>
+<body style="opacity: 0">
+	<div class="wrapper">
+		<main class="main contacts-page">
+			<section class="contacts-page__contacts contacts grid">
+				<div class="hero-project__sidebar sidebar">
+					<div class="sidebar__inner">
+						<a href="#" class="sidebar__logo-wrap"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" class="sidebar__logo" /></picture></a>
+						<a data-da=".menu__body,768,last" href="tel:79999999999" class="sidebar__tel txt txt_16">+7 (999) 999 99 - 99</a>
+						<div class="sidebar__menu menu">
+							<button id="hamburger" type="button" class="menu__hamburger-wrap">
+								<div class="menu__hamburger hamburger"><span></span></div>
+								<span class="menu__hamburger-txt txt txt_16 desktop-only">меню</span>
+							</button>
+							<nav class="menu__body">
+								<ul class="menu__list txt txt_16">
+									<li class="menu__item">
+										<a href="#" class="menu__link">о нас</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">проекты</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">портфолио</a>
+									</li>
+									<li class="menu__item">
+										<a href="#" class="menu__link">контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<ul data-da=".menu__body,768,last" class="sidebar__socials">
+							<li class="sidebar__socials-item">
+								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/ig.svg" alt="" class="sidebar__socials-icon" /></a>
+							</li>
+							<li class="sidebar__socials-item">
+								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/yt.svg" alt="" class="sidebar__socials-icon" /></a>
+							</li>
+							<li class="sidebar__socials-item _mobile-only">
+								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/tg.svg" alt="" class="sidebar__socials-icon" /></a>
+							</li>
+							<li class="sidebar__socials-item _mobile-only">
+								<a href="#" target="_blank" class="sidebar__socials-link"><img src="img/icons/wp.svg" alt="" class="sidebar__socials-icon" /></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="contacts__container container">
+					<div class="contacts__content">
+						<div class="contacts__column">
+							<span class="contacts__title tl1 desktop-only">Контакты</span>
+							<div class="contacts__image-wrap">
+								<picture><source srcset="img/contacts/cd4af4372a7d6368191f02994866367e.webp" type="image/webp"><img src="img/contacts/cd4af4372a7d6368191f02994866367e.webp" alt="" class="contacts__image" /></picture>
+							</div>
+							<a data-da=".contacts__column_info,768,first" href="tel:79999999999" class="contacts__tel tl1">+7 999 999 - 99 - 99</a>
+							<button data-da=".contacts__column_info,768,first" type="button" class="contacts__btn btn btn_primary">
+								<span class="btn__text txt txt_16">Заказать звонок</span>
+								<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
+									<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
+								</svg>
+							</button>
+						</div>
+						<div class="contacts__column contacts__column_info">
+							<div class="contacts__info">
+								<div class="contacts__group txt txt_18">
+									<span class="contacts__group-subtitle">Информация:</span>
+									<a href="mailto:runaconstruction@.com" class="contacts__group-text">runaconstruction@.com</a>
+								</div>
+								<div class="contacts__group txt txt_18">
+									<span class="contacts__group-subtitle">Заказчикам:</span>
+									<a href="mailto:forexample@.com" class="contacts__group-text">forexample@.com</a>
+								</div>
+								<div class="contacts__group txt txt_18">
+									<span class="contacts__group-subtitle">Адрес:</span>
+									<p class="contacts__group-text">
+										г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="contacts__image-wrap contacts__image-wrap_abs">
+							<picture><source srcset="img/contacts/33bbdaea4540cb49520b4d97dd672873.webp" type="image/webp"><img src="img/contacts/33bbdaea4540cb49520b4d97dd672873.webp" alt="" class="contacts__image" /></picture>
+						</div>
+					</div>
+					<div id="map" class="contacts__map"></div>
+				</div>
+			</section>
+
+			<section class="contacts-page__request request grid">
+				<div class="request__container container">
+					<div class="request__image-wrap">
+						<picture><source srcset="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp" type="image/webp"><img src="img/e08e0ef85b77ad5775f25cf1ecbb2ec3.webp" alt="" class="request__image" /></picture>
+					</div>
+					<div class="request__content">
+						<div class="request__text-wrap">
+							<span class="request__title tl1">Оставьте заявку</span>
+							<p class="request__text txt txt_18">
+								Мы ответим на любые интересующие вас вопросы
+							</p>
+						</div>
+						<form action="#" data-dev class="request__form form">
+							<div class="request__fields">
+								<div class="request__input input">
+									<input data-validate data-required autocomplete="off" type="text" name="form[]" placeholder="Имя" data-error="Поле не заполнено" class="input__field" />
+								</div>
+								<div class="request__input input">
+									<input data-validate data-required="tel" autocomplete="off" type="text" name="form[]" data-error="Поле не заполнено" placeholder="Телефон" class="input__field" />
+								</div>
+								<div class="request__input input">
+									<input data-validate data-required autocomplete="off" type="text" name="form[]" data-error="Поле не заполнено" placeholder="Комментарий" class="input__field" />
+								</div>
+								<div data-da=".request__form,768,last" class="request__checkbox checkbox">
+									<input id="c_1" data-error data-required data-validate class="checkbox__input" type="checkbox" value="1" name="form[]" />
+									<label for="c_1" class="checkbox__label"><span class="checkbox__text txt txt_16">Я согласен на обработку персональных данных</span></label>
+								</div>
+							</div>
+							<button type="submit" class="request__btn btn btn_primary">
+								<span class="btn__text txt txt_16">Отправить</span>
+								<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 1.5L7 7.5L1 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
+									<path d="M8 1.5L14 7.5L8 13.5" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" />
+								</svg>
+							</button>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer grid">
+			<div class="footer__container container">
+				<div class="footer__row footer__row_upper">
+					<div class="footer__contacts">
+						<a href="tel:+79999999999" class="footer__tel tl1 reg">+7 999 999 - 99 - 99</a>
+						<a href="mailto:forexample@.com" class="footer__mail txt reg">forexample@.com</a>
+					</div>
+					<ul data-da=".footer__container,768,last" class="footer__socials">
+						<li class="footer__socials-item">
+							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/ig.svg" alt="" class="footer__socials-icon" /></a>
+						</li>
+						<li class="footer__socials-item">
+							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/yt.svg" alt="" class="footer__socials-icon" /></a>
+						</li>
+						<li class="footer__socials-item">
+							<a href="#" target="_blank" class="footer__socials-link"><img src="img/icons/tg.svg" alt="" class="footer__socials-icon" /></a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__row footer__row_lower">
+					<div class="footer__address">
+						<span class="footer__address-heading tl2">руна</span>
+						<p class="footer__address-text txt txt_18">
+							г. Москва, ул. Нижняя Сыромятническая, дом 10, стр. 2А
+						</p>
+					</div>
+					<nav class="footer__navigation">
+						<ul class="footer__navigation-list">
+							<li class="footer__navigation-item">
+								<a href="#" class="footer__navigation-link">о нас</a>
+							</li>
+							<li class="footer__navigation-item">
+								<a href="#" class="footer__navigation-link">проекты</a>
+							</li>
+							<li class="footer__navigation-item">
+								<a href="#" class="footer__navigation-link">портфолио</a>
+							</li>
+							<li class="footer__navigation-item">
+								<a href="#" class="footer__navigation-link">контакты</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231106172701"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231106172701"></script>
+	<script src="js/app.min.js?_v=20231106172701"></script>
+
+</body>
+
 </html>

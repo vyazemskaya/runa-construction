@@ -1,0 +1,151 @@
+.company-methods {
+  margin-bottom: 18rem;
+
+  // .company-methods__container
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    &::before {
+      @extend %line;
+      top: -18rem;
+      height: calc(100% + 18rem);
+    }
+    @media (min-width: 48em) {
+      grid-column: 2/3;
+    }
+    @media (max-width: 48em) {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // .company-methods__body
+
+  &__body {
+    position: relative;
+    padding: 3.2rem 0;
+    &::before,
+    &::after {
+      @extend %line;
+      left: 0;
+      width: calc(100% + 23.2rem);
+      height: 2px;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    @media (min-width: 48em) {
+      padding: 3.2rem 3rem 0 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 48em) {
+      &::before,
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // .company-methods__text-wrap
+
+  &__text-wrap {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 48em) {
+      padding-bottom: 25.2rem;
+      &_lc {
+        justify-self: end;
+        text-align: right;
+      }
+    }
+    @media (max-width: 48em) {
+      &_fc {
+        margin-bottom: 10rem;
+        flex-direction: row;
+        justify-content: space-between;
+        .company-methods__group {
+          margin: 0;
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  // .company-methods__group
+
+  &__group {
+    margin-bottom: 33.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .company-methods__subtitle
+
+  &__subtitle {
+    text-transform: uppercase;
+  }
+
+  // .company-methods__subtext
+
+  &__subtext {
+    color: #9a9a9a;
+  }
+
+  // .company-methods__text
+
+  &__text {
+    @media (max-width: 48em) {
+      margin-bottom: 3.2rem;
+      padding-top: 3.2rem;
+      border-top: 2px solid #505050;
+    }
+  }
+
+  // .company-methods__image-wrap
+
+  &__image-wrap {
+    @media (max-width: 48em) {
+      height: 70rem;
+    }
+  }
+
+  // .company-methods__bg-text
+
+  &__bg-text {
+    position: absolute;
+    top: 23rem;
+    left: 3rem;
+    font-size: 14.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 90%;
+    opacity: 0.1;
+    @media (max-width: 48em) {
+      top: 22rem;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 8rem;
+      transform: translateX(-50%);
+      span {
+        font-size: 21.8rem;
+      }
+    }
+  }
+
+  // .company-methods__link
+
+  &__link {
+  }
+}

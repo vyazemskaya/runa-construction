@@ -281,6 +281,24 @@ function initSliders() {
       },
     });
   }
+  if (document.querySelector('.privileges-company-info__slider')) {
+    new Swiper('.privileges-company-info__slider', {
+      modules: [Navigation],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      autoHeight: false,
+      speed: 800,
+      allowTouchMove: false,
+      loop: true,
+      // navigation
+      navigation: {
+        prevEl: '.privileges-company-info__slider-arr_prev',
+        nextEl: '.privileges-company-info__slider-arr_next',
+      },
+    });
+  }
 }
 
 // slider scroll ===============================================================

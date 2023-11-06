@@ -8038,6 +8038,21 @@
                     nextEl: ".project-interiors__slider-arr_next"
                 }
             });
+            if (document.querySelector(".privileges-company-info__slider")) new swiper_core_Swiper(".privileges-company-info__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 30,
+                autoHeight: false,
+                speed: 800,
+                allowTouchMove: false,
+                loop: true,
+                navigation: {
+                    prevEl: ".privileges-company-info__slider-arr_prev",
+                    nextEl: ".privileges-company-info__slider-arr_next"
+                }
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
@@ -8153,8 +8168,8 @@
         };
         const da = new DynamicAdapt("max");
         da.init();
-        window.map = null;
-        window.addEventListener("load", (function() {
+        if (document.getElementById("map")) {
+            window.map = null;
             async function initMap() {
                 await ymaps3.ready;
                 const LOCATION = {
@@ -8181,7 +8196,7 @@
                 }, el));
             }
             initMap();
-        }));
+        }
         window.addEventListener("load", (function() {
             window.matchMedia("(max-width: 768px)").matches;
             document.body.style.opacity = "1";

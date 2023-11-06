@@ -1,6 +1,6 @@
-window.map = null;
+if (document.getElementById('map')) {
+  window.map = null;
 
-window.addEventListener('load', function () {
   async function initMap() {
     await ymaps3.ready;
 
@@ -32,4 +32,4 @@ window.addEventListener('load', function () {
     map.addChild(new YMapMarker({ coordinates: LOCATION.center }, el));
   }
   initMap();
-});
+}

@@ -80,6 +80,12 @@
         }
       }
     }
+    @media (max-width: 48em) {
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 
   // .btn__text

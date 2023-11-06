@@ -185,6 +185,9 @@
 
   &__group-text {
     max-width: 29.2rem;
+    @media (max-width: 48em) {
+      max-width: 53.2rem;
+    }
   }
 
   // .contacts__map
