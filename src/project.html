@@ -7,10 +7,13 @@
     <title>Детальная проекта</title>
   </head>
   <body style="opacity: 0">
-    <div class="wrapper">
+    <div class="wrapper scroll-trigger">
       <main class="main project-page">
         <section class="project-page__hero hero-project grid">
-          <div class="hero-project__sidebar sidebar">
+          <div
+            data-scroll="120"
+            data-scroll-show
+            class="hero-project__sidebar sidebar">
             <div class="sidebar__inner">
               <a href="#" class="sidebar__logo-wrap"
                 ><img
@@ -211,6 +214,7 @@
                   >
                   <button
                     type="button"
+                    data-popup="#request-modal"
                     class="hero-project__btn btn btn_primary">
                     <span class="btn__text txt txt_16">Обсудить проект</span>
                     <svg

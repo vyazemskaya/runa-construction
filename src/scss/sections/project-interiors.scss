@@ -13,6 +13,9 @@
       top: -18rem;
       left: 0;
       height: calc(100% + 18rem);
+      .scroll-trigger & {
+        transform: scaleY((var(--scaleY)));
+      }
     }
     @media (max-width: 48em) {
       &::before {
@@ -79,6 +82,9 @@
       left: 0;
       width: calc(100% + 129.2rem);
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX((var(--scaleX)));
+      }
     }
     &::before {
       top: 0;

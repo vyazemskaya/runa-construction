@@ -4,55 +4,6 @@ import { modules } from './modules.js';
 // main utilities
 // =============================================================================
 
-// webp check
-export function isWebp() {
-  function testWebP(callback) {
-    let webP = new Image();
-    webP.onload = webP.onerror = function () {
-      callback(webP.height == 2);
-    };
-    webP.src =
-      'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-  }
-  testWebP(function (support) {
-    let className = support === true ? 'webp' : 'no-webp';
-    document.documentElement.classList.add(className);
-  });
-}
-
-// is mobile
-export let isMobile = {
-  Android: function () {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function () {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function () {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera: function () {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function () {
-    return navigator.userAgent.match(/IEMobile/i);
-  },
-  any: function () {
-    return (
-      isMobile.Android() ||
-      isMobile.BlackBerry() ||
-      isMobile.iOS() ||
-      isMobile.Opera() ||
-      isMobile.Windows()
-    );
-  },
-};
-
-// add touch class
-export function addTouchClass() {
-  if (isMobile.any()) document.documentElement.classList.add('touch');
-}
-
 // add loaded class
 export function addLoadedClass() {
   window.addEventListener('load', function () {
@@ -73,19 +24,6 @@ export function getHash() {
 export function setHash(hash) {
   hash = hash ? `#${hash}` : window.location.href.split('#')[0];
   history.pushState('', '', hash);
-}
-
-// floating panel
-export function fullVHfix() {
-  const fullScreens = document.querySelectorAll('[data-fullscreen]');
-  if (fullScreens.length && isMobile.any()) {
-    window.addEventListener('resize', fixHeight);
-    function fixHeight() {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    fixHeight();
-  }
 }
 
 // smooth behavior ============================================================
@@ -181,13 +119,13 @@ export let bodyLockToggle = (delay = 500) => {
 export let bodyUnlock = (delay = 500) => {
   let body = document.querySelector('body');
   if (bodyLockStatus) {
-    let lock_padding = document.querySelectorAll('[data-lp]');
+    // let lock_padding = document.querySelectorAll('[data-lp]');
     setTimeout(() => {
-      for (let index = 0; index < lock_padding.length; index++) {
-        const el = lock_padding[index];
-        el.style.paddingRight = '0px';
-      }
-      body.style.paddingRight = '0px';
+      //   for (let index = 0; index < lock_padding.length; index++) {
+      //     const el = lock_padding[index];
+      //     // el.style.paddingRight = '0px';
+      //   }
+      //   // body.style.paddingRight = '0px';
       document.documentElement.classList.remove('lock');
     }, delay);
     bodyLockStatus = false;
@@ -200,15 +138,15 @@ export let bodyLock = (delay = 500) => {
   let body = document.querySelector('body');
   if (bodyLockStatus) {
     let lock_padding = document.querySelectorAll('[data-lp]');
-    for (let index = 0; index < lock_padding.length; index++) {
-      const el = lock_padding[index];
-      el.style.paddingRight =
-        window.innerWidth -
-        document.querySelector('.wrapper').offsetWidth +
-        'px';
-    }
-    body.style.paddingRight =
-      window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+    // for (let index = 0; index < lock_padding.length; index++) {
+    //   const el = lock_padding[index];
+    //   el.style.paddingRight =
+    //     window.innerWidth -
+    //     document.querySelector('.wrapper').offsetWidth +
+    //     'px';
+    // }
+    // body.style.paddingRight =
+    //   window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
     document.documentElement.classList.add('lock');
 
     bodyLockStatus = false;
@@ -217,123 +155,6 @@ export let bodyLock = (delay = 500) => {
     }, delay);
   }
 };
-
-// spoilers ====================================================================
-export function spoilers() {
-  const spoilersArray = document.querySelectorAll('[data-spoilers]');
-  if (spoilersArray.length > 0) {
-    // get regular spoilers
-    const spoilersRegular = Array.from(spoilersArray).filter(
-      function (item, index, self) {
-        return !item.dataset.spoilers.split(',')[0];
-      }
-    );
-    // regular spoilers initialization
-    if (spoilersRegular.length) {
-      initSpoilers(spoilersRegular);
-    }
-    // get spoilers with media queries
-    let mdQueriesArray = dataMediaQueries(spoilersArray, 'spoilers');
-    if (mdQueriesArray && mdQueriesArray.length) {
-      mdQueriesArray.forEach(mdQueriesItem => {
-        // event
-        mdQueriesItem.matchMedia.addEventListener('change', function () {
-          initSpoilers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-        });
-        initSpoilers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-      });
-    }
-    // initialization
-    function initSpoilers(spoilersArray, matchMedia = false) {
-      spoilersArray.forEach(spoilersBlock => {
-        spoilersBlock = matchMedia ? spoilersBlock.item : spoilersBlock;
-        if (matchMedia.matches || !matchMedia) {
-          spoilersBlock.classList.add('_spoiler-init');
-          initSpoilerBody(spoilersBlock);
-          spoilersBlock.addEventListener('click', setSpoilerAction);
-        } else {
-          spoilersBlock.classList.remove('_spoiler-init');
-          initSpoilerBody(spoilersBlock, false);
-          spoilersBlock.removeEventListener('click', setSpoilerAction);
-        }
-      });
-    }
-    // content
-    function initSpoilerBody(spoilersBlock, hideSpoilerBody = true) {
-      let spoilerTitles = spoilersBlock.querySelectorAll('[data-spoiler]');
-      if (spoilerTitles.length) {
-        spoilerTitles = Array.from(spoilerTitles).filter(
-          item => item.closest('[data-spoilers]') === spoilersBlock
-        );
-        spoilerTitles.forEach(spoilerTitle => {
-          if (hideSpoilerBody) {
-            spoilerTitle.removeAttribute('tabindex');
-            if (!spoilerTitle.classList.contains('_spoiler-active')) {
-              spoilerTitle.nextElementSibling.hidden = true;
-            }
-          } else {
-            spoilerTitle.setAttribute('tabindex', '-1');
-            spoilerTitle.nextElementSibling.hidden = false;
-          }
-        });
-      }
-    }
-    function setSpoilerAction(e) {
-      const el = e.target;
-      if (el.closest('[data-spoiler]')) {
-        const spoilerTitle = el.closest('[data-spoiler]');
-        const spoilersBlock = spoilerTitle.closest('[data-spoilers]');
-        const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler');
-        const spoilerSpeed = spoilersBlock.dataset.spoilersSpeed
-          ? parseInt(spoilersBlock.dataset.spoilersSpeed)
-          : 500;
-        if (!spoilersBlock.querySelectorAll('._slide').length) {
-          if (
-            oneSpoiler &&
-            !spoilerTitle.classList.contains('_spoiler-active')
-          ) {
-            hideSpoilersBody(spoilersBlock);
-          }
-          spoilerTitle.classList.toggle('_spoiler-active');
-          _slideToggle(spoilerTitle.nextElementSibling, spoilerSpeed);
-        }
-        e.preventDefault();
-      }
-    }
-    function hideSpoilersBody(spoilersBlock) {
-      const spoilerActiveTitle = spoilersBlock.querySelector(
-        '[data-spoiler]._spoiler-active'
-      );
-      const spoilerSpeed = spoilersBlock.dataset.spoilersSpeed
-        ? parseInt(spoilersBlock.dataset.spoilersSpeed)
-        : 500;
-      if (
-        spoilerActiveTitle &&
-        !spoilersBlock.querySelectorAll('._slide').length
-      ) {
-        spoilerActiveTitle.classList.remove('_spoiler-active');
-        _slideUp(spoilerActiveTitle.nextElementSibling, spoilerSpeed);
-      }
-    }
-    // closing on click outside the spoiler
-    const spoilersClose = document.querySelectorAll('[data-spoiler-close]');
-    if (spoilersClose.length) {
-      document.addEventListener('click', function (e) {
-        const el = e.target;
-        if (!el.closest('[data-spoilers]')) {
-          spoilersClose.forEach(spoilerClose => {
-            const spoilersBlock = spoilerClose.closest('[data-spoilers]');
-            const spoilerSpeed = spollersBlock.dataset.spoilersSpeed
-              ? parseInt(spoilersBlock.dataset.spoilersSpeed)
-              : 500;
-            spoilerClose.classList.remove('_spoiler-active');
-            _slideUp(spoilerClose.nextElementSibling, spoilerSpeed);
-          });
-        }
-      });
-    }
-  }
-}
 
 // tabs ========================================================================
 export function tabs() {
@@ -526,144 +347,6 @@ export function menuClose() {
   document.documentElement.classList.remove('menu-open');
 }
 
-// menu ========================================================================
-export function showMore() {
-  window.addEventListener('load', function (e) {
-    const showMoreBlocks = document.querySelectorAll('[data-showmore]');
-    let showMoreBlocksRegular;
-    let mdQueriesArray;
-    if (showMoreBlocks.length) {
-      // get regular objects
-      showMoreBlocksRegular = Array.from(showMoreBlocks).filter(
-        function (item, index, self) {
-          return !item.dataset.showmoreMedia;
-        }
-      );
-      // regular objects initialization
-      showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
-
-      document.addEventListener('click', showMoreActions);
-      window.addEventListener('resize', showMoreActions);
-
-      // get objects with media queries
-      mdQueriesArray = dataMediaQueries(showMoreBlocks, 'showmoreMedia');
-      if (mdQueriesArray && mdQueriesArray.length) {
-        mdQueriesArray.forEach(mdQueriesItem => {
-          // event
-          mdQueriesItem.matchMedia.addEventListener('change', function () {
-            initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-          });
-        });
-        initItemsMedia(mdQueriesArray);
-      }
-    }
-    function initItemsMedia(mdQueriesArray) {
-      mdQueriesArray.forEach(mdQueriesItem => {
-        initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-      });
-    }
-    function initItems(showMoreBlocks, matchMedia) {
-      showMoreBlocks.forEach(showMoreBlock => {
-        initItem(showMoreBlock, matchMedia);
-      });
-    }
-    function initItem(showMoreBlock, matchMedia = false) {
-      showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
-      let showMoreContent = showMoreBlock.querySelectorAll(
-        '[data-showmore-content]'
-      );
-      let showMoreButton = showMoreBlock.querySelectorAll(
-        '[data-showmore-button]'
-      );
-      showMoreContent = Array.from(showMoreContent).filter(
-        item => item.closest('[data-showmore]') === showMoreBlock
-      )[0];
-      showMoreButton = Array.from(showMoreButton).filter(
-        item => item.closest('[data-showmore]') === showMoreBlock
-      )[0];
-      const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-      if (matchMedia.matches || !matchMedia) {
-        if (hiddenHeight < getOriginalHeight(showMoreContent)) {
-          _slideUp(showMoreContent, 0, hiddenHeight);
-          showMoreButton.hidden = false;
-        } else {
-          _slideDown(showMoreContent, 0, hiddenHeight);
-          showMoreButton.hidden = true;
-        }
-      } else {
-        _slideDown(showMoreContent, 0, hiddenHeight);
-        showMoreButton.hidden = true;
-      }
-    }
-    function getHeight(showMoreBlock, showMoreContent) {
-      let hiddenHeight = 0;
-      const showMoreType = showMoreBlock.dataset.showmore
-        ? showMoreBlock.dataset.showmore
-        : 'size';
-      if (showMoreType === 'items') {
-        const showMoreTypeValue = showMoreContent.dataset.showmoreContent
-          ? showMoreContent.dataset.showmoreContent
-          : 3;
-        const showMoreItems = showMoreContent.children;
-        for (let index = 1; index < showMoreItems.length; index++) {
-          const showMoreItem = showMoreItems[index - 1];
-          hiddenHeight += showMoreItem.offsetHeight;
-          if (index == showMoreTypeValue) break;
-        }
-      } else {
-        const showMoreTypeValue = showMoreContent.dataset.showmoreContent
-          ? showMoreContent.dataset.showmoreContent
-          : 150;
-        hiddenHeight = showMoreTypeValue;
-      }
-      return hiddenHeight;
-    }
-    function getOriginalHeight(showMoreContent) {
-      let parentHidden;
-      let hiddenHeight = showMoreContent.offsetHeight;
-      showMoreContent.style.removeProperty('height');
-      if (showMoreContent.closest(`[hidden]`)) {
-        parentHidden = showMoreContent.closest(`[hidden]`);
-        parentHidden.hidden = false;
-      }
-      let originalHeight = showMoreContent.offsetHeight;
-      parentHidden ? (parentHidden.hidden = true) : null;
-      showMoreContent.style.height = `${hiddenHeight}px`;
-      return originalHeight;
-    }
-    function showMoreActions(e) {
-      const targetEvent = e.target;
-      const targetType = e.type;
-      if (targetType === 'click') {
-        if (targetEvent.closest('[data-showmore-button]')) {
-          const showMoreButton = targetEvent.closest('[data-showmore-button]');
-          const showMoreBlock = showMoreButton.closest('[data-showmore]');
-          const showMoreContent = showMoreBlock.querySelector(
-            '[data-showmore-content]'
-          );
-          const showMoreSpeed = showMoreBlock.dataset.showmoreButton
-            ? showMoreBlock.dataset.showmoreButton
-            : '500';
-          const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-          if (!showMoreContent.classList.contains('_slide')) {
-            showMoreBlock.classList.contains('_showmore-active')
-              ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight)
-              : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
-            showMoreBlock.classList.toggle('_showmore-active');
-          }
-        }
-      } else if (targetType === 'resize') {
-        showMoreBlocksRegular && showMoreBlocksRegular.length
-          ? initItems(showMoreBlocksRegular)
-          : null;
-        mdQueriesArray && mdQueriesArray.length
-          ? initItemsMedia(mdQueriesArray)
-          : null;
-      }
-    }
-  });
-}
-
 // =============================================================================
 // other utilities
 // =============================================================================
@@ -681,16 +364,6 @@ export function FLS(message) {
       console.log(message);
     }
   }, 0);
-}
-
-// get digits from string
-export function getDigFromString(item) {
-  return parseInt(item.replace(/[^\d]/g, ''));
-}
-
-// format digits like 100,000,000
-export function getDigFormat(item) {
-  return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 }
 
 // remove class from all array elements

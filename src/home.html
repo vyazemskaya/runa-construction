@@ -10,7 +10,7 @@
     <div class="wrapper scroll-trigger">
       <main class="main mainpage">
         <section class="mainpage__hero hero grid">
-          <div class="hero__sidebar sidebar">
+          <div data-scroll="120" data-scroll-show class="hero__sidebar sidebar">
             <div class="sidebar__inner">
               <a href="#" class="sidebar__logo-wrap"
                 ><img
@@ -97,7 +97,10 @@
                 <p class="hero__text txt txt_16">
                   В каждом нашем проекте заложен уникальный смысл
                 </p>
-                <button data-popup="#request-modal" type="button" class="hero__btn btn btn_primary">
+                <button
+                  data-popup="#request-modal"
+                  type="button"
+                  class="hero__btn btn btn_primary">
                   <span class="btn__text txt txt_16">Заказать звонок</span>
                   <svg
                     width="16"
@@ -201,7 +204,10 @@
           <div class="services__container container">
             <div class="services__head">
               <span class="services__title tl1">услуги</span>
-              <a href="#" class="services__btn btn btn_primary">
+              <button
+                type="button"
+                data-popup="#request-modal"
+                class="services__btn btn btn_primary">
                 <span class="btn__text txt txt_18">Обсудить проект</span>
                 <svg
                   width="16"
@@ -220,7 +226,7 @@
                     stroke-width="1.5"
                     stroke-linecap="round" />
                 </svg>
-              </a>
+              </button>
             </div>
             <div class="services__body">
               <div class="services__card card-services">

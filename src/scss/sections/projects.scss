@@ -11,7 +11,10 @@
     &::before {
       @extend %line;
       top: -18rem;
-      height: calc(100% + 18rem);
+      height: calc(100% + 36rem);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (min-width: 48em) {
       grid-column: 2/3;
@@ -55,6 +58,9 @@
       left: 2px;
       width: calc(161.3rem - 4px);
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     &::before {
       top: -2px;
@@ -92,6 +98,11 @@
   // .projects__tab
 
   &__tab {
+    .tab__text::after {
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
+    }
     @media (min-width: 48em) {
       flex: 1 1 auto;
     }
@@ -108,6 +119,9 @@
     &::after {
       @extend %line;
       top: 2px;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     &::before {
       left: calc(50% - 2px);

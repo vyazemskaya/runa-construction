@@ -11,12 +11,18 @@
       @extend %line;
       top: 0;
       left: 0;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     &::after {
       @extend %line;
       top: 0;
       right: 0;
       height: calc(100% + 18rem);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (max-width: 48em) {
       padding: 0;
@@ -39,6 +45,9 @@
       @extend %line;
       top: 0;
       left: calc(145.6rem / 2);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (min-width: 48em) {
       grid-template-columns: repeat(2, calc(145.6rem / 2));

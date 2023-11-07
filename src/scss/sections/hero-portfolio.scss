@@ -13,6 +13,9 @@
       top: 0;
       left: 0;
       background-color: rgba(255, 255, 255, 0.2);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (max-width: 48em) {
       padding: 0;
@@ -181,21 +184,32 @@
     }
   }
 
-  // .hero-portfolio__thumbs
+  // .hero-portfolio__thumbs-carousel
 
-  &__thumbs {
+  &__thumbs-carousel {
     position: absolute;
     z-index: 5;
     bottom: 10rem;
     right: 0;
+    overflow: hidden;
+  }
+
+
+  // .hero-portfolio__thumbs
+
+  &__thumbs {
     width: 68.2rem;
     height: 23.3rem;
+    &.swiper {
+      overflow: visible;
+    }
   }
 
   // .hero-portfolio__thumb
 
   &__thumb {
     width: 23.5rem;
+    cursor: pointer;
   }
 
   // .hero-portfolio__thumb-image-wrap

@@ -28,6 +28,9 @@
       @extend %line;
       top: 0;
       left: 0;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (max-width: 48em) {
       padding: 0;

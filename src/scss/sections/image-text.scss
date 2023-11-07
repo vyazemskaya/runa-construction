@@ -11,6 +11,9 @@
       @extend %line;
       top: -18rem;
       height: calc(100% + 18rem);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (min-width: 48em) {
       display: grid;
@@ -37,6 +40,9 @@
       bottom: 0;
       width: 100%;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
   }
 
@@ -50,6 +56,9 @@
       left: 0;
       width: 100%;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     &::before {
       top: 0;
@@ -94,6 +103,9 @@
       top: 0;
       width: 100%;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (max-width: 48em) {
       flex-direction: column;
@@ -131,6 +143,7 @@
   &__image-wrap {
     height: 37rem;
     @media (min-width: 48em) {
+      width: calc(100% + 23.2rem);
       height: 100%;
       min-height: 77.1rem;
     }
@@ -144,8 +157,5 @@
   &__image {
     height: 100%;
     object-fit: cover;
-    @media (min-width: 48em) {
-      width: calc(100% + ((192rem - 145.6rem) / 2));
-    }
   }
 }

@@ -5,7 +5,7 @@ import {
   Pagination,
   Autoplay,
   EffectCreative,
-  Thumbs,
+  Controller,
 } from 'swiper/modules';
 
 // styles ======================================================================
@@ -20,6 +20,7 @@ import '../../scss/base/swiper.scss';
 // import 'swiper/css';
 
 // launch ======================================================================
+
 let tabsSlider = null;
 let heroProjectSlider = null;
 
@@ -79,7 +80,7 @@ function initSliders() {
 
       // autoplay
       autoplay: {
-        delay: 7000,
+        delay: 8000,
         disableOnInteraction: false,
         enabled: false,
       },
@@ -95,7 +96,6 @@ function initSliders() {
         el: '#projects-sl-fraction',
         type: 'custom',
         renderCustom: function (swiper, current, total) {
-          console.log('log');
           const isSingletTotal = total < 10 ? '0' : ' ';
           const isSingleCurrent = current < 10 ? '0' : ' ';
           return isSingleCurrent + current + ' / ' + isSingletTotal + total;
@@ -106,6 +106,12 @@ function initSliders() {
       on: {
         afterInit: swiper => {
           setSlideText(swiper);
+          swiper.autoplay.stop();
+          if (document.documentElement.classList.contains('_loaded')) {
+            setTimeout(() => {
+              swiper.autoplay.start();
+            }, 2000);
+          }
         },
         slideChange: swiper => {
           setSlideText(swiper);
@@ -223,6 +229,14 @@ function initSliders() {
           autoplayTimeLeft: (s, time, progress) => {
             setAutoplayProgress(s, time, progress);
           },
+          init: swiper => {
+            swiper.autoplay.stop();
+            if (document.documentElement.classList.contains('_loaded')) {
+              setTimeout(() => {
+                swiper.autoplay.start();
+              }, 2000);
+            }
+          },
         },
       });
     }
@@ -236,13 +250,20 @@ function initSliders() {
       spaceBetween: 30,
       autoHeight: false,
       speed: 800,
-      allowTouchMove: false,
+      allowTouchMove: true,
       loop: true,
 
       // navigation
       navigation: {
         prevEl: '.project-info__slider-arr_prev',
         nextEl: '.project-info__slider-arr_next',
+      },
+
+      // breakpoints
+      breakpoints: {
+        768: {
+          allowTouchMove: false,
+        },
       },
     });
   }
@@ -255,12 +276,19 @@ function initSliders() {
       spaceBetween: 30,
       autoHeight: false,
       speed: 800,
-      allowTouchMove: false,
+      allowTouchMove: true,
       loop: true,
       // navigation
       navigation: {
         prevEl: '.project-layout__slider-arr_prev',
         nextEl: '.project-layout__slider-arr_next',
+      },
+
+      // breakpoints
+      breakpoints: {
+        768: {
+          allowTouchMove: false,
+        },
       },
     });
   }
@@ -273,12 +301,19 @@ function initSliders() {
       spaceBetween: 30,
       autoHeight: false,
       speed: 800,
-      allowTouchMove: false,
+      allowTouchMove: true,
       loop: true,
       // navigation
       navigation: {
         prevEl: '.project-interiors__slider-arr_prev',
         nextEl: '.project-interiors__slider-arr_next',
+      },
+
+      // breakpoints
+      breakpoints: {
+        768: {
+          allowTouchMove: false,
+        },
       },
     });
   }
@@ -302,21 +337,19 @@ function initSliders() {
   }
   if (document.querySelector('.hero-portfolio__slider')) {
     const portfolioThumbs = new Swiper('.hero-portfolio__thumbs', {
+      modules: [Controller],
+      observer: true,
+      observeParents: true,
       spaceBetween: 30,
-      slidesPerView: 'auto',
-      freeMode: true,
+      slidesPerView: 2.4,
+      slideToClickedSlide: true,
     });
-    new Swiper('.hero-portfolio__slider', {
-      modules: [Navigation, Pagination, EffectFade, Thumbs],
+    const portfolioSlider = new Swiper('.hero-portfolio__slider', {
+      modules: [Navigation, Pagination, EffectFade, Controller],
       observer: true,
       observeParents: true,
       slidesPerView: 1,
       updateOnWindowResize: true,
-
-      // thumbs
-      thumbs: {
-        swiper: portfolioThumbs,
-      },
 
       // effects
       effect: 'fade',
@@ -341,6 +374,8 @@ function initSliders() {
         },
       },
     });
+    portfolioSlider.controller.control = portfolioThumbs;
+    portfolioThumbs.controller.control = portfolioSlider;
   }
 }
 
@@ -377,6 +412,7 @@ function initSlidersScroll() {
 //=================================================================================================================
 
 window.addEventListener('load', function (e) {
+  document.documentElement.classList.add('_loaded');
   initSliders();
   //initSlidersScroll();
 });

@@ -8,10 +8,13 @@
     <title>Контакты</title>
   </head>
   <body style="opacity: 0">
-    <div class="wrapper">
+    <div class="wrapper scroll-trigger">
       <main class="main contacts-page">
         <section class="contacts-page__contacts contacts grid">
-          <div class="hero-project__sidebar sidebar">
+          <div
+            data-scroll="120"
+            data-scroll-show
+            class="contacts__sidebar sidebar">
             <div class="sidebar__inner">
               <a href="#" class="sidebar__logo-wrap"
                 ><img
@@ -104,7 +107,8 @@
                   class="contacts__tel tl1"
                   >+7 999 999 - 99 - 99</a
                 >
-                <button data-popup="#request-modal"
+                <button
+                  data-popup="#request-modal"
                   data-da=".contacts__column_info,768,first"
                   type="button"
                   class="contacts__btn btn btn_primary">

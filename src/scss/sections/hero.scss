@@ -19,6 +19,9 @@
       top: 0;
       left: 0;
       background-color: rgba(255, 255, 255, 0.2);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     .mainpage & {
       &::before {
@@ -131,6 +134,9 @@
         width: 192rem;
         height: 2px;
         background-color: rgba(255, 255, 255, 0.2);
+        .scroll-trigger & {
+          transform: scaleX(var(--scaleX));
+        }
       }
     }
     @media (max-width: 48em) {

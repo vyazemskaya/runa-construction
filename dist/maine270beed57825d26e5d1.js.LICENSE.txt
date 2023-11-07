@@ -112,11 +112,15 @@
 
 /*! ./files/scroll/lazyload.js */
 
+/*! ./files/scroll/scroll.js */
+
 /*! ./files/sliders.js */
 
 /*! ./free-mode.mjs */
 
 /*! ./functions.js */
+
+/*! ./gotoblock.js */
 
 /*! ./grid.mjs */
 
@@ -215,6 +219,10 @@
 /*!**************************************!*\
   !*** ./src/js/libs/dynamic_adapt.js ***!
   \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/js/files/scroll/scroll.js ***!
+  \***************************************/
 
 /*!****************************************!*\
   !*** ./node_modules/swiper/swiper.mjs ***!

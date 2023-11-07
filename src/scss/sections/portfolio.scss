@@ -12,6 +12,9 @@
       top: -18rem;
       left: 0;
       height: calc(100% + 18rem);
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (max-width: 48em) {
       &::before {
@@ -34,6 +37,9 @@
       left: 0;
       width: 100%;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (min-width: 48em) {
       padding-left: 3rem;
@@ -61,6 +67,9 @@
       @extend %line;
       right: 0;
       top: 0;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (max-width: 48em) {
       row-gap: 10rem;
@@ -82,6 +91,9 @@
       left: 0;
       width: 100%;
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     &:last-child::after {
       top: auto;
@@ -113,6 +125,9 @@
         @extend %line;
         top: 0;
         right: 0;
+        .scroll-trigger & {
+          transform: scaleY(var(--scaleY));
+        }
       }
     }
     @media (min-width: 48em) {
@@ -204,6 +219,9 @@
       left: 0;
       width: calc(100% + 23.2rem);
       height: 2px;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (max-width: 48em) {
       padding: 3.2rem 0;
