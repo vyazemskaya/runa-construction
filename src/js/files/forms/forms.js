@@ -253,7 +253,7 @@ export function formSubmit(options = { validate: true }) {
         const popup = form.dataset.popupMessage;
         popup ? modules.popup.open(popup) : null;
       }
-    }, 0);
+    }, 500);
     // clean form
     formValidate.formClean(form);
     // console output

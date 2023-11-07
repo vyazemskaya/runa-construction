@@ -107,6 +107,9 @@ class Popup {
           `[${this.options.attributeOpenButton}]`
         )
         if (buttonOpen) {
+          if (document.documentElement.classList.contains('menu-open')) {
+            document.documentElement.classList.remove('menu-open')
+          }
           e.preventDefault()
           this._dataValue = buttonOpen.getAttribute(
             this.options.attributeOpenButton

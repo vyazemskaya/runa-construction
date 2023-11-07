@@ -1,17 +1,21 @@
-body::after {
+body::before {
   content: '';
-  background-color: rgba(27, 66, 85, 0.2);
   position: fixed;
-  width: 100%;
-  height: 100%;
+  z-index: 90;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transition: opacity 0.8s ease 0s;
+  background-color: $black;
   pointer-events: none;
-  z-index: 149;
+  transition: opacity 0.8s ease 0s;
+  @media (min-width: 48em){
+    background: rgba(106, 106, 106, 0.20);
+    backdrop-filter: blur(1.9rem);
+  }
 }
-.popup-show body::after {
+.popup-show body::before {
   opacity: 1;
 }
 .popup {
@@ -20,10 +24,15 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 30px 10px;
-  transition: visibility 0.8s ease 0s;
+  padding: 3rem 1rem;
   visibility: hidden;
   pointer-events: none;
+  transition: visibility 0.8s ease 0s;
+  &.request-modal{
+    @media (max-width: 48em){
+       padding: 0;
+    }
+  }
 }
 .popup_show {
   z-index: 150;
@@ -38,24 +47,185 @@ body::after {
 .popup__wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 100%;
-  flex: 1 1 auto;
-  width: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1 1 auto;
+  min-height: 100%;
+  width: 100%;
 }
 .popup__content {
+  padding: 2rem;
+  width: 100%;
+  max-width: 127.8rem;
+  background-color: $black;
   visibility: hidden;
   transform: scale(0);
   transition: transform 0.3s ease 0s;
-  background-color: #eee;
-  padding: 20px;
-  width: 100%;
-  max-width: 900px;
-  border-radius: 20px;
   .lock & {
     visibility: visible;
+  }
+  .request-modal & {
+    padding: 0;
+    display: grid;
+    @media (min-width: 48em){
+      grid-template-columns: 59.9rem 1fr;
+
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+
+.request-modal {
+
+  // .request-modal__image-wrap
+
+  &__image-wrap {
+    @media (max-width: 48em){
+      margin-bottom: 6.3rem;
+      width: 100%;
+       height: 46rem;
+    }
+  }
+
+  // .request-modal__image
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // .request-modal__body
+
+  &__body {
+    padding: 2.5rem 2.5rem 9.7rem 8rem;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 48em){
+       padding: 5rem 0 21.4rem 0;
+       .request-modal_sent & {
+        align-items: center;
+    text-align: center;
+       }
+    }
+    @media (min-width: 48em){
+      .request-modal_sent & {
+        padding: 2.5rem 2.5rem 23.6rem 8rem;
+
+      }
+    }
+  }
+
+  // .request-modal__close-btn
+
+  &__close-btn {
+    margin-bottom: 4.9rem;
+    width: 3rem;
+    height: 3rem;
+    align-self: flex-end;
+    @media (max-width: 48em){
+       margin-bottom: 11rem;
+       width: 5rem;
+       height: 5rem;
+       transform: translateX(-3.2rem);
+    }
+    @media (min-width: 48em){
+      .request-modal_sent & {
+        margin-bottom: 18.8rem;
+      }
+
+    }
+  }
+
+  // .request-modal__title
+
+  &__title {
+    margin-bottom: 3.2rem;
+    @media (max-width: 48em){
+       padding: 0 3.2rem;
+    }
+    @media (min-width: 48em){
+      .request-modal_sent & {
+        max-width: 53.3rem;
+      }
+
+    }
+  }
+
+  // .request-modal__text
+
+  &__text {
+    margin-bottom: 6rem;
+    .request-modal_sent & {
+      margin-bottom: 3.2rem;
+    }
+    @media (max-width: 48em){
+      margin-bottom: 5rem;
+      padding: 0 3.2rem;
+       max-width: 58.2rem;
+    }
+  }
+
+  // .request-modal__form
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (max-width: 48em){
+       padding: 0 3.2rem;
+    }
+  }
+
+  // .request-modal__fields
+
+  &__fields {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    width: 50rem;
+    @media (max-width: 48em){
+      margin-bottom: 5rem;
+      row-gap: 5rem;
+       width: 100%;
+    }
+  }
+
+  // .request-modal__input
+
+  &__input {
+  }
+
+  // .request-modal__actions
+
+  &__actions {
+    @media (max-width: 48em){
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       column-gap: 2rem;
+    }
+  }
+
+  // .request-modal__checkbox
+
+  &__checkbox {
+    @media (min-width: 48em){
+      margin-bottom: 5.6rem;
+
+    }
+  }
+
+  // .request-modal__btn
+
+  &__btn {
+    min-width: 15.3rem;
+    @media (max-width: 48em){
+       min-width: 24.6rem;
+    }
+    @media (min-width: 48em){
+        align-self: flex-start;
+    }
   }
 }

@@ -40,6 +40,10 @@
 
 /*! ../../scss/base/swiper.scss */
 
+/*! ../files/functions.js */
+
+/*! ../files/modules.js */
+
 /*! ../functions.js */
 
 /*! ../modules.js */
@@ -128,6 +132,8 @@
 
 /*! ./libs/dynamic_adapt.js */
 
+/*! ./libs/popup.js */
+
 /*! ./manipulation.mjs */
 
 /*! ./modules.js */
@@ -177,6 +183,10 @@
 /*!*****************************!*\
   !*** ./src/js/files/map.js ***!
   \*****************************/
+
+/*!******************************!*\
+  !*** ./src/js/libs/popup.js ***!
+  \******************************/
 
 /*!********************************!*\
   !*** ./src/js/files/script.js ***!

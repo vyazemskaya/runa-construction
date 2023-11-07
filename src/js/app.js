@@ -1,5 +1,5 @@
-// full logging system)
-window['FLS'] = true;
+// full logging system
+window['FLS'] = false;
 
 // main styles
 // import '../scss/style.scss';
@@ -40,7 +40,7 @@ tabs();
 
 // popups
 // snippet ( HTML ): pl
-// import './libs/popup.js'
+import './libs/popup.js'
 
 // mouse parallax
 // import './libs/parallax-mouse.js'
