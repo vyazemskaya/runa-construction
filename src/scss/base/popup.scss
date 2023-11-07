@@ -10,8 +10,8 @@ body::before {
   background-color: $black;
   pointer-events: none;
   transition: opacity 0.8s ease 0s;
-  @media (min-width: 48em){
-    background: rgba(106, 106, 106, 0.20);
+  @media (min-width: 48em) {
+    background: rgba(106, 106, 106, 0.2);
     backdrop-filter: blur(1.9rem);
   }
 }
@@ -25,12 +25,16 @@ body::before {
   bottom: 0;
   right: 0;
   padding: 3rem 1rem;
+  display: none;
   visibility: hidden;
   pointer-events: none;
   transition: visibility 0.8s ease 0s;
-  &.request-modal{
-    @media (max-width: 48em){
-       padding: 0;
+  ._loaded & {
+    display: block;
+  }
+  &.request-modal {
+    @media (max-width: 48em) {
+      padding: 0;
     }
   }
 }
@@ -67,9 +71,8 @@ body::before {
   .request-modal & {
     padding: 0;
     display: grid;
-    @media (min-width: 48em){
+    @media (min-width: 48em) {
       grid-template-columns: 59.9rem 1fr;
-
     }
   }
 }
@@ -77,14 +80,13 @@ body::before {
 // --------------------------------------------------------------------------
 
 .request-modal {
-
   // .request-modal__image-wrap
 
   &__image-wrap {
-    @media (max-width: 48em){
+    @media (max-width: 48em) {
       margin-bottom: 6.3rem;
       width: 100%;
-       height: 46rem;
+      height: 46rem;
     }
   }
 
@@ -101,17 +103,16 @@ body::before {
     padding: 2.5rem 2.5rem 9.7rem 8rem;
     display: flex;
     flex-direction: column;
-    @media (max-width: 48em){
-       padding: 5rem 0 21.4rem 0;
-       .request-modal_sent & {
+    @media (max-width: 48em) {
+      padding: 5rem 0 21.4rem 0;
+      .request-modal_sent & {
         align-items: center;
-    text-align: center;
-       }
+        text-align: center;
+      }
     }
-    @media (min-width: 48em){
+    @media (min-width: 48em) {
       .request-modal_sent & {
         padding: 2.5rem 2.5rem 23.6rem 8rem;
-
       }
     }
   }
@@ -123,17 +124,16 @@ body::before {
     width: 3rem;
     height: 3rem;
     align-self: flex-end;
-    @media (max-width: 48em){
-       margin-bottom: 11rem;
-       width: 5rem;
-       height: 5rem;
-       transform: translateX(-3.2rem);
+    @media (max-width: 48em) {
+      margin-bottom: 11rem;
+      width: 5rem;
+      height: 5rem;
+      transform: translateX(-3.2rem);
     }
-    @media (min-width: 48em){
+    @media (min-width: 48em) {
       .request-modal_sent & {
         margin-bottom: 18.8rem;
       }
-
     }
   }
 
@@ -141,14 +141,13 @@ body::before {
 
   &__title {
     margin-bottom: 3.2rem;
-    @media (max-width: 48em){
-       padding: 0 3.2rem;
+    @media (max-width: 48em) {
+      padding: 0 3.2rem;
     }
-    @media (min-width: 48em){
+    @media (min-width: 48em) {
       .request-modal_sent & {
         max-width: 53.3rem;
       }
-
     }
   }
 
@@ -159,10 +158,10 @@ body::before {
     .request-modal_sent & {
       margin-bottom: 3.2rem;
     }
-    @media (max-width: 48em){
+    @media (max-width: 48em) {
       margin-bottom: 5rem;
       padding: 0 3.2rem;
-       max-width: 58.2rem;
+      max-width: 58.2rem;
     }
   }
 
@@ -172,8 +171,8 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    @media (max-width: 48em){
-       padding: 0 3.2rem;
+    @media (max-width: 48em) {
+      padding: 0 3.2rem;
     }
   }
 
@@ -185,10 +184,10 @@ body::before {
     flex-direction: column;
     row-gap: 2.4rem;
     width: 50rem;
-    @media (max-width: 48em){
+    @media (max-width: 48em) {
       margin-bottom: 5rem;
       row-gap: 5rem;
-       width: 100%;
+      width: 100%;
     }
   }
 
@@ -200,20 +199,19 @@ body::before {
   // .request-modal__actions
 
   &__actions {
-    @media (max-width: 48em){
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-       column-gap: 2rem;
+    @media (max-width: 48em) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 2rem;
     }
   }
 
   // .request-modal__checkbox
 
   &__checkbox {
-    @media (min-width: 48em){
+    @media (min-width: 48em) {
       margin-bottom: 5.6rem;
-
     }
   }
 
@@ -221,11 +219,11 @@ body::before {
 
   &__btn {
     min-width: 15.3rem;
-    @media (max-width: 48em){
-       min-width: 24.6rem;
+    @media (max-width: 48em) {
+      min-width: 24.6rem;
     }
-    @media (min-width: 48em){
-        align-self: flex-start;
+    @media (min-width: 48em) {
+      align-self: flex-start;
     }
   }
 }

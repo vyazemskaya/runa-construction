@@ -119,8 +119,9 @@
   // .company-methods__image-wrap
 
   &__image-wrap {
+    width: 64.3rem;
     @media (max-width: 48em) {
-      height: 70rem;
+      margin-bottom: 8rem;
     }
   }
 
