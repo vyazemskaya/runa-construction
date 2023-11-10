@@ -84,6 +84,9 @@ body::before {
     .popup__wrapper {
       justify-content: stretch;
     }
+    .popup__content {
+      flex: 1 1 auto;
+    }
   }
 
   // .request-modal__image-wrap
