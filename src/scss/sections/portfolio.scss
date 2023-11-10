@@ -37,12 +37,12 @@
       left: 0;
       width: 100%;
       height: 2px;
-      .scroll-trigger & {
-        transform: scaleX(var(--scaleX));
-      }
     }
     @media (min-width: 48em) {
       padding-left: 3rem;
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
       &::after {
         display: none;
       }
@@ -67,14 +67,16 @@
       @extend %line;
       right: 0;
       top: 0;
-      .scroll-trigger & {
-        transform: scaleY(var(--scaleY));
-      }
     }
     @media (max-width: 48em) {
       row-gap: 10rem;
       &::after {
         display: none;
+      }
+    }
+    @media (min-width: 48em) {
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
       }
     }
   }
@@ -91,9 +93,6 @@
       left: 0;
       width: 100%;
       height: 2px;
-      .scroll-trigger & {
-        transform: scaleX(var(--scaleX));
-      }
     }
     &:last-child::after {
       top: auto;
@@ -102,6 +101,9 @@
     }
     @media (min-width: 48em) {
       grid-template-columns: repeat(4, 1fr);
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
+      }
     }
     @media (max-width: 48em) {
       padding-bottom: 3.2rem;
@@ -125,13 +127,13 @@
         @extend %line;
         top: 0;
         right: 0;
-        .scroll-trigger & {
-          transform: scaleY(var(--scaleY));
-        }
       }
     }
     @media (min-width: 48em) {
       padding: 3rem;
+      .scroll-trigger & {
+        transform: scaleY(var(--scaleY));
+      }
     }
     @media (max-width: 48em) {
       &:not(:last-child) {
@@ -219,14 +221,16 @@
       left: 0;
       width: calc(100% + 23.2rem);
       height: 2px;
-      .scroll-trigger & {
-        transform: scaleX(var(--scaleX));
-      }
     }
     @media (max-width: 48em) {
       padding: 3.2rem 0;
       &::after {
         width: 100%;
+      }
+    }
+    @media (min-width: 48em) {
+      .scroll-trigger & {
+        transform: scaleX(var(--scaleX));
       }
     }
   }

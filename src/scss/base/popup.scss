@@ -61,7 +61,7 @@ body::before {
   padding: 2rem;
   width: 100%;
   max-width: 127.8rem;
-  background-color: $black;
+  background-color: #242424;
   visibility: hidden;
   transform: scale(0);
   transition: transform 0.3s ease 0s;
@@ -80,6 +80,12 @@ body::before {
 // --------------------------------------------------------------------------
 
 .request-modal {
+  @media (max-width: 48em) {
+    .popup__wrapper {
+      justify-content: stretch;
+    }
+  }
+
   // .request-modal__image-wrap
 
   &__image-wrap {

@@ -123,6 +123,9 @@
     @media (max-width: 48em) {
       margin-bottom: 8rem;
     }
+    @media (min-width: 48em) {
+      padding-bottom: 3rem;
+    }
   }
 
   // .company-methods__bg-text

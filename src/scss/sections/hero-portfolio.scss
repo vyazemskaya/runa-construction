@@ -194,7 +194,6 @@
     overflow: hidden;
   }
 
-
   // .hero-portfolio__thumbs
 
   &__thumbs {
@@ -354,5 +353,6 @@
   // .slide-hero-portfolio__link
 
   &__link {
+    transform: none;
   }
 }

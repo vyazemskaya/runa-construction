@@ -173,7 +173,7 @@ window.addEventListener('load', function () {
             .scaleY('.portfolio-page__hero')
             .fadeIn('.hero-portfolio__title')
             .clipT2B('.hero-portfolio__text', 2)
-            .fadeIn('.slide-hero-portfolio__content', 2)
+            .fadeIn('.swiper-slide-active .slide-hero-portfolio__content', 2)
             .toLeft('.hero-portfolio__thumbs-carousel', 3)
             .fadeIn(
               ['.hero-portfolio__slider-control', '.hero-portfolio__group'],

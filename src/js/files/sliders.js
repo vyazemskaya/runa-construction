@@ -23,6 +23,7 @@ import '../../scss/base/swiper.scss';
 
 let tabsSlider = null;
 let heroProjectSlider = null;
+let heroSlider = null;
 
 // hero slide text
 const setSlideText = swiper => {
@@ -61,73 +62,112 @@ function initSliders() {
     });
   }
   if (document.querySelector('.hero__slider')) {
-    new Swiper('.hero__slider', {
-      modules: [Navigation, EffectFade, Pagination, Autoplay],
-      observer: true,
-      observeParents: true,
-      slidesPerView: 1,
-      spaceBetween: 0,
-      autoHeight: false,
-      speed: 800,
-      allowTouchMove: false,
-      updateOnWindowResize: true,
+    if (window.innerWidth <= 768) {
+      heroSlider = new Swiper('.hero__slider', {
+        modules: [Navigation, EffectFade, Pagination],
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoHeight: false,
+        speed: 800,
+        allowTouchMove: false,
+        updateOnWindowResize: true,
 
-      // effects
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-
-      // autoplay
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false,
-        enabled: false,
-      },
-
-      // navigation
-      navigation: {
-        prevEl: '.hero__slider-arr_prev',
-        nextEl: '.hero__slider-arr_next',
-      },
-
-      // pagination
-      pagination: {
-        el: '#projects-sl-fraction',
-        type: 'custom',
-        renderCustom: function (swiper, current, total) {
-          const isSingletTotal = total < 10 ? '0' : ' ';
-          const isSingleCurrent = current < 10 ? '0' : ' ';
-          return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+        // effects
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
         },
-      },
 
-      // events
-      on: {
-        afterInit: swiper => {
-          setSlideText(swiper);
-          swiper.autoplay.stop();
-          if (document.documentElement.classList.contains('_loaded')) {
-            setTimeout(() => {
-              swiper.autoplay.start();
-            }, 2000);
-          }
+        // navigation
+        navigation: {
+          prevEl: '.hero__slider-arr_prev',
+          nextEl: '.hero__slider-arr_next',
         },
-        slideChange: swiper => {
-          setSlideText(swiper);
-        },
-        autoplayTimeLeft: (s, time, progress) => {
-          setAutoplayProgress(s, time, progress);
-        },
-      },
 
-      // breakpoints
-      breakpoints: {
-        768: {
-          autoplay: { enabled: true },
+        // pagination
+        pagination: {
+          el: '#projects-sl-fraction',
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            const isSingletTotal = total < 10 ? '0' : ' ';
+            const isSingleCurrent = current < 10 ? '0' : ' ';
+            return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+          },
         },
-      },
-    });
+
+        // events
+        on: {
+          afterInit: swiper => {
+            setSlideText(swiper);
+          },
+          slideChange: swiper => {
+            setSlideText(swiper);
+          },
+        },
+      });
+    } else {
+      heroSlider = new Swiper('.hero__slider', {
+        modules: [Navigation, EffectFade, Pagination, Autoplay],
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoHeight: false,
+        speed: 800,
+        allowTouchMove: false,
+        updateOnWindowResize: true,
+
+        // effects
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true,
+        },
+
+        // autoplay
+        autoplay: {
+          delay: 8000,
+          disableOnInteraction: false,
+        },
+
+        // navigation
+        navigation: {
+          prevEl: '.hero__slider-arr_prev',
+          nextEl: '.hero__slider-arr_next',
+        },
+
+        // pagination
+        pagination: {
+          el: '#projects-sl-fraction',
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+            const isSingletTotal = total < 10 ? '0' : ' ';
+            const isSingleCurrent = current < 10 ? '0' : ' ';
+            return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+          },
+        },
+
+        // events
+        on: {
+          afterInit: swiper => {
+            setSlideText(swiper);
+            swiper.autoplay.stop();
+            if (document.documentElement.classList.contains('_loaded')) {
+              setTimeout(() => {
+                swiper.autoplay.start();
+              }, 2000);
+            }
+          },
+          slideChange: swiper => {
+            setSlideText(swiper);
+          },
+          autoplayTimeLeft: (s, time, progress) => {
+            setAutoplayProgress(s, time, progress);
+          },
+        },
+      });
+    }
   }
   if (document.querySelector('.projects__tabs')) {
     if (window.innerWidth <= 768 && !tabsSlider) {
@@ -371,6 +411,13 @@ function initSliders() {
           const isSingletTotal = total < 10 ? '0' : ' ';
           const isSingleCurrent = current < 10 ? '0' : ' ';
           return isSingleCurrent + current + ' / ' + isSingletTotal + total;
+        },
+      },
+
+      // events
+      on: {
+        init: swiper => {
+          swiper.update();
         },
       },
     });
