@@ -44,7 +44,7 @@
     "lightgallery": "latest",
     "nouislider": "latest",
     "smooth-scroll": "latest",
-    "swiper": "latest",
+    "swiper": "8.1.4",
     "vanilla-lazyload": "latest"
   },
   "dependencies": {

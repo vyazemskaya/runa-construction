@@ -100,6 +100,14 @@
     @media (min-width: 48em) {
       padding-top: 10rem;
       width: calc(100% + 129.2rem);
+      .two-slides & {
+        margin-left: 9rem;
+        width: 112rem;
+      }
+      .three-slides & {
+        margin-left: 9rem;
+        width: 163rem;
+      }
     }
     @media (max-width: 48em) {
       margin-bottom: 3.2rem;
@@ -122,6 +130,9 @@
   &__slide {
     @media (min-width: 48em) {
       width: 52rem;
+      .one-slide & {
+        width: 100%;
+      }
     }
   }
 
@@ -210,6 +221,11 @@
   // .hero-project__slider-control
 
   &__slider-control {
+    .one-slide & {
+      .sl-fraction__progress {
+        display: none;
+      }
+    }
     @media (max-width: 48em) {
       display: flex;
       flex-direction: column;

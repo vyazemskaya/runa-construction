@@ -1,12 +1,12 @@
-import Swiper from 'swiper';
-import {
+// import Swiper from 'swiper';
+import Swiper, {
   Navigation,
   EffectFade,
   Pagination,
   Autoplay,
   EffectCreative,
   Controller,
-} from 'swiper/modules';
+} from 'swiper';
 
 // styles ======================================================================
 
@@ -20,6 +20,8 @@ import '../../scss/base/swiper.scss';
 // import 'swiper/css';
 
 // launch ======================================================================
+
+const progressBarTl = gsap.timeline();
 
 let tabsSlider = null;
 let heroProjectSlider = null;
@@ -35,10 +37,37 @@ const setSlideText = swiper => {
   target.innerHTML = text.innerHTML;
 };
 // autoplay progress
-const setAutoplayProgress = (s, time, progress) => {
-  const progressLine = document.querySelector('.sl-fraction__progress');
-  progressLine.style.setProperty('--progress', 1 - progress);
+const progressLine = document.querySelector('.sl-fraction__progress');
+const resetSlProgress = () => {
+  progressBarTl.progress(0);
+  updateSlProgress();
 };
+const updateSlProgress = () => {
+  if (progressLine) {
+    progressBarTl.to('.sl-fraction', {
+      '--progress': '100%',
+      duration: 7,
+      ease: 'linear',
+    });
+  }
+};
+// project slides
+const projSlides = document.querySelectorAll('.hero-project__slide');
+if (projSlides && window.innerWidth > 768) {
+  if (projSlides.length === 3) {
+    document
+      .querySelector('.hero-project__container')
+      .classList.add('three-slides');
+  } else if (projSlides.length === 2) {
+    document
+      .querySelector('.hero-project__container')
+      .classList.add('two-slides');
+  } else if (projSlides.length === 1) {
+    document
+      .querySelector('.hero-project__container')
+      .classList.add('one-slide');
+  }
+}
 
 function initSliders() {
   if (document.querySelector('.our-team__slider')) {
@@ -150,20 +179,19 @@ function initSliders() {
 
         // events
         on: {
+          realIndexChange: swiper => {
+            setSlideText(swiper);
+            resetSlProgress();
+          },
           afterInit: swiper => {
             setSlideText(swiper);
             swiper.autoplay.stop();
             if (document.documentElement.classList.contains('_loaded')) {
               setTimeout(() => {
                 swiper.autoplay.start();
+                updateSlProgress();
               }, 2000);
             }
-          },
-          slideChange: swiper => {
-            setSlideText(swiper);
-          },
-          autoplayTimeLeft: (s, time, progress) => {
-            setAutoplayProgress(s, time, progress);
           },
         },
       });
@@ -187,7 +215,11 @@ function initSliders() {
       tabsSlider = null;
     }
   }
-  if (document.querySelector('.hero-project__slider')) {
+  if (
+    document.querySelector('.hero-project__slider') &&
+    projSlides &&
+    projSlides.length !== 1
+  ) {
     if (window.innerWidth <= 768) {
       heroProjectSlider = new Swiper('.hero-project__slider', {
         modules: [Navigation, Pagination],
@@ -222,10 +254,9 @@ function initSliders() {
         modules: [Navigation, Pagination, EffectCreative, Autoplay],
         observer: true,
         observeParents: true,
-        slidesPerView: 4,
-        centeredSlides: false,
         loop: true,
-        updateOnWindowResize: true,
+        grabCursor: true,
+        slidesPerView: projSlides.length < 4 ? projSlides.length : 4,
 
         // autoplay
         autoplay: {
@@ -266,14 +297,15 @@ function initSliders() {
 
         // events
         on: {
-          autoplayTimeLeft: (s, time, progress) => {
-            setAutoplayProgress(s, time, progress);
+          realIndexChange: swiper => {
+            resetSlProgress();
           },
-          init: swiper => {
+          afterInit: swiper => {
             swiper.autoplay.stop();
             if (document.documentElement.classList.contains('_loaded')) {
               setTimeout(() => {
                 swiper.autoplay.start();
+                updateSlProgress();
               }, 2000);
             }
           },

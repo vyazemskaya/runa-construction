@@ -158,5 +158,8 @@
   // .company-methods__link
 
   &__link {
+    @media (max-width: 48em) {
+      transform: none;
+    }
   }
 }
